@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RiskLab - Wiki</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>R</text></svg>" />
+  <style>
+    :root {
+      --uc-ease-standard: cubic-bezier(0.22, 0.68, 0.14, 1);
+      --uc-dur-fast: 130ms;
+      --uc-dur-mid: 210ms;
+      --uc-header-max: 1760px;
+      --wiki-bg: #071120;
+      --wiki-bg-soft: #101c32;
+      --wiki-bg-panel: rgba(10, 18, 33, 0.86);
+      --wiki-border: rgba(71, 85, 105, 0.56);
+      --wiki-border-strong: rgba(56, 189, 248, 0.58);
+      --wiki-text: #dbe6f5;
+      --wiki-text-muted: #8ba0b8;
+      --wiki-accent: #7dd3fc;
+      --wiki-shadow: 0 14px 28px rgba(2, 8, 23, 0.18);
+      --wiki-radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      color: var(--wiki-text);
+      background:
+        radial-gradient(140% 95% at 14% -10%, rgba(56, 189, 248, 0.16), transparent 42%),
+        radial-gradient(90% 70% at 88% -12%, rgba(129, 140, 248, 0.14), transparent 46%),
+        linear-gradient(180deg, #040b15 0%, #0a1322 48%, #0d1829 100%);
+    }
+
+    body.light-mode {
+      --wiki-bg: #eef3fa;
+      --wiki-bg-soft: #f6f9fe;
+      --wiki-bg-panel: rgba(255, 255, 255, 0.92);
+      --wiki-border: rgba(148, 163, 184, 0.32);
+      --wiki-border-strong: rgba(14, 165, 233, 0.58);
+      --wiki-text: #0f172a;
+      --wiki-text-muted: #64748b;
+      --wiki-accent: #0369a1;
+      --wiki-shadow: 0 14px 28px rgba(15, 23, 42, 0.09);
+      background:
+        radial-gradient(120% 80% at 16% -10%, rgba(59, 130, 246, 0.09), transparent 44%),
+        radial-gradient(120% 80% at 85% -20%, rgba(14, 165, 233, 0.08), transparent 48%),
+        linear-gradient(180deg, #f6f8fc 0%, #edf2f8 52%, #e7edf5 100%);
+    }
+
+    header {
+      max-width: var(--uc-header-max);
+      margin: 0 auto;
+      padding: 0.72rem 1.35rem 0.4rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.55rem 1rem;
+    }
+
+    header h1 {
+      font-size: 0.98rem;
+      color: var(--wiki-text);
+      letter-spacing: -0.02em;
+      font-weight: 730;
+    }
+
+    .header-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .editor-link {
+      display: inline-block;
+      padding: 0.08rem 0;
+      border: 0;
+      background: transparent;
+      color: var(--wiki-text-muted);
+      font-size: 0.76rem;
+      font-weight: 720;
+      text-decoration: none;
+      font-family: inherit;
+      cursor: pointer;
+      transition: color var(--uc-dur-fast) var(--uc-ease-standard), text-decoration-color var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    .editor-link:hover {
+      color: var(--wiki-text);
+    }
+
+    .editor-link.active {
+      color: var(--wiki-text);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.32rem;
+      text-decoration-color: rgba(129, 140, 248, 0.9);
+    }
+
+    .theme-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      max-width: var(--uc-header-max);
+      margin: 0 auto 0.7rem;
+      padding: 4px 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      border-radius: 10px;
+      border: 1px solid var(--wiki-border);
+      background: rgba(6, 14, 25, 0.84);
+      backdrop-filter: blur(12px);
+      transition: border-color var(--uc-dur-mid) var(--uc-ease-standard), background var(--uc-dur-mid) var(--uc-ease-standard);
+    }
+
+    body.light-mode .theme-bar {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .theme-bar-label {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--wiki-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .theme-count {
+      flex-shrink: 0;
+      min-width: 28px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      background: rgba(56, 189, 248, 0.13);
+      color: #bae6fd;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    body.light-mode .theme-count {
+      background: rgba(14, 165, 233, 0.08);
+      border-color: rgba(56, 189, 248, 0.24);
+      color: #0c4a6e;
+    }
+
+    .theme-swatch {
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: border-color var(--uc-dur-fast) var(--uc-ease-standard), transform var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    .theme-swatch:hover {
+      transform: scale(1.08);
+    }
+
+    .theme-swatch.active {
+      border-color: #38bdf8;
+    }
+
+    .theme-mode-toggle {
+      flex-shrink: 0;
+      margin-left: auto;
+      border: 1px solid var(--wiki-border);
+      background: rgba(12, 20, 35, 0.72);
+      color: var(--wiki-text);
+      border-radius: 7px;
+      padding: 4px 9px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      transition: border-color var(--uc-dur-fast) var(--uc-ease-standard), background var(--uc-dur-fast) var(--uc-ease-standard), color var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    .theme-mode-toggle:hover {
+      border-color: var(--wiki-border-strong);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    body.light-mode .theme-mode-toggle {
+      background: #ffffff;
+    }
+
+    .wiki-shell {
+      max-width: 1760px;
+      margin: 0 auto;
+      padding: 0.2rem 1.35rem 2rem;
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 0.86rem;
+      align-items: start;
+    }
+
+    .wiki-panel {
+      border-radius: var(--wiki-radius);
+      border: 1px solid var(--wiki-border);
+      background: var(--wiki-bg-panel);
+      box-shadow: var(--wiki-shadow);
+      min-width: 0;
+    }
+
+    .wiki-list {
+      position: sticky;
+      top: 56px;
+      max-height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .wiki-list-head {
+      padding: 0.85rem 0.95rem 0.6rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .wiki-kicker {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--wiki-accent);
+      font-weight: 800;
+    }
+
+    .wiki-list-head h2 {
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .wiki-list-head p {
+      font-size: 0.76rem;
+      line-height: 1.45;
+      color: var(--wiki-text-muted);
+    }
+
+    .wiki-search-wrap {
+      padding: 0.72rem 0.95rem 0.52rem;
+      display: grid;
+      gap: 0.38rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+    }
+
+    .wiki-search-wrap label,
+    .wiki-filter-row label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--wiki-text-muted);
+    }
+
+    .wiki-search {
+      width: 100%;
+      border: 1px solid var(--wiki-border);
+      background: rgba(7, 13, 24, 0.86);
+      color: var(--wiki-text);
+      border-radius: 10px;
+      padding: 0.68rem 0.74rem;
+      font: inherit;
+      transition: border-color var(--uc-dur-fast) var(--uc-ease-standard), box-shadow var(--uc-dur-fast) var(--uc-ease-standard), background var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    body.light-mode .wiki-search {
+      background: #ffffff;
+    }
+
+    .wiki-search:focus-visible,
+    .wiki-chip:focus-visible,
+    .wiki-item:focus-visible,
+    .snippet-tab:focus-visible,
+    .snippet-copy:focus-visible {
+      outline: none;
+      border-color: var(--wiki-border-strong);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+    }
+
+    .wiki-filter-row {
+      padding: 0.58rem 0.95rem;
+      display: grid;
+      gap: 0.42rem;
+      border-bottom: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+    }
+
+    .wiki-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.42rem;
+    }
+
+    .wiki-chip {
+      border: 1px solid var(--wiki-border);
+      background: rgba(12, 20, 35, 0.66);
+      color: var(--wiki-text-muted);
+      border-radius: 999px;
+      padding: 0.32rem 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color var(--uc-dur-fast) var(--uc-ease-standard), color var(--uc-dur-fast) var(--uc-ease-standard), background var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    body.light-mode .wiki-chip {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .wiki-chip:hover,
+    .wiki-chip.active {
+      border-color: var(--wiki-border-strong);
+      color: var(--wiki-text);
+      background: rgba(56, 189, 248, 0.11);
+    }
+
+    .wiki-list-scroll {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      padding: 0.66rem 0.48rem 0.78rem 0.82rem;
+      display: grid;
+      gap: 0.44rem;
+      align-content: start;
+    }
+
+    .wiki-item {
+      width: calc(100% - 0.3rem);
+      text-align: left;
+      border: 1px solid var(--wiki-border);
+      background: rgba(10, 17, 30, 0.62);
+      color: var(--wiki-text);
+      border-radius: 10px;
+      padding: 0.58rem 0.68rem;
+      display: grid;
+      gap: 0.26rem;
+      cursor: pointer;
+      transition: border-color var(--uc-dur-fast) var(--uc-ease-standard), background var(--uc-dur-fast) var(--uc-ease-standard), transform var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    body.light-mode .wiki-item {
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .wiki-item:hover,
+    .wiki-item.active {
+      border-color: var(--wiki-border-strong);
+      background: rgba(12, 24, 42, 0.82);
+      transform: translateX(2px);
+    }
+
+    body.light-mode .wiki-item:hover,
+    body.light-mode .wiki-item.active {
+      background: rgba(186, 230, 253, 0.2);
+    }
+
+    .wiki-item-title {
+      font-size: 0.82rem;
+      font-weight: 760;
+      line-height: 1.3;
+      color: var(--wiki-text);
+    }
+
+    .wiki-item-meta {
+      font-size: 0.72rem;
+      color: var(--wiki-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .wiki-main {
+      display: grid;
+      gap: 0.82rem;
+      min-width: 0;
+    }
+
+    .wiki-card {
+      border: 1px solid var(--wiki-border);
+      border-radius: var(--wiki-radius);
+      background: var(--wiki-bg-panel);
+      box-shadow: var(--wiki-shadow);
+      padding: 0.82rem 0.9rem;
+      min-width: 0;
+    }
+
+    .wiki-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .wiki-overview-card {
+      border: 1px solid color-mix(in srgb, var(--wiki-border) 86%, transparent);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--wiki-bg-soft) 84%, transparent);
+      padding: 0.62rem 0.68rem;
+      display: grid;
+      gap: 0.26rem;
+    }
+
+    .wiki-overview-card strong {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--wiki-accent);
+    }
+
+    .wiki-overview-card span {
+      font-size: 0.8rem;
+      font-weight: 650;
+      color: var(--wiki-text);
+    }
+
+    .wiki-overview-card p {
+      font-size: 0.72rem;
+      line-height: 1.4;
+      color: var(--wiki-text-muted);
+    }
+
+    .wiki-selected-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.62rem;
+    }
+
+    .wiki-selected-head h3 {
+      font-size: 1.32rem;
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      color: var(--wiki-text);
+      margin-bottom: 0.26rem;
+    }
+
+    .wiki-selected-meta {
+      font-size: 0.78rem;
+      color: var(--wiki-text-muted);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      letter-spacing: -0.01em;
+      line-height: 1.45;
+    }
+
+    .wiki-selected-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0.6rem;
+    }
+
+    .wiki-section {
+      border: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--wiki-bg-soft) 84%, transparent);
+      padding: 0.62rem 0.68rem;
+      min-width: 0;
+    }
+
+    .wiki-section h4 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--wiki-accent);
+      margin-bottom: 0.38rem;
+    }
+
+    .wiki-section p {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--wiki-text);
+    }
+
+    .wiki-example-list {
+      list-style: none;
+      display: grid;
+      gap: 0.36rem;
+    }
+
+    .wiki-example-list li {
+      font-size: 0.77rem;
+      line-height: 1.45;
+      color: var(--wiki-text);
+      padding-left: 0.78rem;
+      position: relative;
+    }
+
+    .wiki-example-list li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--wiki-accent);
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+    }
+
+    .wiki-snippet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.62rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.52rem;
+    }
+
+    .snippet-tab-row {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .snippet-tab,
+    .snippet-copy {
+      border: 1px solid var(--wiki-border);
+      border-radius: 8px;
+      background: rgba(12, 20, 35, 0.66);
+      color: var(--wiki-text-muted);
+      padding: 0.33rem 0.56rem;
+      font-size: 0.72rem;
+      font-weight: 680;
+      cursor: pointer;
+      transition: border-color var(--uc-dur-fast) var(--uc-ease-standard), color var(--uc-dur-fast) var(--uc-ease-standard), background var(--uc-dur-fast) var(--uc-ease-standard);
+    }
+
+    body.light-mode .snippet-tab,
+    body.light-mode .snippet-copy {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .snippet-tab:hover,
+    .snippet-tab.active,
+    .snippet-copy:hover {
+      border-color: var(--wiki-border-strong);
+      color: var(--wiki-text);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .wiki-snippet {
+      border: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+      border-radius: 10px;
+      background: rgba(5, 11, 20, 0.95);
+      color: #d7e5ff;
+      font: 12px/1.54 Consolas, "SFMono-Regular", Menlo, monospace;
+      white-space: pre;
+      overflow: auto;
+      min-height: 300px;
+      max-height: 420px;
+      padding: 0.72rem 0.78rem;
+    }
+
+    body.light-mode .wiki-snippet {
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    .wiki-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+    }
+
+    .wiki-preview-card {
+      border: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--wiki-bg-soft) 84%, transparent);
+      padding: 0.58rem;
+      display: grid;
+      gap: 0.4rem;
+      min-width: 0;
+    }
+
+    .wiki-preview-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .wiki-preview-head strong {
+      font-size: 0.8rem;
+      color: var(--wiki-text);
+      letter-spacing: -0.01em;
+    }
+
+    .wiki-preview-head span {
+      font-size: 0.7rem;
+      color: var(--wiki-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .wiki-preview-box {
+      height: 218px;
+      border-radius: 8px;
+      border: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
+      background:
+        radial-gradient(120% 120% at 15% 0%, rgba(56, 189, 248, 0.09), transparent 46%),
+        #08111f;
+      overflow: hidden;
+    }
+
+    body.light-mode .wiki-preview-box {
+      background: linear-gradient(180deg, #f8fbff, #eef4fb);
+    }
+
+    @media (max-width: 1360px) {
+      .wiki-shell {
+        grid-template-columns: 320px minmax(0, 1fr);
+        padding-inline: 1rem;
+      }
+      .wiki-overview-grid,
+      .wiki-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .wiki-shell {
+        grid-template-columns: 1fr;
+      }
+      .wiki-list {
+        position: static;
+        max-height: none;
+      }
+      .wiki-selected-grid {
+        grid-template-columns: 1fr;
+      }
+      .wiki-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="../assets/wiki-CzpVQLLw.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/index-BZzCVWED.js">
+</head>
+<body>
+  <header>
+    <h1>Wiki</h1>
+    <div class="header-links">
+      <a class="editor-link" href="../">Charts</a>
+      <a class="editor-link" href="../builder/">Builder</a>
+      <a class="editor-link active" href="./">Wiki</a>
+    </div>
+  </header>
+
+  <div class="theme-bar" id="theme-bar"></div>
+
+  <main class="wiki-shell">
+    <aside class="wiki-panel wiki-list">
+      <div class="wiki-list-head">
+        <span class="wiki-kicker">Reference</span>
+        <h2>Chart Wiki</h2>
+        <p>What each chart means, how it works, and where to use it.</p>
+      </div>
+
+      <div class="wiki-search-wrap">
+        <label for="chart-search">Search chart type</label>
+        <input id="chart-search" class="wiki-search" type="search" autocomplete="off" placeholder="line, sankey, graph3d" />
+      </div>
+
+      <div class="wiki-filter-row">
+        <label>Lane</label>
+        <div class="wiki-chip-row" id="lane-chips"></div>
+      </div>
+
+      <div class="wiki-list-scroll" id="chart-list"></div>
+    </aside>
+
+    <section class="wiki-main">
+      <section class="wiki-card">
+        <div class="wiki-overview-grid">
+          <article class="wiki-overview-card">
+            <strong>What it is</strong>
+            <span>Typed chart platform</span>
+            <p>Every chart is configured with explicit series types, data shape, and interactions.</p>
+          </article>
+          <article class="wiki-overview-card">
+            <strong>How it works</strong>
+            <span>Config -> render -> export</span>
+            <p>Charts consume JSON config, mount through the adapter, then export through shared APIs.</p>
+          </article>
+          <article class="wiki-overview-card">
+            <strong>Package lanes</strong>
+            <span>Basic, advanced, 3D</span>
+            <p>Basic is default; advanced adds specialized analysis; 3D focuses on graph topology.</p>
+          </article>
+          <article class="wiki-overview-card">
+            <strong>Operator workflow</strong>
+            <span>Gallery + builder + docs</span>
+            <p>Browse charts, tune them in Builder, then move exact config into product code.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wiki-card">
+        <div class="wiki-selected-head">
+          <div>
+            <h3 id="selected-title">Line</h3>
+            <p class="wiki-selected-meta" id="selected-package">@risklab/charts/basic</p>
+            <p class="wiki-selected-meta" id="selected-lane">Basic lane</p>
+          </div>
+        </div>
+
+        <div class="wiki-selected-grid">
+          <article class="wiki-section">
+            <h4>What it means</h4>
+            <p id="selected-meaning"></p>
+          </article>
+          <article class="wiki-section">
+            <h4>How it works</h4>
+            <p id="selected-mechanics"></p>
+          </article>
+          <article class="wiki-section">
+            <h4>Example scenarios</h4>
+            <ul class="wiki-example-list" id="selected-examples"></ul>
+          </article>
+          <article class="wiki-section">
+            <h4>Runtime notes</h4>
+            <p id="selected-runtime"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wiki-card">
+        <div class="wiki-snippet-head">
+          <strong>Implementation examples</strong>
+          <div class="snippet-tab-row">
+            <button class="snippet-tab active" id="snippet-tab-a" type="button">Example A</button>
+            <button class="snippet-tab" id="snippet-tab-b" type="button">Example B</button>
+            <button class="snippet-copy" id="snippet-copy" type="button">Copy</button>
+          </div>
+        </div>
+        <pre class="wiki-snippet" id="snippet-active"></pre>
+      </section>
+
+      <section class="wiki-card">
+        <div class="wiki-snippet-head">
+          <strong>Live lane examples</strong>
+        </div>
+        <div class="wiki-preview-grid">
+          <article class="wiki-preview-card">
+            <div class="wiki-preview-head">
+              <strong>Basic lane sample</strong>
+              <span>@risklab/charts/basic</span>
+            </div>
+            <div id="preview-basic" class="wiki-preview-box"></div>
+          </article>
+          <article class="wiki-preview-card">
+            <div class="wiki-preview-head">
+              <strong>Advanced lane sample</strong>
+              <span>@risklab/charts/advanced</span>
+            </div>
+            <div id="preview-advanced" class="wiki-preview-box"></div>
+          </article>
+          <article class="wiki-preview-card">
+            <div class="wiki-preview-head">
+              <strong>3D lane sample</strong>
+              <span>@risklab/charts/3d</span>
+            </div>
+            <div id="preview-3d" class="wiki-preview-box"></div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+</body>
+</html>
