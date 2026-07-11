@@ -1,0 +1,1138 @@
+{
+  "templateId": "alert-triage",
+  "specialization": "Evacuation",
+  "title": "Kabul 2021 Evacuation (Operation Allies Refuge/Refugee Airlift)",
+  "subtitle": "public_historical",
+  "focusArea": "evacuation",
+  "seed": 1914947898,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "4"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "3"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "4"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "3"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "2021-08-16T00:00:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Airport Status",
+      "summary": "Airport operating state restored.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a2",
+      "openedAt": "2021-08-24T00:00:00Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Throughput",
+      "summary": "24-hour throughput spike in public reporting.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a3",
+      "openedAt": "2021-08-31T00:00:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Drawdown",
+      "summary": "Final departures phase.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "2021-08-16T00:00:00Z",
+      "title": "Airport Secured",
+      "detail": "Airport security restored sufficiently to resume large-scale departures.",
+      "severity": "error",
+      "status": "ph_setup",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "2021-08-20T00:00:00Z",
+      "title": "Scale Statement",
+      "detail": "Public DoD statement describes operation as one of the largest and most difficult airlifts in history.",
+      "severity": "info",
+      "status": "ph_flow",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "2021-08-24T00:00:00Z",
+      "title": "Throughput Peak",
+      "detail": "High-throughput day in public DoD reporting; throughput trend supports peak airlift phase.",
+      "severity": "info",
+      "status": "ph_flow",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e4",
+      "timestamp": "2021-08-31T00:00:00Z",
+      "title": "Final Departures",
+      "detail": "Final evacuation departures and drawdown actions complete.",
+      "severity": "error",
+      "status": "ph_drawdown",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "c17_stack",
+      "label": "C-17 sortie stack",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "15 samples",
+      "region": "evacuation",
+      "lastSeen": "2021-08-31T00:00:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "c130_stack",
+      "label": "C-130 sortie stack",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "12 samples",
+      "region": "evacuation",
+      "lastSeen": "2021-08-28T00:00:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "hub_qatar",
+      "label": "Qatar Transit Hub",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "6 samples",
+      "region": "evacuation",
+      "lastSeen": "2021-08-29T00:00:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "sensor-hkia",
+      "label": "Hamid Karzai International Airport",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "evacuation",
+      "lastSeen": "2021-08-31T00:00:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-c17_stack",
+      "label": "C-17 sortie stack",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "evacuation",
+      "lastSeen": "2021-08-31T00:00:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-c130_stack",
+      "label": "C-130 sortie stack",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "evacuation",
+      "lastSeen": "2021-08-28T00:00:00Z",
+      "confidence": 0.72
+    },
+    {
+      "id": "sensor-hub_qatar",
+      "label": "Qatar Transit Hub",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "evacuation",
+      "lastSeen": "2021-08-29T00:00:00Z",
+      "confidence": 0.64
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "2021-08-14T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-16T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-17T00:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2021-08-18T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-19T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-20T00:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2021-08-21T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-22T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-23T00:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2021-08-24T00:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2021-08-25T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-26T00:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2021-08-27T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-28T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-29T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-30T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-31T00:00:00.000Z",
+          "y": 3
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "2021-08-14T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-17T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-18T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-19T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-20T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-21T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-22T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-23T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-24T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-25T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-26T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-08-27T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-28T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-29T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-30T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-08-31T00:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-hkia",
+      "name": "Hamid Karzai International Airport",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "evacuation",
+      "location": {
+        "lat": 0,
+        "lon": 0
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2021-08-31T00:00:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-c17_stack",
+      "name": "C-17 sortie stack",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "evacuation",
+      "location": {
+        "lat": 25.117,
+        "lon": 51.565
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2021-08-31T00:00:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-c130_stack",
+      "name": "C-130 sortie stack",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "evacuation",
+      "location": {
+        "lat": 25.117,
+        "lon": 51.565
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2021-08-28T00:00:00Z",
+      "confidence": 0.72
+    },
+    {
+      "id": "sensor-hub_qatar",
+      "name": "Qatar Transit Hub",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "evacuation",
+      "location": {
+        "lat": 25.117,
+        "lon": 51.565
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2021-08-29T00:00:00Z",
+      "confidence": 0.64
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "c17_stack",
+      "label": "C-17 sortie stack",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "evacuation",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2021-08-17T00:00:00Z",
+          "lat": 34.5553,
+          "lon": 69.2075,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-18T00:00:00Z",
+          "lat": 33.881136,
+          "lon": 67.947321,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-19T00:00:00Z",
+          "lat": 33.206971,
+          "lon": 66.687143,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-20T00:00:00Z",
+          "lat": 32.532807,
+          "lon": 65.426964,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-21T00:00:00Z",
+          "lat": 31.858643,
+          "lon": 64.166786,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-22T00:00:00Z",
+          "lat": 31.184479,
+          "lon": 62.906607,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-23T00:00:00Z",
+          "lat": 30.510314,
+          "lon": 61.646429,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-24T00:00:00Z",
+          "lat": 29.83615,
+          "lon": 60.38625,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-25T00:00:00Z",
+          "lat": 29.161986,
+          "lon": 59.126071,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-26T00:00:00Z",
+          "lat": 28.487821,
+          "lon": 57.865893,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-27T00:00:00Z",
+          "lat": 27.813657,
+          "lon": 56.605714,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-28T00:00:00Z",
+          "lat": 27.139493,
+          "lon": 55.345536,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-29T00:00:00Z",
+          "lat": 26.465329,
+          "lon": 54.085357,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-30T00:00:00Z",
+          "lat": 25.791164,
+          "lon": 52.825179,
+          "speed": 447,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-31T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 447,
+          "heading": 240
+        }
+      ]
+    },
+    {
+      "id": "c130_stack",
+      "label": "C-130 sortie stack",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "evacuation",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2021-08-17T00:00:00Z",
+          "lat": 34.5553,
+          "lon": 69.2075,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-18T00:00:00Z",
+          "lat": 33.697273,
+          "lon": 67.603636,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-19T00:00:00Z",
+          "lat": 32.839245,
+          "lon": 65.999773,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-20T00:00:00Z",
+          "lat": 31.981218,
+          "lon": 64.395909,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-21T00:00:00Z",
+          "lat": 31.123191,
+          "lon": 62.792045,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-22T00:00:00Z",
+          "lat": 30.265164,
+          "lon": 61.188182,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-23T00:00:00Z",
+          "lat": 29.407136,
+          "lon": 59.584318,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-24T00:00:00Z",
+          "lat": 28.549109,
+          "lon": 57.980455,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-25T00:00:00Z",
+          "lat": 27.691082,
+          "lon": 56.376591,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-26T00:00:00Z",
+          "lat": 26.833055,
+          "lon": 54.772727,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-27T00:00:00Z",
+          "lat": 25.975027,
+          "lon": 53.168864,
+          "speed": 292,
+          "heading": 240
+        },
+        {
+          "timestamp": "2021-08-28T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 292,
+          "heading": 240
+        }
+      ]
+    },
+    {
+      "id": "hub_qatar",
+      "label": "Qatar Transit Hub",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "evacuation",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2021-08-14T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 0,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-08-17T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 0,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-08-20T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 0,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-08-23T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 0,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-08-26T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 0,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-08-29T00:00:00Z",
+          "lat": 25.117,
+          "lon": 51.565,
+          "speed": 0,
+          "heading": 0
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_hkia",
+      "name": "z_hkia",
+      "type": "site",
+      "region": "evacuation",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "2021-08-31T00:00:00Z"
+    },
+    {
+      "id": "z_hub",
+      "name": "z_hub",
+      "type": "site",
+      "region": "evacuation",
+      "status": "healthy",
+      "utilization": 65,
+      "lastServiceAt": "2021-08-31T00:00:00Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-hkia",
+      "label": "Hamid Karzai International Airport",
+      "group": "ground",
+      "status": "healthy",
+      "importance": 85
+    },
+    {
+      "id": "node-c17_stack",
+      "label": "C-17 sortie stack",
+      "group": "air",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "node-c130_stack",
+      "label": "C-130 sortie stack",
+      "group": "air",
+      "status": "healthy",
+      "importance": 71
+    },
+    {
+      "id": "node-hub_qatar",
+      "label": "Qatar Transit Hub",
+      "group": "ground",
+      "status": "healthy",
+      "importance": 64
+    },
+    {
+      "id": "phase-ph_setup",
+      "label": "airport_security_and_recovery",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_flow",
+      "label": "sustained_airlift",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_drawdown",
+      "label": "final_drawdown",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-hkia-ph_setup",
+      "source": "node-hkia",
+      "target": "phase-ph_setup",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-c17_stack-ph_flow",
+      "source": "node-c17_stack",
+      "target": "phase-ph_flow",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-c130_stack-ph_drawdown",
+      "source": "node-c130_stack",
+      "target": "phase-ph_drawdown",
+      "label": "assigned",
+      "weight": 3,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-hub_qatar-ph_setup",
+      "source": "node-hub_qatar",
+      "target": "phase-ph_setup",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "daily_throughput",
+      "label": "Evacuees Per Day Est",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2021-08-16T00:00:00Z",
+          "value": 3500
+        },
+        {
+          "timestamp": "2021-08-20T00:00:00Z",
+          "value": 5700
+        },
+        {
+          "timestamp": "2021-08-24T00:00:00Z",
+          "value": 21600
+        },
+        {
+          "timestamp": "2021-08-28T00:00:00Z",
+          "value": 12000
+        },
+        {
+          "timestamp": "2021-08-31T00:00:00Z",
+          "value": 3000
+        }
+      ]
+    },
+    {
+      "id": "runway_capacity",
+      "label": "Runway Operational Score",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2021-08-15T00:00:00Z",
+          "value": 0.35
+        },
+        {
+          "timestamp": "2021-08-17T00:00:00Z",
+          "value": 0.8
+        },
+        {
+          "timestamp": "2021-08-24T00:00:00Z",
+          "value": 0.93
+        },
+        {
+          "timestamp": "2021-08-30T00:00:00Z",
+          "value": 0.74
+        }
+      ]
+    },
+    {
+      "id": "hub_load",
+      "label": "Transit Hub Population Est",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2021-08-20T00:00:00Z",
+          "value": 15000
+        },
+        {
+          "timestamp": "2021-08-24T00:00:00Z",
+          "value": 40000
+        },
+        {
+          "timestamp": "2021-08-28T00:00:00Z",
+          "value": 58000
+        },
+        {
+          "timestamp": "2021-09-01T00:00:00Z",
+          "value": 4000
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "daily_throughput-0",
+      "timestamp": "2021-08-16T00:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Evacuees Per Day Est 3500",
+      "region": "evacuation"
+    },
+    {
+      "id": "daily_throughput-1",
+      "timestamp": "2021-08-20T00:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 85,
+      "status": "nominal",
+      "summary": "Evacuees Per Day Est 5700",
+      "region": "evacuation"
+    },
+    {
+      "id": "daily_throughput-2",
+      "timestamp": "2021-08-24T00:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 60,
+      "status": "nominal",
+      "summary": "Evacuees Per Day Est 21600",
+      "region": "evacuation"
+    },
+    {
+      "id": "runway_capacity-0",
+      "timestamp": "2021-08-15T00:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 155,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Runway Operational Score 0",
+      "region": "evacuation"
+    },
+    {
+      "id": "runway_capacity-1",
+      "timestamp": "2021-08-17T00:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 163,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Runway Operational Score 1",
+      "region": "evacuation"
+    },
+    {
+      "id": "runway_capacity-2",
+      "timestamp": "2021-08-24T00:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 171,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Runway Operational Score 1",
+      "region": "evacuation"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "2021-08-16T00:00:00Z",
+      "author": "mission-pack",
+      "text": "Transition from airport recovery to sustained evacuation flow.",
+      "linkedRefs": []
+    },
+    {
+      "id": "annotation-2",
+      "timestamp": "2021-08-20T00:00:00Z",
+      "author": "mission-pack",
+      "text": "Prioritize high-turn airlift cycle.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "2021-08-14T00:00:00Z",
+      "kind": "note",
+      "title": "Secure airport for evacuation",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "2021-08-17T00:00:00Z",
+      "kind": "note",
+      "title": "Maximize passenger throughput",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-3",
+      "createdAt": "2021-08-29T00:00:00Z",
+      "kind": "note",
+      "title": "Transfer evacuees to regional hubs",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_setup",
+      "timestamp": "2021-08-14T00:00:00Z",
+      "title": "airport_security_and_recovery",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_flow",
+      "timestamp": "2021-08-17T00:00:00Z",
+      "title": "sustained_airlift",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_drawdown",
+      "timestamp": "2021-08-29T00:00:00Z",
+      "title": "final_drawdown",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "33 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "4 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "3 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "2 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "Kabul 2021 Evacuation (Operation Allies Refuge/Refugee Airlift)",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "airport_security_and_recovery · complete",
+        "sustained_airlift · complete",
+        "final_drawdown · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "3 objectives · 0 tasks",
+      "bullets": [
+        "Secure airport for evacuation",
+        "Maximize passenger throughput",
+        "Transfer evacuees to regional hubs"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "16 time slices",
+      "bullets": [
+        "airport_security_and_recovery · 2021-08-14T00:00:00Z",
+        "sustained_airlift · 2021-08-17T00:00:00Z",
+        "final_drawdown · 2021-08-29T00:00:00Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-c17_stack",
+        "label": "C-17 sortie stack",
+        "role": "facility",
+        "lat": 25.117,
+        "lon": 51.565,
+        "windSpeed": 17,
+        "windGusts": 21,
+        "windDir": 12,
+        "temp": 31,
+        "vis": 35655,
+        "cloudCover": 4,
+        "precipProb": 18,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 81,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "sensor-c130_stack",
+        "label": "C-130 sortie stack",
+        "role": "facility",
+        "lat": 25.117,
+        "lon": 51.565,
+        "windSpeed": 8,
+        "windGusts": 13,
+        "windDir": 59,
+        "temp": 6,
+        "vis": 34778,
+        "cloudCover": 69,
+        "precipProb": 17,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 84,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "sensor-hub_qatar",
+        "label": "Qatar Transit Hub",
+        "role": "facility",
+        "lat": 25.117,
+        "lon": 51.565,
+        "windSpeed": 4,
+        "windGusts": 10,
+        "windDir": 309,
+        "temp": 10,
+        "vis": 37864,
+        "cloudCover": 27,
+        "precipProb": 31,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 92,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "c17_stack",
+        "label": "C-17 sortie stack",
+        "role": "evacuation",
+        "lat": 34.5553,
+        "lon": 69.2075,
+        "windSpeed": 7,
+        "windGusts": 14,
+        "windDir": 128,
+        "temp": 3,
+        "vis": 37263,
+        "cloudCover": 76,
+        "precipProb": 24,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 75,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "c130_stack",
+        "label": "C-130 sortie stack",
+        "role": "evacuation",
+        "lat": 34.5553,
+        "lon": 69.2075,
+        "windSpeed": 8,
+        "windGusts": 16,
+        "windDir": 317,
+        "temp": 20,
+        "vis": 15586,
+        "cloudCover": 35,
+        "precipProb": 13,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 92,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "hub_qatar",
+        "label": "Qatar Transit Hub",
+        "role": "evacuation",
+        "lat": 25.117,
+        "lon": 51.565,
+        "windSpeed": 6,
+        "windGusts": 15,
+        "windDir": 79,
+        "temp": 22,
+        "vis": 39472,
+        "cloudCover": 97,
+        "precipProb": 33,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 94,
+        "dzStatus": "GO"
+      }
+    ],
+    "hfScore": 79,
+    "satcomScore": 56,
+    "gpsScore": 77,
+    "avgDzScore": 86,
+    "adsbSummary": {
+      "total": 3,
+      "airborne": 0,
+      "military": 2
+    }
+  }
+}

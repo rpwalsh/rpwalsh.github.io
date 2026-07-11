@@ -1,0 +1,1224 @@
+{
+  "templateId": "environmental-ops",
+  "specialization": "Spaceflight",
+  "title": "Apollo 13",
+  "subtitle": "public_historical",
+  "focusArea": "spaceflight",
+  "seed": 1823348765,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "7"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "3"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "3"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "4"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "1970-04-14T03:08:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Vehicle Anomaly",
+      "summary": "Major spacecraft failure detected.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a2",
+      "openedAt": "1970-04-15T18:00:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Trajectory",
+      "summary": "Critical return burn executed.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a3",
+      "openedAt": "1970-04-17T18:07:41Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Recovery",
+      "summary": "Splashdown complete.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "1970-04-11T19:13:00Z",
+      "title": "Launch",
+      "detail": "Apollo 13 launches from Kennedy Space Center.",
+      "severity": "info",
+      "status": "ph_launch",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "1970-04-14T03:08:00Z",
+      "title": "Explosion",
+      "detail": "Oxygen tank explosion triggers major spacecraft emergency.",
+      "severity": "error",
+      "status": "ph_emergency",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "1970-04-14T08:08:00Z",
+      "title": "Trajectory Correction",
+      "detail": "Ground-computed burn restores free-return trajectory.",
+      "severity": "error",
+      "status": "ph_emergency",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e4",
+      "timestamp": "1970-04-15T18:00:00Z",
+      "title": "Pc Plus 2",
+      "detail": "Critical return-course burn executed.",
+      "severity": "error",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e5",
+      "timestamp": "1970-04-17T16:43:00Z",
+      "title": "Service Module Jettison",
+      "detail": "Service module jettison reveals extensive damage.",
+      "severity": "info",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e6",
+      "timestamp": "1970-04-17T17:53:00Z",
+      "title": "Lunar Module Jettison",
+      "detail": "Aquarius jettisoned before reentry.",
+      "severity": "info",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e7",
+      "timestamp": "1970-04-17T18:07:41Z",
+      "title": "Splashdown",
+      "detail": "Apollo 13 splashes down safely.",
+      "severity": "error",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "csm_odyssey",
+      "label": "CM Odyssey",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "13 samples",
+      "region": "spaceflight",
+      "lastSeen": "1970-04-17T15:08:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "lm_aquarius",
+      "label": "LM Aquarius",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "8 samples",
+      "region": "spaceflight",
+      "lastSeen": "1970-04-17T15:08:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "recovery_tf",
+      "label": "Pacific Recovery Force",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "4 samples",
+      "region": "spaceflight",
+      "lastSeen": "1970-04-17T12:00:00Z",
+      "confidence": 0.7
+    },
+    {
+      "id": "sensor-csm_odyssey",
+      "label": "CM Odyssey",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1970-04-17T15:08:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-lm_aquarius",
+      "label": "LM Aquarius",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1970-04-17T15:08:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-recovery_tf",
+      "label": "Pacific Recovery Force",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1970-04-17T12:00:00Z",
+      "confidence": 0.72
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "1970-04-11T19:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-12T07:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-12T19:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-13T07:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-13T19:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-14T03:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "1970-04-14T08:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-14T15:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-15T03:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-15T15:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-15T18:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-16T03:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-16T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-16T15:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-17T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T03:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-17T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T15:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-17T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T18:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "1970-04-11T19:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-12T07:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-12T19:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-13T07:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-13T19:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-14T03:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1970-04-14T08:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-14T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-15T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-15T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-15T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-16T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-16T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-16T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1970-04-17T18:00:00.000Z",
+          "y": 1
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-csm_odyssey",
+      "name": "CM Odyssey",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "spaceflight",
+      "location": {
+        "lat": -21.63,
+        "lon": -165.36
+      },
+      "healthScore": 62,
+      "lastSeenAt": "1970-04-17T15:08:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-lm_aquarius",
+      "name": "LM Aquarius",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "spaceflight",
+      "location": {
+        "lat": -20,
+        "lon": -166
+      },
+      "healthScore": 62,
+      "lastSeenAt": "1970-04-17T15:08:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-recovery_tf",
+      "name": "Pacific Recovery Force",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "spaceflight",
+      "location": {
+        "lat": -21.63,
+        "lon": -165.36
+      },
+      "healthScore": 88,
+      "lastSeenAt": "1970-04-17T12:00:00Z",
+      "confidence": 0.72
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "csm_odyssey",
+      "label": "CM Odyssey",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "spaceflight",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1970-04-11T19:13:00Z",
+          "lat": 28.6,
+          "lon": -80.6,
+          "speed": 17883,
+          "heading": 105
+        },
+        {
+          "timestamp": "1970-04-12T07:13:00Z",
+          "lat": 22.7,
+          "lon": -97.95,
+          "speed": 17883,
+          "heading": 105
+        },
+        {
+          "timestamp": "1970-04-12T19:13:00Z",
+          "lat": 16.8,
+          "lon": -115.3,
+          "speed": 17883,
+          "heading": 105
+        },
+        {
+          "timestamp": "1970-04-13T07:13:00Z",
+          "lat": 10.9,
+          "lon": -132.65,
+          "speed": 17883,
+          "heading": 105
+        },
+        {
+          "timestamp": "1970-04-13T19:13:00Z",
+          "lat": 5,
+          "lon": -150,
+          "speed": 17883,
+          "heading": 105
+        },
+        {
+          "timestamp": "1970-04-14T03:08:00Z",
+          "lat": 5,
+          "lon": -150,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-14T15:08:00Z",
+          "lat": 1.195714,
+          "lon": -152.194286,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-15T03:08:00Z",
+          "lat": -2.608571,
+          "lon": -154.388571,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-15T15:08:00Z",
+          "lat": -6.412857,
+          "lon": -156.582857,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-16T03:08:00Z",
+          "lat": -10.217143,
+          "lon": -158.777143,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-16T15:08:00Z",
+          "lat": -14.021429,
+          "lon": -160.971429,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-17T03:08:00Z",
+          "lat": -17.825714,
+          "lon": -163.165714,
+          "speed": 16911,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-17T15:08:00Z",
+          "lat": -21.63,
+          "lon": -165.36,
+          "speed": 16911,
+          "heading": 80
+        }
+      ]
+    },
+    {
+      "id": "lm_aquarius",
+      "label": "LM Aquarius",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "spaceflight",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1970-04-14T03:08:00Z",
+          "lat": 5,
+          "lon": -150,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-14T15:08:00Z",
+          "lat": 1.428571,
+          "lon": -152.285714,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-15T03:08:00Z",
+          "lat": -2.142857,
+          "lon": -154.571429,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-15T15:08:00Z",
+          "lat": -5.714286,
+          "lon": -156.857143,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-16T03:08:00Z",
+          "lat": -9.285714,
+          "lon": -159.142857,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-16T15:08:00Z",
+          "lat": -12.857143,
+          "lon": -161.428571,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-17T03:08:00Z",
+          "lat": -16.428571,
+          "lon": -163.714286,
+          "speed": 16717,
+          "heading": 80
+        },
+        {
+          "timestamp": "1970-04-17T15:08:00Z",
+          "lat": -20,
+          "lon": -166,
+          "speed": 16717,
+          "heading": 80
+        }
+      ]
+    },
+    {
+      "id": "recovery_tf",
+      "label": "Pacific Recovery Force",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "spaceflight",
+      "confidence": 0.7,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1970-04-16T00:00:00Z",
+          "lat": -22.3,
+          "lon": -166.2,
+          "speed": 14,
+          "heading": 40
+        },
+        {
+          "timestamp": "1970-04-16T12:00:00Z",
+          "lat": -22.076667,
+          "lon": -165.92,
+          "speed": 14,
+          "heading": 40
+        },
+        {
+          "timestamp": "1970-04-17T00:00:00Z",
+          "lat": -21.853333,
+          "lon": -165.64,
+          "speed": 14,
+          "heading": 40
+        },
+        {
+          "timestamp": "1970-04-17T12:00:00Z",
+          "lat": -21.63,
+          "lon": -165.36,
+          "speed": 14,
+          "heading": 40
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_launch",
+      "name": "z_launch",
+      "type": "site",
+      "region": "spaceflight",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "1970-04-17T18:07:41Z"
+    },
+    {
+      "id": "z_recovery",
+      "name": "z_recovery",
+      "type": "site",
+      "region": "spaceflight",
+      "status": "healthy",
+      "utilization": 65,
+      "lastServiceAt": "1970-04-17T18:07:41Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-csm_odyssey",
+      "label": "CM Odyssey",
+      "group": "crew",
+      "status": "warning",
+      "importance": 85
+    },
+    {
+      "id": "node-lm_aquarius",
+      "label": "LM Aquarius",
+      "group": "crew",
+      "status": "warning",
+      "importance": 78
+    },
+    {
+      "id": "node-recovery_tf",
+      "label": "Pacific Recovery Force",
+      "group": "recovery",
+      "status": "healthy",
+      "importance": 71
+    },
+    {
+      "id": "phase-ph_launch",
+      "label": "launch_and_departure",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_transit",
+      "label": "trans_lunar_coast",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_emergency",
+      "label": "emergency_reconfiguration",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    },
+    {
+      "id": "phase-ph_return",
+      "label": "free_return_and_reentry",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-csm_odyssey-ph_launch",
+      "source": "node-csm_odyssey",
+      "target": "phase-ph_launch",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-lm_aquarius-ph_transit",
+      "source": "node-lm_aquarius",
+      "target": "phase-ph_transit",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-recovery_tf-ph_emergency",
+      "source": "node-recovery_tf",
+      "target": "phase-ph_emergency",
+      "label": "assigned",
+      "weight": 3,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "cmd_link",
+      "label": "Comm Link Quality",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1970-04-11T19:13:00Z",
+          "value": 1
+        },
+        {
+          "timestamp": "1970-04-12T07:13:00Z",
+          "value": 0.98
+        },
+        {
+          "timestamp": "1970-04-12T19:13:00Z",
+          "value": 0.45
+        },
+        {
+          "timestamp": "1970-04-13T07:13:00Z",
+          "value": 0.62
+        },
+        {
+          "timestamp": "1970-04-13T19:13:00Z",
+          "value": 0.81
+        },
+        {
+          "timestamp": "1970-04-14T07:13:00Z",
+          "value": 0.96
+        },
+        {
+          "timestamp": "1970-04-14T19:13:00Z",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "trajectory_margin",
+      "label": "Trajectory Margin Score",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1970-04-11T19:13:00Z",
+          "value": 1
+        },
+        {
+          "timestamp": "1970-04-12T07:13:00Z",
+          "value": 0.92
+        },
+        {
+          "timestamp": "1970-04-12T19:13:00Z",
+          "value": 0.3
+        },
+        {
+          "timestamp": "1970-04-13T07:13:00Z",
+          "value": 0.71
+        },
+        {
+          "timestamp": "1970-04-13T19:13:00Z",
+          "value": 0.83
+        },
+        {
+          "timestamp": "1970-04-14T07:13:00Z",
+          "value": 0.9
+        },
+        {
+          "timestamp": "1970-04-14T19:13:00Z",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "csm_power",
+      "label": "Power Margin Pct",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1970-04-11T19:13:00Z",
+          "value": 100
+        },
+        {
+          "timestamp": "1970-04-12T07:13:00Z",
+          "value": 91
+        },
+        {
+          "timestamp": "1970-04-12T19:13:00Z",
+          "value": 12
+        },
+        {
+          "timestamp": "1970-04-13T07:13:00Z",
+          "value": 8
+        },
+        {
+          "timestamp": "1970-04-13T19:13:00Z",
+          "value": 15
+        },
+        {
+          "timestamp": "1970-04-14T07:13:00Z",
+          "value": 64
+        },
+        {
+          "timestamp": "1970-04-14T19:13:00Z",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "lm_consumables",
+      "label": "Consumables Margin Pct",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1970-04-14T03:08:00Z",
+          "value": 100
+        },
+        {
+          "timestamp": "1970-04-14T13:08:00Z",
+          "value": 88
+        },
+        {
+          "timestamp": "1970-04-14T23:08:00Z",
+          "value": 72
+        },
+        {
+          "timestamp": "1970-04-15T09:08:00Z",
+          "value": 57
+        },
+        {
+          "timestamp": "1970-04-15T19:08:00Z",
+          "value": 41
+        },
+        {
+          "timestamp": "1970-04-16T05:08:00Z",
+          "value": 26
+        },
+        {
+          "timestamp": "1970-04-16T15:08:00Z",
+          "value": 9
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "cmd_link-0",
+      "timestamp": "1970-04-11T19:13:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "spaceflight"
+    },
+    {
+      "id": "cmd_link-1",
+      "timestamp": "1970-04-12T07:13:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "spaceflight"
+    },
+    {
+      "id": "cmd_link-2",
+      "timestamp": "1970-04-12T19:13:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Comm Link Quality 0",
+      "region": "spaceflight"
+    },
+    {
+      "id": "trajectory_margin-0",
+      "timestamp": "1970-04-11T19:13:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 155,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Trajectory Margin Score 1",
+      "region": "spaceflight"
+    },
+    {
+      "id": "trajectory_margin-1",
+      "timestamp": "1970-04-12T07:13:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 163,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Trajectory Margin Score 1",
+      "region": "spaceflight"
+    },
+    {
+      "id": "trajectory_margin-2",
+      "timestamp": "1970-04-12T19:13:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 171,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Trajectory Margin Score 0",
+      "region": "spaceflight"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "1970-04-14T03:20:00Z",
+      "author": "mission-pack",
+      "text": "Power down command module and transfer crew support to lunar module.",
+      "linkedRefs": []
+    },
+    {
+      "id": "annotation-2",
+      "timestamp": "1970-04-14T08:08:00Z",
+      "author": "mission-pack",
+      "text": "Execute burn to regain free-return trajectory.",
+      "linkedRefs": []
+    },
+    {
+      "id": "annotation-3",
+      "timestamp": "1970-04-17T15:30:00Z",
+      "author": "mission-pack",
+      "text": "Begin command module power-up and reentry configuration.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "1970-04-11T19:13:00Z",
+      "kind": "note",
+      "title": "Preserve crew",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "1970-04-12T00:00:00Z",
+      "kind": "note",
+      "title": "Stabilize trajectory",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-1",
+      "createdAt": "1970-04-11T19:13:00Z",
+      "kind": "bookmark",
+      "title": "Launch and translunar coast",
+      "summary": "Imported task",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-2",
+      "createdAt": "1970-04-12T00:00:00Z",
+      "kind": "bookmark",
+      "title": "Diagnose explosion and powerdown command module",
+      "summary": "Imported task",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-3",
+      "createdAt": "1970-04-14T03:08:00Z",
+      "kind": "bookmark",
+      "title": "Use lunar module as lifeboat",
+      "summary": "Imported task",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-4",
+      "createdAt": "1970-04-15T00:00:00Z",
+      "kind": "bookmark",
+      "title": "Return to free-return trajectory",
+      "summary": "Imported task",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_launch",
+      "timestamp": "1970-04-11T19:13:00Z",
+      "title": "launch_and_departure",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_transit",
+      "timestamp": "1970-04-12T00:00:00Z",
+      "title": "trans_lunar_coast",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_emergency",
+      "timestamp": "1970-04-14T03:08:00Z",
+      "title": "emergency_reconfiguration",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_return",
+      "timestamp": "1970-04-15T00:00:00Z",
+      "title": "free_return_and_reentry",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "25 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "7 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "3 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "2 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "Apollo 13",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "launch_and_departure · complete",
+        "trans_lunar_coast · complete",
+        "emergency_reconfiguration · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "2 objectives · 5 tasks",
+      "bullets": [
+        "Preserve crew",
+        "Stabilize trajectory"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "17 time slices",
+      "bullets": [
+        "launch_and_departure · 1970-04-11T19:13:00Z",
+        "trans_lunar_coast · 1970-04-12T00:00:00Z",
+        "emergency_reconfiguration · 1970-04-14T03:08:00Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-csm_odyssey",
+        "label": "CM Odyssey",
+        "role": "facility",
+        "lat": -21.63,
+        "lon": -165.36,
+        "windSpeed": 15,
+        "windGusts": 19,
+        "windDir": 264,
+        "temp": -1,
+        "vis": 12061,
+        "cloudCover": 56,
+        "precipProb": 18,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 94,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "sensor-lm_aquarius",
+        "label": "LM Aquarius",
+        "role": "facility",
+        "lat": -20,
+        "lon": -166,
+        "windSpeed": 7,
+        "windGusts": 12,
+        "windDir": 256,
+        "temp": 17,
+        "vis": 40355,
+        "cloudCover": 44,
+        "precipProb": 22,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 64,
+        "dzStatus": "NO-GO"
+      },
+      {
+        "siteId": "sensor-recovery_tf",
+        "label": "Pacific Recovery Force",
+        "role": "facility",
+        "lat": -21.63,
+        "lon": -165.36,
+        "windSpeed": 11,
+        "windGusts": 17,
+        "windDir": 332,
+        "temp": 21,
+        "vis": 14119,
+        "cloudCover": 12,
+        "precipProb": 22,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 64,
+        "dzStatus": "NO-GO"
+      },
+      {
+        "siteId": "csm_odyssey",
+        "label": "CM Odyssey",
+        "role": "spaceflight",
+        "lat": 28.6,
+        "lon": -80.6,
+        "windSpeed": 5,
+        "windGusts": 12,
+        "windDir": 92,
+        "temp": 17,
+        "vis": 20027,
+        "cloudCover": 22,
+        "precipProb": 26,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 84,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "lm_aquarius",
+        "label": "LM Aquarius",
+        "role": "spaceflight",
+        "lat": 5,
+        "lon": -150,
+        "windSpeed": 15,
+        "windGusts": 23,
+        "windDir": 14,
+        "temp": 19,
+        "vis": 17641,
+        "cloudCover": 46,
+        "precipProb": 8,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 94,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "recovery_tf",
+        "label": "Pacific Recovery Force",
+        "role": "spaceflight",
+        "lat": -22.3,
+        "lon": -166.2,
+        "windSpeed": 19,
+        "windGusts": 28,
+        "windDir": 30,
+        "temp": 23,
+        "vis": 21219,
+        "cloudCover": 88,
+        "precipProb": 8,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 66,
+        "dzStatus": "MARGINAL"
+      }
+    ],
+    "hfScore": 88,
+    "satcomScore": 60,
+    "gpsScore": 82,
+    "avgDzScore": 78,
+    "adsbSummary": {
+      "total": 3,
+      "airborne": 0,
+      "military": 2
+    }
+  }
+}

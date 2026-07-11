@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RiskLab - Builder</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>R</text></svg>" />
+  <style>
+    :root {
+      --bg: #06101d;
+      --bg-elev: #0c1a2e;
+      --bg-panel: #101f34;
+      --bg-input: #0a1628;
+      --text: #e6edf8;
+      --text-muted: #9bb0c7;
+      --border: #29415d;
+      --border-strong: #3b5f86;
+      --accent: #5ca6ff;
+      --danger: #f87171;
+      --ok: #34d399;
+      --shadow: 0 16px 34px rgba(3, 8, 17, 0.28);
+      --radius: 12px;
+      --mono: "Cascadia Code", "Fira Code", Consolas, Menlo, monospace;
+      /* shared site header vars */
+      --uc-ease-standard: cubic-bezier(0.22, 0.68, 0.14, 1);
+      --uc-ease-out: cubic-bezier(0.17, 0.84, 0.44, 1);
+      --uc-dur-fast: 120ms;
+      --uc-page-surface-strong: rgba(12, 26, 46, 0.97);
+      --uc-page-border: #29415d;
+      --uc-page-accent: #5ca6ff;
+      --uc-page-accent-soft: rgba(92, 166, 255, 0.14);
+      --uc-page-panel: rgba(16, 31, 52, 0.88);
+      --uc-page-text: #e6edf8;
+      --uc-page-muted: #9bb0c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(110% 90% at 10% -20%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 44%),
+        radial-gradient(100% 90% at 100% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 36%),
+        var(--bg);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    body.light-mode {
+      background:
+        radial-gradient(120% 90% at 10% -20%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 42%),
+        radial-gradient(100% 90% at 100% -10%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 38%),
+        var(--bg);
+    }
+
+    /* ── Shared site header ───────────────────────────────────── */
+    header {
+      height: auto; padding: 0.35rem 0.6rem; gap: 0.45rem;
+      display: flex; align-items: center;
+      border-bottom: 1px solid var(--uc-page-border);
+      background: var(--uc-page-surface-strong);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      position: relative; z-index: 10; flex-shrink: 0;
+    }
+    .hdr-brand { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; }
+    .hdr-mark {
+      width: 18px; height: 18px; border-radius: 4px;
+      background: color-mix(in srgb, var(--uc-page-accent) 13%, var(--uc-page-panel));
+      border: 1px solid color-mix(in srgb, var(--uc-page-accent) 26%, transparent);
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.52rem; font-weight: 900; letter-spacing: -0.07em;
+      color: color-mix(in srgb, var(--uc-page-accent) 94%, #fff 6%);
+      flex-shrink: 0; -webkit-user-select: none; user-select: none;
+    }
+    .hdr-brand-name {
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--uc-page-text); line-height: 1;
+    }
+    .hdr-vsep { width: 1px; height: 14px; background: var(--uc-page-border); flex-shrink: 0; align-self: center; }
+    .hdr-context { min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+    header h1 {
+      font-family: inherit; font-size: 0.74rem; font-weight: 600;
+      color: var(--uc-page-text); letter-spacing: 0.01em; margin: 0;
+      line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    header p { display: none; }
+    .header-links { display: flex; justify-content: flex-end; align-items: center; gap: 0.14rem; flex-shrink: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .header-links::-webkit-scrollbar { display: none; }
+    header .editor-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 24px; padding: 0 0.46rem; border-radius: 0;
+      background: color-mix(in srgb, var(--uc-page-panel) 80%, transparent); color: var(--uc-page-muted);
+      font-size: 0.58rem; font-weight: 700; text-decoration: none;
+      text-transform: uppercase; letter-spacing: 0.09em;
+      border: 1px solid color-mix(in srgb, var(--uc-page-border) 80%, transparent); cursor: pointer; font-family: inherit;
+      transition: background 120ms var(--uc-ease-standard), border-color 120ms, color 120ms;
+    }
+    header .editor-link:hover { color: var(--uc-page-text); border-color: var(--uc-page-border); background: color-mix(in srgb, var(--uc-page-panel) 55%, transparent); }
+    header .editor-link.active { color: var(--uc-page-accent); border-color: color-mix(in srgb, var(--uc-page-accent) 34%, transparent); background: var(--uc-page-accent-soft); }
+    header .editor-link--utility { background: transparent; color: color-mix(in srgb, var(--uc-page-muted) 68%, transparent); }
+    .hdr-nav-sep { display: block; width: 1px; height: 14px; background: var(--uc-page-border); flex-shrink: 0; align-self: center; margin: 0 0.22rem; }
+    /* Palette dropdown */
+    .hdr-palette { flex: 1; max-width: none; align-self: stretch; position: relative; display: flex; align-items: stretch; }
+    .hdr-palette-btn {
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.38rem;
+      padding: 0 0.72rem; height: auto; border-radius: 0;
+      border: none; border-left: 1px solid rgba(255,255,255,0.07); border-right: 1px solid rgba(255,255,255,0.07);
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      cursor: pointer; font: 700 0.67rem/1 inherit; color: #fff;
+      letter-spacing: 0.04em; text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      overflow: hidden; white-space: nowrap;
+      transition: filter 120ms var(--uc-ease-standard);
+    }
+    .hdr-palette-btn:hover { filter: brightness(1.12); }
+    .hdr-palette-btn__name { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .hdr-palette-btn__arrow { display: inline-block; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid rgba(255,255,255,0.7); flex-shrink: 0; }
+    .hdr-palette-popup {
+      display: none; position: absolute; top: calc(100% + 4px); left: 50%; right: auto;
+      transform: translateX(-50%); z-index: 9999;
+      min-width: 236px; max-height: calc(100vh - 60px); overflow-y: auto; overscroll-behavior: contain;
+      padding: 10px;
+      background: var(--uc-page-surface-strong); border: 1px solid var(--uc-page-border);
+      border-radius: 10px; box-shadow: 0 14px 36px rgba(0,0,0,0.4);
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    }
+    .hdr-palette-popup.is-open { display: block; }
+    .hdr-pop-mode-row { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .hdr-pop-mode { border: 1px solid var(--uc-page-border); background: transparent; color: var(--uc-page-muted); border-radius: 6px; padding: 3px 10px; font: 700 0.67rem/1.4 inherit; cursor: pointer; transition: border-color 100ms, background 100ms, color 100ms; }
+    .hdr-pop-mode:hover { border-color: var(--uc-page-accent); background: var(--uc-page-accent-soft); color: var(--uc-page-text); }
+    .hdr-pop-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; }
+    .hdr-pop-swatch { width: 100%; aspect-ratio: 1; border-radius: 5px; border: 2px solid transparent; cursor: pointer; transition: border-color 100ms, transform 100ms; }
+    .hdr-pop-swatch:hover { transform: scale(1.1); }
+    .hdr-pop-swatch.active { border-color: var(--uc-page-accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--uc-page-accent) 50%, transparent); }
+    /* Builder-specific action buttons */
+    .hdr-builder-actions { display: flex; align-items: center; gap: 0.38rem; flex-shrink: 0; margin-left: 0.12rem; }
+    .action-btn {
+      font: inherit;
+      border: 1px solid var(--uc-page-border);
+      background: transparent;
+      color: var(--uc-page-muted);
+      border-radius: 6px;
+      padding: 0.32rem 0.6rem;
+      font-size: 0.67rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: border-color 120ms, background 120ms, color 120ms;
+    }
+    .action-btn:hover { border-color: var(--uc-page-accent); background: var(--uc-page-accent-soft); color: var(--uc-page-text); }
+    .action-btn:active { transform: translateY(1px); }
+
+    .builder-shell {
+      height: calc(100vh - 44px);
+      display: grid;
+      grid-template-columns: minmax(270px, 320px) minmax(0, 1fr) minmax(360px, 450px);
+      gap: 0.7rem;
+      padding: 0.7rem;
+    }
+
+    .panel {
+      min-width: 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg-panel) 92%, transparent);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 0.8rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .panel-head h2 {
+      font-size: 0.9rem;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 760;
+      color: var(--text);
+    }
+
+    .panel-head small {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 560;
+    }
+
+    .controls-body {
+      padding: 0.9rem;
+      overflow-y: auto;
+      display: grid;
+      gap: 0.75rem;
+      align-content: start;
+    }
+
+    .field-row {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .field-row label,
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .field,
+    .textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--bg-input);
+      color: var(--text);
+      font-size: 0.82rem;
+      line-height: 1.2;
+      padding: 0.5rem 0.6rem;
+      transition: border-color 120ms ease, box-shadow 120ms ease;
+    }
+
+    .field:focus,
+    .textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 26%, transparent);
+    }
+
+    .tooltip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      padding: 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--bg-elev) 76%, transparent);
+    }
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      min-height: 32px;
+    }
+
+    .toggle span {
+      font-size: 0.76rem;
+      color: var(--text);
+      font-weight: 540;
+    }
+
+    .toggle input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .subfield {
+      display: grid;
+      gap: 0.28rem;
+    }
+
+    .subfield label {
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      font-weight: 620;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .status-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 0.55rem;
+    }
+
+    .status-text {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .status-text.error {
+      color: var(--danger);
+      font-weight: 620;
+    }
+
+    .status-text.ok {
+      color: var(--ok);
+      font-weight: 620;
+    }
+
+    .preview-body {
+      flex: 1;
+      padding: 0.85rem;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .chart-wrap {
+      flex: 1;
+      min-height: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background:
+        radial-gradient(120% 90% at 15% 0%, rgba(92, 166, 255, 0.14), transparent 42%),
+        var(--bg-elev);
+      overflow: hidden;
+    }
+
+    #chart-container {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+    }
+
+    .json-body {
+      flex: 1;
+      min-height: 0;
+      padding: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .textarea {
+      flex: 1;
+      min-height: 0;
+      resize: none;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.56;
+      white-space: pre;
+      overflow: auto;
+    }
+
+    .json-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .json-meta strong {
+      font-weight: 660;
+      color: var(--text);
+    }
+
+    @media (max-width: 1400px) {
+      .builder-shell {
+        grid-template-columns: minmax(250px, 300px) minmax(0, 1fr) minmax(320px, 380px);
+      }
+    }
+
+    @media (max-width: 1140px) {
+      body {
+        overflow: auto;
+      }
+
+      .builder-shell {
+        height: auto;
+        min-height: calc(100vh - 52px);
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        min-height: 280px;
+      }
+
+      #chart-container {
+        min-height: 440px;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="../assets/builder-BK5KuOiF.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/header-DjhvEMjA.js">
+  <link rel="modulepreload" crossorigin href="../assets/react-runtime-D6y62UW6.js">
+  <link rel="modulepreload" crossorigin href="../assets/charts-core-8_jSIf52.js">
+</head>
+<body>
+  <header id="site-header">
+    <div class="hdr-brand">
+      <span class="hdr-mark">RL</span>
+      <span class="hdr-brand-name">Risklab</span>
+    </div>
+    <span class="hdr-vsep"></span>
+    <div class="hdr-context">
+      <h1></h1>
+      <p></p>
+    </div>
+    <div class="hdr-palette" id="hdr-palette"></div>
+    <nav class="header-links"></nav>
+    <div class="hdr-builder-actions">
+      <button class="action-btn" id="copy-link-btn" type="button">Copy&nbsp;Link</button>
+      <button class="action-btn" id="export-png-btn" type="button">PNG</button>
+      <button class="action-btn" id="export-svg-btn" type="button">SVG</button>
+      <button class="action-btn" id="export-json-btn" type="button">JSON</button>
+    </div>
+  </header>
+
+  <main class="builder-shell">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Chart Config</h2>
+      </div>
+      <div class="controls-body">
+        <div class="field-row">
+          <label for="preset-select">Preset</label>
+          <select id="preset-select" class="field"></select>
+        </div>
+
+        <div class="section-title">Tooltips and Mouseover</div>
+        <div class="tooltip-grid">
+          <label class="toggle">
+            <span>Tooltip enabled</span>
+            <input id="tooltip-enabled" type="checkbox" />
+          </label>
+          <label class="toggle">
+            <span>Shared tooltip</span>
+            <input id="tooltip-shared" type="checkbox" />
+          </label>
+          <label class="toggle">
+            <span>Crosshair enabled</span>
+            <input id="tooltip-crosshair" type="checkbox" />
+          </label>
+          <label class="toggle">
+            <span>Pinnable on click</span>
+            <input id="tooltip-pinnable" type="checkbox" />
+          </label>
+
+          <div class="subfield">
+            <label for="tooltip-trigger">Trigger</label>
+            <select id="tooltip-trigger" class="field">
+              <option value="hover">Hover</option>
+              <option value="click">Click</option>
+              <option value="both">Both</option>
+            </select>
+          </div>
+
+          <div class="subfield">
+            <label for="crosshair-axis">Crosshair axis</label>
+            <select id="crosshair-axis" class="field">
+              <option value="both">Both</option>
+              <option value="x">X only</option>
+              <option value="y">Y only</option>
+            </select>
+          </div>
+
+          <div class="subfield">
+            <label for="tooltip-sort">Sort items</label>
+            <select id="tooltip-sort" class="field">
+              <option value="none">None</option>
+              <option value="ascending">Ascending</option>
+              <option value="descending">Descending</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="status-line">
+          <span id="status-text" class="status-text">Ready</span>
+          <span id="render-time" class="status-text">-</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Chart Rendering</h2>
+        <small id="render-summary">Live preview</small>
+      </div>
+      <div class="preview-body">
+        <div class="chart-wrap">
+          <div id="chart-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Chart JSON</h2>
+        <small id="json-state">Live</small>
+      </div>
+      <div class="json-body">
+        <div class="json-meta">
+          <span><strong>Source</strong> updates render on each valid edit.</span>
+          <span id="json-size">0 bytes</span>
+        </div>
+        <textarea
+          id="json-editor"
+          class="textarea"
+          spellcheck="false"
+          aria-label="Chart JSON editor"
+        ></textarea>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

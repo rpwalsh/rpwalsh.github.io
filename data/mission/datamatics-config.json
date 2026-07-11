@@ -1,0 +1,112 @@
+{
+  "mission-overview": {
+    "palette": ["#8ba47d", "#647a63", "#d3a061", "#b76647", "#aab78a", "#526652"],
+    "visualProfile": {
+      "signalVariant": "bars",
+      "theaterMode": "fusion",
+      "correlationMode": "heatmap",
+      "graphMode": "network",
+      "timelineMode": "line",
+      "gaugeMode": "donut"
+    }
+  },
+  "track-analysis": {
+    "palette": ["#8ca27f", "#647c64", "#d49e5a", "#bf6c45", "#a5b48c", "#526655"],
+    "visualProfile": {
+      "signalVariant": "sparkline",
+      "theaterMode": "bubble",
+      "correlationMode": "columnRange",
+      "graphMode": "radar",
+      "timelineMode": "stepLine",
+      "gaugeMode": "solidGauge"
+    }
+  },
+  "sensor-fleet": {
+    "palette": ["#7e9d7d", "#5e7464", "#cfa769", "#b46849", "#9fb38c", "#536651"],
+    "visualProfile": {
+      "signalVariant": "bars",
+      "theaterMode": "sensor",
+      "correlationMode": "radar",
+      "graphMode": "packedBubble",
+      "timelineMode": "line",
+      "gaugeMode": "solidGauge"
+    }
+  },
+  "alert-triage": {
+    "palette": ["#c79254", "#8b7250", "#d4b379", "#a25d41", "#7b8d73", "#5f644d"],
+    "visualProfile": {
+      "signalVariant": "bars",
+      "theaterMode": "funnel",
+      "correlationMode": "heatmap",
+      "graphMode": "packedBubble",
+      "timelineMode": "stepLine",
+      "gaugeMode": "solidGauge"
+    }
+  },
+  "replay-review": {
+    "palette": ["#7d9179", "#a88c5d", "#d0b07d", "#9d6a52", "#6f7f68", "#556155"],
+    "visualProfile": {
+      "signalVariant": "sparkline",
+      "theaterMode": "timeline",
+      "correlationMode": "heatmap",
+      "graphMode": "network",
+      "timelineMode": "stepLine",
+      "gaugeMode": "donut"
+    }
+  },
+  "environmental-ops": {
+    "palette": ["#7a9b85", "#5c746f", "#d2a264", "#9ab08d", "#b86b46", "#50615d"],
+    "visualProfile": {
+      "signalVariant": "bars",
+      "theaterMode": "fusion",
+      "correlationMode": "errorBand",
+      "graphMode": "radar",
+      "timelineMode": "line",
+      "gaugeMode": "donut"
+    }
+  },
+  "spectrum-awareness": {
+    "palette": ["#8c8f72", "#667267", "#c79d5d", "#a55f46", "#8ba585", "#596051"],
+    "visualProfile": {
+      "signalVariant": "sparkline",
+      "theaterMode": "spectrum",
+      "correlationMode": "oscilloscope",
+      "graphMode": "packedBubble",
+      "timelineMode": "oscilloscope",
+      "gaugeMode": "solidGauge"
+    }
+  },
+  "network-ops": {
+    "palette": ["#75907a", "#65726a", "#cf9a5d", "#b16547", "#9eb083", "#4f5d57"],
+    "visualProfile": {
+      "signalVariant": "sparkline",
+      "theaterMode": "topology",
+      "correlationMode": "heatmap",
+      "graphMode": "network",
+      "timelineMode": "stepLine",
+      "gaugeMode": "solidGauge"
+    }
+  },
+  "infrastructure-monitor": {
+    "palette": ["#8fa283", "#6f7764", "#c89a58", "#b56244", "#a7b48e", "#5c6356"],
+    "visualProfile": {
+      "signalVariant": "bars",
+      "theaterMode": "fusion",
+      "correlationMode": "columnRange",
+      "graphMode": "solidGauge",
+      "timelineMode": "stepLine",
+      "gaugeMode": "solidGauge"
+    }
+  },
+  "case-evidence-workbench": {
+    "palette": ["#8ca17f", "#6b7766", "#c8ad73", "#ae6448", "#a89a7d", "#545c55"],
+    "visualProfile": {
+      "signalVariant": "sparkline",
+      "theaterMode": "timeline",
+      "correlationMode": "heatmap",
+      "graphMode": "radar",
+      "timelineMode": "stepLine",
+      "gaugeMode": "donut"
+    }
+  }
+}
