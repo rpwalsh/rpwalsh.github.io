@@ -1,17 +1,11 @@
-# RiskLab Production Site
+# RiskLab Mission Lane
 
-Production deployment repository for the RiskLab website and package demos at
-`https://rpwalsh.github.io/`.
+Public deployment repository for `https://rpwalsh.github.io/`.
 
-This repo contains generated GitHub Pages artifacts only. It is the public
-deployment target, not the primary source repo for the packages or the staging
-site application.
+This repository publishes a synthetic RiskLab demo that integrates the public
+presentation surfaces for `risklab-ui`, `risklab-charts`, and
+`risklab-mission`.
 
-Source lives in the split package repos:
-
-- `rpwalsh/risklab-ui`
-- `rpwalsh/risklab-charts`
-- `rpwalsh/risklab-mission`
-
-License: Apache License 2.0. Redistributed copies must preserve the required
-copyright, license, and notice attribution in `LICENSE.txt` and `NOTICE`.
+The site is not open source. All rights are reserved. The demo data is synthetic
+and the repository does not include private methods, proprietary formulas, or
+non-public source material.
