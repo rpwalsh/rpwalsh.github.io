@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-04-07T01:47:02.666Z",
+  "feeds": {
+    "usgs": {
+      "status": "ok",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson"
+    },
+    "cisa": {
+      "status": "ok",
+      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+    },
+    "metoc": {
+      "status": "ok",
+      "url": "https://api.open-meteo.com/v1/forecast"
+    },
+    "airQuality": {
+      "status": "ok",
+      "url": "https://air-quality-api.open-meteo.com/v1/air-quality"
+    },
+    "kIndex": {
+      "status": "ok",
+      "url": "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
+    },
+    "xray": {
+      "status": "ok",
+      "url": "https://services.swpc.noaa.gov/json/goes/primary/xrays-6-hour.json"
+    },
+    "solarWind": {
+      "status": "ok",
+      "url": "https://services.swpc.noaa.gov/products/solar-wind/plasma-7-day.json"
+    },
+    "adsb": {
+      "status": "ok",
+      "url": "https://opensky-network.org/api/states/all"
+    }
+  },
+  "scenario": "scenario.json",
+  "theater": "theater.json",
+  "templates": "templates.json",
+  "theme": "theme.json",
+  "datamaticsConfig": "datamatics-config.json",
+  "dashboardProfiles": "dashboard-profiles.json"
+}

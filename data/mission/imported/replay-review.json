@@ -1,0 +1,1282 @@
+{
+  "templateId": "replay-review",
+  "specialization": "Search And Rescue",
+  "title": "Maritime Search and Rescue Case",
+  "subtitle": "synthetic_training_safe",
+  "focusArea": "search and rescue",
+  "seed": 463601280,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "6"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "3"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "3"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "4"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "2024-09-12T12:05:00Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Launch",
+      "summary": "Search assets committed.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a2",
+      "openedAt": "2024-09-12T17:42:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Probable Contact",
+      "summary": "Visual contact likely target.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a3",
+      "openedAt": "2024-09-12T18:11:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Rescue",
+      "summary": "Survivor recovered.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "2024-09-12T11:00:00Z",
+      "title": "Distress Report",
+      "detail": "Distress alert received; probable raft drift case opened.",
+      "severity": "error",
+      "status": "ph_alert",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "2024-09-12T11:25:00Z",
+      "title": "Planning",
+      "detail": "Initial datum and search box generated from drift assumptions.",
+      "severity": "info",
+      "status": "ph_alert",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "2024-09-12T12:05:00Z",
+      "title": "Launch",
+      "detail": "Air and surface assets launched toward search box.",
+      "severity": "info",
+      "status": "ph_search",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e4",
+      "timestamp": "2024-09-12T17:42:00Z",
+      "title": "Sighting",
+      "detail": "Possible raft visual contact reported from helicopter crew.",
+      "severity": "error",
+      "status": "ph_search",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e5",
+      "timestamp": "2024-09-12T18:11:00Z",
+      "title": "Hoist",
+      "detail": "Survivor hoisted from raft.",
+      "severity": "error",
+      "status": "ph_rescue",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e6",
+      "timestamp": "2024-09-12T20:14:00Z",
+      "title": "Medical Handoff",
+      "detail": "Patient transferred to shore medical support.",
+      "severity": "info",
+      "status": "ph_transfer",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "helo6017",
+      "label": "Rescue Helicopter 6017",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "25 samples",
+      "region": "search and rescue",
+      "lastSeen": "2024-09-12T20:02:00Z",
+      "confidence": 0.95
+    },
+    {
+      "id": "mlb4721",
+      "label": "Motor Lifeboat 4721",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "15 samples",
+      "region": "search and rescue",
+      "lastSeen": "2024-09-12T19:05:00Z",
+      "confidence": 0.97
+    },
+    {
+      "id": "sru1",
+      "label": "Survivor/raft target",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "15 samples",
+      "region": "search and rescue",
+      "lastSeen": "2024-09-12T18:00:00Z",
+      "confidence": 0.9
+    },
+    {
+      "id": "sensor-helo6017",
+      "label": "Rescue Helicopter 6017",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "camera",
+      "region": "search and rescue",
+      "lastSeen": "2024-09-12T20:02:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-mlb4721",
+      "label": "Motor Lifeboat 4721",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "search and rescue",
+      "lastSeen": "2024-09-12T19:05:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-sru1",
+      "label": "Survivor/raft target",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "search and rescue",
+      "lastSeen": "2024-09-12T18:00:00Z",
+      "confidence": 0.72
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "2024-09-12T11:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T12:00:00.000Z",
+          "y": 9
+        },
+        {
+          "x": "2024-09-12T13:00:00.000Z",
+          "y": 7
+        },
+        {
+          "x": "2024-09-12T14:00:00.000Z",
+          "y": 7
+        },
+        {
+          "x": "2024-09-12T15:00:00.000Z",
+          "y": 7
+        },
+        {
+          "x": "2024-09-12T16:00:00.000Z",
+          "y": 7
+        },
+        {
+          "x": "2024-09-12T17:00:00.000Z",
+          "y": 9
+        },
+        {
+          "x": "2024-09-12T18:00:00.000Z",
+          "y": 8
+        },
+        {
+          "x": "2024-09-12T19:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T20:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "2024-09-12T11:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2024-09-12T12:00:00.000Z",
+          "y": 5
+        },
+        {
+          "x": "2024-09-12T13:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T14:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T15:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T16:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T17:00:00.000Z",
+          "y": 5
+        },
+        {
+          "x": "2024-09-12T18:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "2024-09-12T19:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2024-09-12T20:00:00.000Z",
+          "y": 1
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-helo6017",
+      "name": "Rescue Helicopter 6017",
+      "kind": "camera",
+      "status": "healthy",
+      "region": "search and rescue",
+      "location": {
+        "lat": 47.91,
+        "lon": -124.64
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2024-09-12T20:02:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-mlb4721",
+      "name": "Motor Lifeboat 4721",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "search and rescue",
+      "location": {
+        "lat": 48.09,
+        "lon": -124.7
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2024-09-12T19:05:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-sru1",
+      "name": "Survivor/raft target",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "search and rescue",
+      "location": {
+        "lat": 48.095,
+        "lon": -124.68
+      },
+      "healthScore": 62,
+      "lastSeenAt": "2024-09-12T18:00:00Z",
+      "confidence": 0.72
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "helo6017",
+      "label": "Rescue Helicopter 6017",
+      "classification": "air",
+      "status": "monitoring",
+      "region": "search and rescue",
+      "confidence": 0.95,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2024-09-12T12:05:00Z",
+          "lat": 47.91,
+          "lon": -124.72,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T12:25:00Z",
+          "lat": 47.921562,
+          "lon": -124.7175,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T12:45:00Z",
+          "lat": 47.933125,
+          "lon": -124.715,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T13:05:00Z",
+          "lat": 47.944688,
+          "lon": -124.7125,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T13:25:00Z",
+          "lat": 47.95625,
+          "lon": -124.71,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T13:45:00Z",
+          "lat": 47.967812,
+          "lon": -124.7075,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T14:05:00Z",
+          "lat": 47.979375,
+          "lon": -124.705,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T14:25:00Z",
+          "lat": 47.990938,
+          "lon": -124.7025,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T14:45:00Z",
+          "lat": 48.0025,
+          "lon": -124.7,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T15:05:00Z",
+          "lat": 48.014062,
+          "lon": -124.6975,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T15:25:00Z",
+          "lat": 48.025625,
+          "lon": -124.695,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T15:45:00Z",
+          "lat": 48.037188,
+          "lon": -124.6925,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T16:05:00Z",
+          "lat": 48.04875,
+          "lon": -124.69,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T16:25:00Z",
+          "lat": 48.060312,
+          "lon": -124.6875,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T16:45:00Z",
+          "lat": 48.071875,
+          "lon": -124.685,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T17:05:00Z",
+          "lat": 48.083438,
+          "lon": -124.6825,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T17:25:00Z",
+          "lat": 48.095,
+          "lon": -124.68,
+          "speed": 113,
+          "heading": 25
+        },
+        {
+          "timestamp": "2024-09-12T17:42:00Z",
+          "lat": 48.095,
+          "lon": -124.68,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T18:02:00Z",
+          "lat": 48.068571,
+          "lon": -124.674286,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T18:22:00Z",
+          "lat": 48.042143,
+          "lon": -124.668571,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T18:42:00Z",
+          "lat": 48.015714,
+          "lon": -124.662857,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T19:02:00Z",
+          "lat": 47.989286,
+          "lon": -124.657143,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T19:22:00Z",
+          "lat": 47.962857,
+          "lon": -124.651429,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T19:42:00Z",
+          "lat": 47.936429,
+          "lon": -124.645714,
+          "speed": 109,
+          "heading": 210
+        },
+        {
+          "timestamp": "2024-09-12T20:02:00Z",
+          "lat": 47.91,
+          "lon": -124.64,
+          "speed": 109,
+          "heading": 210
+        }
+      ]
+    },
+    {
+      "id": "mlb4721",
+      "label": "Motor Lifeboat 4721",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "search and rescue",
+      "confidence": 0.97,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2024-09-12T12:05:00Z",
+          "lat": 47.98,
+          "lon": -124.92,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T12:35:00Z",
+          "lat": 47.987857,
+          "lon": -124.904286,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T13:05:00Z",
+          "lat": 47.995714,
+          "lon": -124.888571,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T13:35:00Z",
+          "lat": 48.003571,
+          "lon": -124.872857,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T14:05:00Z",
+          "lat": 48.011429,
+          "lon": -124.857143,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T14:35:00Z",
+          "lat": 48.019286,
+          "lon": -124.841429,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T15:05:00Z",
+          "lat": 48.027143,
+          "lon": -124.825714,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T15:35:00Z",
+          "lat": 48.035,
+          "lon": -124.81,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T16:05:00Z",
+          "lat": 48.042857,
+          "lon": -124.794286,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T16:35:00Z",
+          "lat": 48.050714,
+          "lon": -124.778571,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T17:05:00Z",
+          "lat": 48.058571,
+          "lon": -124.762857,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T17:35:00Z",
+          "lat": 48.066429,
+          "lon": -124.747143,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T18:05:00Z",
+          "lat": 48.074286,
+          "lon": -124.731429,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T18:35:00Z",
+          "lat": 48.082143,
+          "lon": -124.715714,
+          "speed": 14,
+          "heading": 45
+        },
+        {
+          "timestamp": "2024-09-12T19:05:00Z",
+          "lat": 48.09,
+          "lon": -124.7,
+          "speed": 14,
+          "heading": 45
+        }
+      ]
+    },
+    {
+      "id": "sru1",
+      "label": "Survivor/raft target",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "search and rescue",
+      "confidence": 0.9,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2024-09-12T11:00:00Z",
+          "lat": 48,
+          "lon": -124.9,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T11:30:00Z",
+          "lat": 48.006786,
+          "lon": -124.884286,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T12:00:00Z",
+          "lat": 48.013571,
+          "lon": -124.868571,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T12:30:00Z",
+          "lat": 48.020357,
+          "lon": -124.852857,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T13:00:00Z",
+          "lat": 48.027143,
+          "lon": -124.837143,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T13:30:00Z",
+          "lat": 48.033929,
+          "lon": -124.821429,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T14:00:00Z",
+          "lat": 48.040714,
+          "lon": -124.805714,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T14:30:00Z",
+          "lat": 48.0475,
+          "lon": -124.79,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T15:00:00Z",
+          "lat": 48.054286,
+          "lon": -124.774286,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T15:30:00Z",
+          "lat": 48.061071,
+          "lon": -124.758571,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T16:00:00Z",
+          "lat": 48.067857,
+          "lon": -124.742857,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T16:30:00Z",
+          "lat": 48.074643,
+          "lon": -124.727143,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T17:00:00Z",
+          "lat": 48.081429,
+          "lon": -124.711429,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T17:30:00Z",
+          "lat": 48.088214,
+          "lon": -124.695714,
+          "speed": 1,
+          "heading": 70
+        },
+        {
+          "timestamp": "2024-09-12T18:00:00Z",
+          "lat": 48.095,
+          "lon": -124.68,
+          "speed": 1,
+          "heading": 70
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_searchbox",
+      "name": "z_searchbox",
+      "type": "site",
+      "region": "search and rescue",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "2024-09-12T20:14:00Z"
+    },
+    {
+      "id": "z_hoist",
+      "name": "z_hoist",
+      "type": "site",
+      "region": "search and rescue",
+      "status": "healthy",
+      "utilization": 65,
+      "lastServiceAt": "2024-09-12T20:14:00Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-helo6017",
+      "label": "Rescue Helicopter 6017",
+      "group": "air",
+      "status": "healthy",
+      "importance": 85
+    },
+    {
+      "id": "node-mlb4721",
+      "label": "Motor Lifeboat 4721",
+      "group": "surface",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "node-sru1",
+      "label": "Survivor/raft target",
+      "group": "target",
+      "status": "warning",
+      "importance": 71
+    },
+    {
+      "id": "phase-ph_alert",
+      "label": "alert_and_planning",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_search",
+      "label": "search",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_rescue",
+      "label": "rescue",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    },
+    {
+      "id": "phase-ph_transfer",
+      "label": "medical_transfer",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-helo6017-ph_alert",
+      "source": "node-helo6017",
+      "target": "phase-ph_alert",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-mlb4721-ph_search",
+      "source": "node-mlb4721",
+      "target": "phase-ph_search",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-sru1-ph_rescue",
+      "source": "node-sru1",
+      "target": "phase-ph_rescue",
+      "label": "assigned",
+      "weight": 3,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "sea_state",
+      "label": "Sea State Index",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2024-09-12T11:00:00Z",
+          "value": 3
+        },
+        {
+          "timestamp": "2024-09-12T13:00:00Z",
+          "value": 3.2
+        },
+        {
+          "timestamp": "2024-09-12T15:00:00Z",
+          "value": 3.6
+        },
+        {
+          "timestamp": "2024-09-12T17:00:00Z",
+          "value": 3.4
+        },
+        {
+          "timestamp": "2024-09-12T19:00:00Z",
+          "value": 3.1
+        },
+        {
+          "timestamp": "2024-09-12T21:00:00Z",
+          "value": 2.9
+        }
+      ]
+    },
+    {
+      "id": "drift_prob",
+      "label": "Search Probability Localized Pct",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2024-09-12T11:00:00Z",
+          "value": 4
+        },
+        {
+          "timestamp": "2024-09-12T13:00:00Z",
+          "value": 9
+        },
+        {
+          "timestamp": "2024-09-12T15:00:00Z",
+          "value": 17
+        },
+        {
+          "timestamp": "2024-09-12T17:00:00Z",
+          "value": 28
+        },
+        {
+          "timestamp": "2024-09-12T19:00:00Z",
+          "value": 46
+        },
+        {
+          "timestamp": "2024-09-12T21:00:00Z",
+          "value": 71
+        }
+      ]
+    },
+    {
+      "id": "helo_fuel",
+      "label": "Fuel Percent",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2024-09-12T12:05:00Z",
+          "value": 100
+        },
+        {
+          "timestamp": "2024-09-12T13:05:00Z",
+          "value": 82
+        },
+        {
+          "timestamp": "2024-09-12T14:05:00Z",
+          "value": 63
+        },
+        {
+          "timestamp": "2024-09-12T15:05:00Z",
+          "value": 45
+        },
+        {
+          "timestamp": "2024-09-12T16:05:00Z",
+          "value": 31
+        },
+        {
+          "timestamp": "2024-09-12T17:05:00Z",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "id": "patient_core_temp",
+      "label": "Patient Core Temperature C",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2024-09-12T11:00:00Z",
+          "value": 35.2
+        },
+        {
+          "timestamp": "2024-09-12T13:00:00Z",
+          "value": 35
+        },
+        {
+          "timestamp": "2024-09-12T15:00:00Z",
+          "value": 34.8
+        },
+        {
+          "timestamp": "2024-09-12T17:00:00Z",
+          "value": 34.5
+        },
+        {
+          "timestamp": "2024-09-12T19:00:00Z",
+          "value": 34.3
+        },
+        {
+          "timestamp": "2024-09-12T21:00:00Z",
+          "value": 34.6
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "sea_state-0",
+      "timestamp": "2024-09-12T11:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 58,
+      "status": "nominal",
+      "summary": "Sea State Index 3",
+      "region": "search and rescue"
+    },
+    {
+      "id": "sea_state-1",
+      "timestamp": "2024-09-12T13:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 58,
+      "status": "nominal",
+      "summary": "Sea State Index 3",
+      "region": "search and rescue"
+    },
+    {
+      "id": "sea_state-2",
+      "timestamp": "2024-09-12T15:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 59,
+      "status": "nominal",
+      "summary": "Sea State Index 4",
+      "region": "search and rescue"
+    },
+    {
+      "id": "drift_prob-0",
+      "timestamp": "2024-09-12T11:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 155,
+      "strength": 59,
+      "status": "nominal",
+      "summary": "Search Probability Localized Pct 4",
+      "region": "search and rescue"
+    },
+    {
+      "id": "drift_prob-1",
+      "timestamp": "2024-09-12T13:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 163,
+      "strength": 64,
+      "status": "nominal",
+      "summary": "Search Probability Localized Pct 9",
+      "region": "search and rescue"
+    },
+    {
+      "id": "drift_prob-2",
+      "timestamp": "2024-09-12T15:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 171,
+      "strength": 72,
+      "status": "nominal",
+      "summary": "Search Probability Localized Pct 17",
+      "region": "search and rescue"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "2024-09-12T11:25:00Z",
+      "author": "mission-pack",
+      "text": "Launch both air and surface assets.",
+      "linkedRefs": []
+    },
+    {
+      "id": "annotation-2",
+      "timestamp": "2024-09-12T17:47:00Z",
+      "author": "mission-pack",
+      "text": "Conduct direct hoist rather than marking for surface pickup.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "2024-09-12T11:00:00Z",
+      "kind": "note",
+      "title": "Locate survivor",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "2024-09-12T12:00:00Z",
+      "kind": "note",
+      "title": "Recover survivor",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-3",
+      "createdAt": "2024-09-12T18:00:00Z",
+      "kind": "note",
+      "title": "Deliver medical care",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_alert",
+      "timestamp": "2024-09-12T11:00:00Z",
+      "title": "alert_and_planning",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_search",
+      "timestamp": "2024-09-12T12:00:00Z",
+      "title": "search",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_rescue",
+      "timestamp": "2024-09-12T18:00:00Z",
+      "title": "rescue",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_transfer",
+      "timestamp": "2024-09-12T19:15:00Z",
+      "title": "medical_transfer",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "55 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "6 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "3 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "2 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "Maritime Search and Rescue Case",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "alert_and_planning · complete",
+        "search · complete",
+        "rescue · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "3 objectives · 0 tasks",
+      "bullets": [
+        "Locate survivor",
+        "Recover survivor",
+        "Deliver medical care"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "49 time slices",
+      "bullets": [
+        "alert_and_planning · 2024-09-12T11:00:00Z",
+        "search · 2024-09-12T12:00:00Z",
+        "rescue · 2024-09-12T18:00:00Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-helo6017",
+        "label": "Rescue Helicopter 6017",
+        "role": "camera",
+        "lat": 47.91,
+        "lon": -124.64,
+        "windSpeed": 5,
+        "windGusts": 9,
+        "windDir": 354,
+        "temp": 13,
+        "vis": 42089,
+        "cloudCover": 62,
+        "precipProb": 0,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 77,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "sensor-mlb4721",
+        "label": "Motor Lifeboat 4721",
+        "role": "facility",
+        "lat": 48.09,
+        "lon": -124.7,
+        "windSpeed": 7,
+        "windGusts": 12,
+        "windDir": 90,
+        "temp": 25,
+        "vis": 13329,
+        "cloudCover": 42,
+        "precipProb": 18,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 89,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "sensor-sru1",
+        "label": "Survivor/raft target",
+        "role": "facility",
+        "lat": 48.095,
+        "lon": -124.68,
+        "windSpeed": 12,
+        "windGusts": 18,
+        "windDir": 43,
+        "temp": 18,
+        "vis": 32286,
+        "cloudCover": 61,
+        "precipProb": 7,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 90,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "helo6017",
+        "label": "Rescue Helicopter 6017",
+        "role": "search and rescue",
+        "lat": 47.91,
+        "lon": -124.72,
+        "windSpeed": 15,
+        "windGusts": 22,
+        "windDir": 352,
+        "temp": 9,
+        "vis": 21869,
+        "cloudCover": 98,
+        "precipProb": 2,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 91,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "mlb4721",
+        "label": "Motor Lifeboat 4721",
+        "role": "search and rescue",
+        "lat": 47.98,
+        "lon": -124.92,
+        "windSpeed": 5,
+        "windGusts": 13,
+        "windDir": 316,
+        "temp": -1,
+        "vis": 18607,
+        "cloudCover": 60,
+        "precipProb": 26,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 71,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "sru1",
+        "label": "Survivor/raft target",
+        "role": "search and rescue",
+        "lat": 48,
+        "lon": -124.9,
+        "windSpeed": 20,
+        "windGusts": 29,
+        "windDir": 149,
+        "temp": 8,
+        "vis": 43158,
+        "cloudCover": 79,
+        "precipProb": 31,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 90,
+        "dzStatus": "GO"
+      }
+    ],
+    "hfScore": 88,
+    "satcomScore": 86,
+    "gpsScore": 82,
+    "avgDzScore": 85,
+    "adsbSummary": {
+      "total": 3,
+      "airborne": 1,
+      "military": 2
+    }
+  }
+}

@@ -1,0 +1,1286 @@
+{
+  "templateId": "infrastructure-monitor",
+  "specialization": "Launch",
+  "title": "NASA SpaceX Crew-1",
+  "subtitle": "public_historical",
+  "focusArea": "launch",
+  "seed": 1743485369,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "5"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "3"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "4"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "4"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "2020-11-16T00:27:00Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Launch",
+      "summary": "Launch commit and liftoff.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a2",
+      "openedAt": "2020-11-17T04:00:00Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Docking",
+      "summary": "Autonomous docking complete.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a3",
+      "openedAt": "2021-05-02T06:56:00Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Recovery",
+      "summary": "Splashdown and crew recovery complete.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "2020-11-16T00:27:00Z",
+      "title": "Launch",
+      "detail": "Crew-1 launches from LC-39A.",
+      "severity": "error",
+      "status": "ph_launch",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "2020-11-16T00:39:00Z",
+      "title": "Orbit Insertion",
+      "detail": "Dragon inserted into orbit.",
+      "severity": "info",
+      "status": "ph_launch",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "2020-11-17T04:00:00Z",
+      "title": "Docking",
+      "detail": "Crew Dragon autonomously docks to ISS Harmony forward port.",
+      "severity": "error",
+      "status": "ph_rendezvous",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e4",
+      "timestamp": "2021-05-01T23:35:00Z",
+      "title": "Undocking",
+      "detail": "Dragon departs ISS.",
+      "severity": "error",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e5",
+      "timestamp": "2021-05-02T06:56:00Z",
+      "title": "Splashdown",
+      "detail": "Crew-1 safely splashes down after station mission.",
+      "severity": "error",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "dragon_resilience",
+      "label": "Crew Dragon Resilience",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "19 samples",
+      "region": "launch",
+      "lastSeen": "2021-05-02T05:35:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "iss",
+      "label": "International Space Station",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "6 samples",
+      "region": "launch",
+      "lastSeen": "2021-04-15T00:27:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "recovery_vessel",
+      "label": "Recovery Vessel",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "6 samples",
+      "region": "launch",
+      "lastSeen": "2021-05-02T06:00:00Z",
+      "confidence": 0.6
+    },
+    {
+      "id": "sensor-falcon9_b1061",
+      "label": "Falcon 9 B1061",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "launch",
+      "lastSeen": "2021-05-02T06:56:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-dragon_resilience",
+      "label": "Crew Dragon Resilience",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "launch",
+      "lastSeen": "2021-05-02T05:35:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-iss",
+      "label": "International Space Station",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "launch",
+      "lastSeen": "2021-04-15T00:27:00Z",
+      "confidence": 0.72
+    },
+    {
+      "id": "sensor-recovery_vessel",
+      "label": "Recovery Vessel",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "launch",
+      "lastSeen": "2021-05-02T06:00:00Z",
+      "confidence": 0.64
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "2020-11-16T00:00:00.000Z",
+          "y": 5
+        },
+        {
+          "x": "2020-11-16T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T09:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T21:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-17T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-17T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-17T04:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2020-12-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-12-17T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-01-15T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-01-16T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-02-14T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-02-15T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-03-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-03-17T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-04-15T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-04-16T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T23:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2021-05-02T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T02:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T06:00:00.000Z",
+          "y": 3
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "2020-11-16T00:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2020-11-16T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T09:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-16T21:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-17T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-17T03:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-11-17T04:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2020-12-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2020-12-17T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-01-15T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-01-16T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-02-14T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-02-15T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-03-16T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-03-17T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-04-15T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-04-16T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-01T23:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T02:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2021-05-02T06:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-falcon9_b1061",
+      "name": "Falcon 9 B1061",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "launch",
+      "location": {
+        "lat": 0,
+        "lon": 0
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2021-05-02T06:56:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-dragon_resilience",
+      "name": "Crew Dragon Resilience",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "launch",
+      "location": {
+        "lat": 30.1,
+        "lon": -86.8
+      },
+      "healthScore": 62,
+      "lastSeenAt": "2021-05-02T05:35:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-iss",
+      "name": "International Space Station",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "launch",
+      "location": {
+        "lat": 20,
+        "lon": 10
+      },
+      "healthScore": 62,
+      "lastSeenAt": "2021-04-15T00:27:00Z",
+      "confidence": 0.72
+    },
+    {
+      "id": "sensor-recovery_vessel",
+      "name": "Recovery Vessel",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "launch",
+      "location": {
+        "lat": 30.1,
+        "lon": -86.8
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2021-05-02T06:00:00Z",
+      "confidence": 0.64
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "dragon_resilience",
+      "label": "Crew Dragon Resilience",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "launch",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2020-11-16T00:27:00Z",
+          "lat": 28.6,
+          "lon": -80.6,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T03:27:00Z",
+          "lat": 27.644444,
+          "lon": -70.533333,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T06:27:00Z",
+          "lat": 26.688889,
+          "lon": -60.466667,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T09:27:00Z",
+          "lat": 25.733333,
+          "lon": -50.4,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T12:27:00Z",
+          "lat": 24.777778,
+          "lon": -40.333333,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T15:27:00Z",
+          "lat": 23.822222,
+          "lon": -30.266667,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T18:27:00Z",
+          "lat": 22.866667,
+          "lon": -20.2,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-16T21:27:00Z",
+          "lat": 21.911111,
+          "lon": -10.133333,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-17T00:27:00Z",
+          "lat": 20.955556,
+          "lon": -0.066667,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-17T03:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14773,
+          "heading": 80
+        },
+        {
+          "timestamp": "2020-11-17T04:00:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2020-12-17T04:00:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-01-16T04:00:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-02-15T04:00:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-03-17T04:00:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-04-16T04:00:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-05-01T23:35:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 15162,
+          "heading": 120
+        },
+        {
+          "timestamp": "2021-05-02T02:35:00Z",
+          "lat": 25.05,
+          "lon": -38.4,
+          "speed": 15162,
+          "heading": 120
+        },
+        {
+          "timestamp": "2021-05-02T05:35:00Z",
+          "lat": 30.1,
+          "lon": -86.8,
+          "speed": 15162,
+          "heading": 120
+        }
+      ]
+    },
+    {
+      "id": "iss",
+      "label": "International Space Station",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "launch",
+      "confidence": 0.8,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2020-11-16T00:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2020-12-16T00:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-01-15T00:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-02-14T00:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-03-16T00:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        },
+        {
+          "timestamp": "2021-04-15T00:27:00Z",
+          "lat": 20,
+          "lon": 10,
+          "speed": 14890,
+          "heading": 0
+        }
+      ]
+    },
+    {
+      "id": "recovery_vessel",
+      "label": "Recovery Vessel",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "launch",
+      "confidence": 0.6,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2021-05-01T00:00:00Z",
+          "lat": 29.9,
+          "lon": -87.4,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "2021-05-01T06:00:00Z",
+          "lat": 29.94,
+          "lon": -87.28,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "2021-05-01T12:00:00Z",
+          "lat": 29.98,
+          "lon": -87.16,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "2021-05-01T18:00:00Z",
+          "lat": 30.02,
+          "lon": -87.04,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "2021-05-02T00:00:00Z",
+          "lat": 30.06,
+          "lon": -86.92,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "2021-05-02T06:00:00Z",
+          "lat": 30.1,
+          "lon": -86.8,
+          "speed": 16,
+          "heading": 45
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_launch",
+      "name": "z_launch",
+      "type": "site",
+      "region": "launch",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "2021-05-02T06:56:00Z"
+    },
+    {
+      "id": "z_recovery",
+      "name": "z_recovery",
+      "type": "site",
+      "region": "launch",
+      "status": "healthy",
+      "utilization": 65,
+      "lastServiceAt": "2021-05-02T06:56:00Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-falcon9_b1061",
+      "label": "Falcon 9 B1061",
+      "group": "launch",
+      "status": "healthy",
+      "importance": 85
+    },
+    {
+      "id": "node-dragon_resilience",
+      "label": "Crew Dragon Resilience",
+      "group": "crew",
+      "status": "warning",
+      "importance": 78
+    },
+    {
+      "id": "node-iss",
+      "label": "International Space Station",
+      "group": "orbit",
+      "status": "warning",
+      "importance": 71
+    },
+    {
+      "id": "node-recovery_vessel",
+      "label": "Recovery Vessel",
+      "group": "recovery",
+      "status": "healthy",
+      "importance": 64
+    },
+    {
+      "id": "phase-ph_launch",
+      "label": "launch_and_orbit_insertion",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_rendezvous",
+      "label": "rendezvous_and_docking",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_iss",
+      "label": "station_increment",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    },
+    {
+      "id": "phase-ph_return",
+      "label": "undock_deorbit_recovery",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-falcon9_b1061-ph_launch",
+      "source": "node-falcon9_b1061",
+      "target": "phase-ph_launch",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-dragon_resilience-ph_rendezvous",
+      "source": "node-dragon_resilience",
+      "target": "phase-ph_rendezvous",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-iss-ph_iss",
+      "source": "node-iss",
+      "target": "phase-ph_iss",
+      "label": "assigned",
+      "weight": 3,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-recovery_vessel-ph_return",
+      "source": "node-recovery_vessel",
+      "target": "phase-ph_return",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "dragon_link",
+      "label": "Comm Link Quality",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2020-11-16T00:27:00Z",
+          "value": 1
+        },
+        {
+          "timestamp": "2020-12-16T00:27:00Z",
+          "value": 0.99
+        },
+        {
+          "timestamp": "2021-01-15T00:27:00Z",
+          "value": 0.98
+        },
+        {
+          "timestamp": "2021-02-14T00:27:00Z",
+          "value": 0.95
+        },
+        {
+          "timestamp": "2021-03-16T00:27:00Z",
+          "value": 0.97
+        },
+        {
+          "timestamp": "2021-04-15T00:27:00Z",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "docking_distance",
+      "label": "Relative Distance To Iss M",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2020-11-16T01:00:00Z",
+          "value": 350000
+        },
+        {
+          "timestamp": "2020-11-16T12:00:00Z",
+          "value": 150000
+        },
+        {
+          "timestamp": "2020-11-16T20:00:00Z",
+          "value": 15000
+        },
+        {
+          "timestamp": "2020-11-17T04:00:00Z",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "dragon_power",
+      "label": "Power Margin Pct",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2020-11-16T00:27:00Z",
+          "value": 100
+        },
+        {
+          "timestamp": "2020-12-16T00:27:00Z",
+          "value": 97
+        },
+        {
+          "timestamp": "2021-01-15T00:27:00Z",
+          "value": 95
+        },
+        {
+          "timestamp": "2021-02-14T00:27:00Z",
+          "value": 88
+        },
+        {
+          "timestamp": "2021-03-16T00:27:00Z",
+          "value": 82
+        },
+        {
+          "timestamp": "2021-04-15T00:27:00Z",
+          "value": 76
+        }
+      ]
+    },
+    {
+      "id": "crew_readiness",
+      "label": "Crew Readiness Score",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2020-11-16T00:27:00Z",
+          "value": 0.98
+        },
+        {
+          "timestamp": "2020-12-16T00:27:00Z",
+          "value": 0.96
+        },
+        {
+          "timestamp": "2021-01-15T00:27:00Z",
+          "value": 0.95
+        },
+        {
+          "timestamp": "2021-02-14T00:27:00Z",
+          "value": 0.95
+        },
+        {
+          "timestamp": "2021-03-16T00:27:00Z",
+          "value": 0.97
+        },
+        {
+          "timestamp": "2021-04-15T00:27:00Z",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "dragon_link-0",
+      "timestamp": "2020-11-16T00:27:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "launch"
+    },
+    {
+      "id": "dragon_link-1",
+      "timestamp": "2020-12-16T00:27:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "launch"
+    },
+    {
+      "id": "dragon_link-2",
+      "timestamp": "2021-01-15T00:27:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "launch"
+    },
+    {
+      "id": "docking_distance-0",
+      "timestamp": "2020-11-16T01:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 155,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Relative Distance To Iss M 350000",
+      "region": "launch"
+    },
+    {
+      "id": "docking_distance-1",
+      "timestamp": "2020-11-16T12:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 163,
+      "strength": 80,
+      "status": "nominal",
+      "summary": "Relative Distance To Iss M 150000",
+      "region": "launch"
+    },
+    {
+      "id": "docking_distance-2",
+      "timestamp": "2020-11-16T20:00:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 171,
+      "strength": 75,
+      "status": "nominal",
+      "summary": "Relative Distance To Iss M 15000",
+      "region": "launch"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "2020-11-16T00:27:00Z",
+      "author": "mission-pack",
+      "text": "Commit to launch.",
+      "linkedRefs": []
+    },
+    {
+      "id": "annotation-2",
+      "timestamp": "2020-11-16T22:30:00Z",
+      "author": "mission-pack",
+      "text": "Continue nominal autonomous docking timeline.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "2020-11-16T00:27:00Z",
+      "kind": "note",
+      "title": "Deliver crew to ISS",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "2020-11-16T01:00:00Z",
+      "kind": "note",
+      "title": "Support long-duration expedition",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_launch",
+      "timestamp": "2020-11-16T00:27:00Z",
+      "title": "launch_and_orbit_insertion",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_rendezvous",
+      "timestamp": "2020-11-16T01:00:00Z",
+      "title": "rendezvous_and_docking",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_iss",
+      "timestamp": "2020-11-17T04:00:00Z",
+      "title": "station_increment",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_return",
+      "timestamp": "2021-05-01T23:35:00Z",
+      "title": "undock_deorbit_recovery",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "31 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "5 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "3 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "2 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "NASA SpaceX Crew-1",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "launch_and_orbit_insertion · complete",
+        "rendezvous_and_docking · complete",
+        "station_increment · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "2 objectives · 0 tasks",
+      "bullets": [
+        "Deliver crew to ISS",
+        "Support long-duration expedition"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "30 time slices",
+      "bullets": [
+        "launch_and_orbit_insertion · 2020-11-16T00:27:00Z",
+        "rendezvous_and_docking · 2020-11-16T01:00:00Z",
+        "station_increment · 2020-11-17T04:00:00Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-dragon_resilience",
+        "label": "Crew Dragon Resilience",
+        "role": "facility",
+        "lat": 30.1,
+        "lon": -86.8,
+        "windSpeed": 16,
+        "windGusts": 20,
+        "windDir": 255,
+        "temp": 4,
+        "vis": 24308,
+        "cloudCover": 45,
+        "precipProb": 11,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 71,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "sensor-iss",
+        "label": "International Space Station",
+        "role": "facility",
+        "lat": 20,
+        "lon": 10,
+        "windSpeed": 7,
+        "windGusts": 12,
+        "windDir": 62,
+        "temp": 17,
+        "vis": 39053,
+        "cloudCover": 22,
+        "precipProb": 36,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 92,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "sensor-recovery_vessel",
+        "label": "Recovery Vessel",
+        "role": "facility",
+        "lat": 30.1,
+        "lon": -86.8,
+        "windSpeed": 5,
+        "windGusts": 11,
+        "windDir": 68,
+        "temp": 3,
+        "vis": 35185,
+        "cloudCover": 36,
+        "precipProb": 2,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 86,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "dragon_resilience",
+        "label": "Crew Dragon Resilience",
+        "role": "launch",
+        "lat": 28.6,
+        "lon": -80.6,
+        "windSpeed": 20,
+        "windGusts": 27,
+        "windDir": 163,
+        "temp": 2,
+        "vis": 40452,
+        "cloudCover": 37,
+        "precipProb": 21,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 81,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "iss",
+        "label": "International Space Station",
+        "role": "launch",
+        "lat": 20,
+        "lon": 10,
+        "windSpeed": 19,
+        "windGusts": 27,
+        "windDir": 120,
+        "temp": 7,
+        "vis": 38243,
+        "cloudCover": 60,
+        "precipProb": 18,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 72,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "recovery_vessel",
+        "label": "Recovery Vessel",
+        "role": "launch",
+        "lat": 29.9,
+        "lon": -87.4,
+        "windSpeed": 13,
+        "windGusts": 22,
+        "windDir": 296,
+        "temp": 23,
+        "vis": 18263,
+        "cloudCover": 78,
+        "precipProb": 36,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 80,
+        "dzStatus": "GO"
+      }
+    ],
+    "hfScore": 77,
+    "satcomScore": 88,
+    "gpsScore": 91,
+    "avgDzScore": 80,
+    "adsbSummary": {
+      "total": 3,
+      "airborne": 0,
+      "military": 2
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "mission-datamatics-default",
+  "name": "Mission Datamatics",
+  "palette": ["#8ca27f", "#d49e5a", "#7dd3fc", "#f59e0b", "#93c5fd", "#34d399"],
+  "backgroundColor": "transparent",
+  "textColor": "#d7c58b",
+  "fontFamily": "\"JetBrains Mono\", \"Cascadia Code\", \"Consolas\", monospace",
+  "displayFont": "\"Bahnschrift\", \"Segoe UI Variable\", \"Segoe UI\", sans-serif",
+  "fontSize": 11,
+  "axis": {
+    "lineColor": "rgba(118, 132, 102, 0.16)",
+    "gridColor": "rgba(118, 132, 102, 0.12)",
+    "labelColor": "#88967d",
+    "titleColor": "#d7c58b"
+  },
+  "tooltip": {
+    "backgroundColor": "#0b120f",
+    "borderColor": "rgba(210, 162, 100, 0.26)",
+    "textColor": "#d7c58b",
+    "shadow": { "enabled": false }
+  },
+  "legend": {
+    "textColor": "#95a287",
+    "hoverColor": "#d7c58b",
+    "inactiveColor": "#566250"
+  }
+}

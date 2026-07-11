@@ -1,0 +1,747 @@
+{
+  "templateId": "network-ops",
+  "specialization": "Raid",
+  "title": "Operation Neptune Spear Public-History Hybrid",
+  "subtitle": "public_history_hybrid",
+  "focusArea": "raid",
+  "seed": 647640969,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "4"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "2"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "3"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "4"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "2011-05-02T00:45:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Objective",
+      "summary": "Objective phase active.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a2",
+      "openedAt": "2011-05-02T01:20:00Z",
+      "severity": "error",
+      "state": "investigating",
+      "title": "Hvt Status",
+      "summary": "Target status updated in public-history timeline.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "2011-05-01T21:30:00Z",
+      "title": "Transit",
+      "detail": "Coarsened transit window active.",
+      "severity": "info",
+      "status": "ph_transit",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "2011-05-02T00:45:00Z",
+      "title": "Objective Action",
+      "detail": "Objective phase active in public-history hybrid timeline.",
+      "severity": "error",
+      "status": "ph_objective",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "2011-05-02T01:20:00Z",
+      "title": "Hvt Killed",
+      "detail": "CIA public account places Bin Ladin’s death in the early hours of May 2 Pakistan time.",
+      "severity": "error",
+      "status": "ph_objective",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e4",
+      "timestamp": "2011-05-02T02:30:00Z",
+      "title": "Site Exploitation Complete",
+      "detail": "Materials departed objective area for later analysis.",
+      "severity": "info",
+      "status": "ph_depart",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "air_element_1",
+      "label": "Air Mobility Element 1",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "8 samples",
+      "region": "raid",
+      "lastSeen": "2011-05-02T00:30:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "ground_element_1",
+      "label": "Ground Element",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "8 samples",
+      "region": "raid",
+      "lastSeen": "2011-05-02T02:30:00Z",
+      "confidence": 0.7
+    },
+    {
+      "id": "sensor-air_element_1",
+      "label": "Air Mobility Element 1",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "raid",
+      "lastSeen": "2011-05-02T00:30:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-ground_element_1",
+      "label": "Ground Element",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "raid",
+      "lastSeen": "2011-05-02T02:30:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-compound_area",
+      "label": "Compound Area",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "raid",
+      "lastSeen": "2011-05-02T02:30:00Z",
+      "confidence": 0.72
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "2011-05-01T21:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2011-05-01T22:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2011-05-01T23:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2011-05-02T00:00:00.000Z",
+          "y": 5
+        },
+        {
+          "x": "2011-05-02T01:00:00.000Z",
+          "y": 6
+        },
+        {
+          "x": "2011-05-02T02:00:00.000Z",
+          "y": 4
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "2011-05-01T21:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "2011-05-01T22:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2011-05-01T23:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "2011-05-02T00:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2011-05-02T01:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "2011-05-02T02:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-air_element_1",
+      "name": "Air Mobility Element 1",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "raid",
+      "location": {
+        "lat": 34.169,
+        "lon": 73.242
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2011-05-02T00:30:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-ground_element_1",
+      "name": "Ground Element",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "raid",
+      "location": {
+        "lat": 34.172,
+        "lon": 73.245
+      },
+      "healthScore": 88,
+      "lastSeenAt": "2011-05-02T02:30:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-compound_area",
+      "name": "Compound Area",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "raid",
+      "location": {
+        "lat": 0,
+        "lon": 0
+      },
+      "healthScore": 62,
+      "lastSeenAt": "2011-05-02T02:30:00Z",
+      "confidence": 0.72
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "air_element_1",
+      "label": "Air Mobility Element 1",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "raid",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2011-05-01T21:00:00Z",
+          "lat": 34,
+          "lon": 72.6,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-01T21:30:00Z",
+          "lat": 34.024143,
+          "lon": 72.691714,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-01T22:00:00Z",
+          "lat": 34.048286,
+          "lon": 72.783429,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-01T22:30:00Z",
+          "lat": 34.072429,
+          "lon": 72.875143,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-01T23:00:00Z",
+          "lat": 34.096571,
+          "lon": 72.966857,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-01T23:30:00Z",
+          "lat": 34.120714,
+          "lon": 73.058571,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-02T00:00:00Z",
+          "lat": 34.144857,
+          "lon": 73.150286,
+          "speed": 126,
+          "heading": 70
+        },
+        {
+          "timestamp": "2011-05-02T00:30:00Z",
+          "lat": 34.169,
+          "lon": 73.242,
+          "speed": 126,
+          "heading": 70
+        }
+      ]
+    },
+    {
+      "id": "ground_element_1",
+      "label": "Ground Element",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "raid",
+      "confidence": 0.7,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "2011-05-02T00:45:00Z",
+          "lat": 34.169,
+          "lon": 73.242,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T01:00:00Z",
+          "lat": 34.169429,
+          "lon": 73.242429,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T01:15:00Z",
+          "lat": 34.169857,
+          "lon": 73.242857,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T01:30:00Z",
+          "lat": 34.170286,
+          "lon": 73.243286,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T01:45:00Z",
+          "lat": 34.170714,
+          "lon": 73.243714,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T02:00:00Z",
+          "lat": 34.171143,
+          "lon": 73.244143,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T02:15:00Z",
+          "lat": 34.171571,
+          "lon": 73.244571,
+          "speed": 2,
+          "heading": 0
+        },
+        {
+          "timestamp": "2011-05-02T02:30:00Z",
+          "lat": 34.172,
+          "lon": 73.245,
+          "speed": 2,
+          "heading": 0
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_compound",
+      "name": "z_compound",
+      "type": "site",
+      "region": "raid",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "2011-05-02T02:30:00Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-air_element_1",
+      "label": "Air Mobility Element 1",
+      "group": "air",
+      "status": "healthy",
+      "importance": 85
+    },
+    {
+      "id": "node-ground_element_1",
+      "label": "Ground Element",
+      "group": "ground",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "node-compound_area",
+      "label": "Compound Area",
+      "group": "objective",
+      "status": "warning",
+      "importance": 71
+    },
+    {
+      "id": "phase-ph_pre",
+      "label": "final_prelaunch",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_transit",
+      "label": "transit",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_objective",
+      "label": "objective_actions",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    },
+    {
+      "id": "phase-ph_depart",
+      "label": "departure_and_exploitation",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-air_element_1-ph_pre",
+      "source": "node-air_element_1",
+      "target": "phase-ph_pre",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-ground_element_1-ph_transit",
+      "source": "node-ground_element_1",
+      "target": "phase-ph_transit",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-compound_area-ph_objective",
+      "source": "node-compound_area",
+      "target": "phase-ph_objective",
+      "label": "assigned",
+      "weight": 3,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "objective_progress",
+      "label": "Objective Progress Score",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2011-05-02T00:45:00Z",
+          "value": 0.2
+        },
+        {
+          "timestamp": "2011-05-02T01:20:00Z",
+          "value": 0.75
+        },
+        {
+          "timestamp": "2011-05-02T02:00:00Z",
+          "value": 0.92
+        }
+      ]
+    },
+    {
+      "id": "platform_margin",
+      "label": "Platform Margin Score",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "2011-05-01T21:30:00Z",
+          "value": 0.95
+        },
+        {
+          "timestamp": "2011-05-02T00:30:00Z",
+          "value": 0.88
+        },
+        {
+          "timestamp": "2011-05-02T02:30:00Z",
+          "value": 0.82
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "objective_progress-0",
+      "timestamp": "2011-05-02T00:45:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Objective Progress Score 0",
+      "region": "raid"
+    },
+    {
+      "id": "objective_progress-1",
+      "timestamp": "2011-05-02T01:20:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Objective Progress Score 1",
+      "region": "raid"
+    },
+    {
+      "id": "objective_progress-2",
+      "timestamp": "2011-05-02T02:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Objective Progress Score 1",
+      "region": "raid"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "2011-05-01T21:00:00Z",
+      "author": "mission-pack",
+      "text": "Proceed on transit timeline.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "2011-05-01T16:00:00Z",
+      "kind": "note",
+      "title": "Conduct raid on target compound",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "2011-05-01T21:00:00Z",
+      "kind": "note",
+      "title": "Recover exploitable material",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_pre",
+      "timestamp": "2011-05-01T16:00:00Z",
+      "title": "final_prelaunch",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_transit",
+      "timestamp": "2011-05-01T21:00:00Z",
+      "title": "transit",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_objective",
+      "timestamp": "2011-05-02T00:30:00Z",
+      "title": "objective_actions",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_depart",
+      "timestamp": "2011-05-02T02:00:00Z",
+      "title": "departure_and_exploitation",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "16 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "4 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "2 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "1 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "Operation Neptune Spear Public-History Hybrid",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "final_prelaunch · complete",
+        "transit · complete",
+        "objective_actions · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "2 objectives · 0 tasks",
+      "bullets": [
+        "Conduct raid on target compound",
+        "Recover exploitable material"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "16 time slices",
+      "bullets": [
+        "final_prelaunch · 2011-05-01T16:00:00Z",
+        "transit · 2011-05-01T21:00:00Z",
+        "objective_actions · 2011-05-02T00:30:00Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-air_element_1",
+        "label": "Air Mobility Element 1",
+        "role": "facility",
+        "lat": 34.169,
+        "lon": 73.242,
+        "windSpeed": 20,
+        "windGusts": 24,
+        "windDir": 323,
+        "temp": 16,
+        "vis": 13040,
+        "cloudCover": 77,
+        "precipProb": 25,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 87,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "sensor-ground_element_1",
+        "label": "Ground Element",
+        "role": "facility",
+        "lat": 34.172,
+        "lon": 73.245,
+        "windSpeed": 14,
+        "windGusts": 19,
+        "windDir": 125,
+        "temp": 8,
+        "vis": 17244,
+        "cloudCover": 59,
+        "precipProb": 19,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 81,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "air_element_1",
+        "label": "Air Mobility Element 1",
+        "role": "raid",
+        "lat": 34,
+        "lon": 72.6,
+        "windSpeed": 17,
+        "windGusts": 23,
+        "windDir": 198,
+        "temp": 19,
+        "vis": 14603,
+        "cloudCover": 30,
+        "precipProb": 0,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 78,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "ground_element_1",
+        "label": "Ground Element",
+        "role": "raid",
+        "lat": 34.169,
+        "lon": 73.242,
+        "windSpeed": 15,
+        "windGusts": 22,
+        "windDir": 358,
+        "temp": 23,
+        "vis": 33623,
+        "cloudCover": 82,
+        "precipProb": 16,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 70,
+        "dzStatus": "MARGINAL"
+      }
+    ],
+    "hfScore": 63,
+    "satcomScore": 70,
+    "gpsScore": 73,
+    "avgDzScore": 79,
+    "adsbSummary": {
+      "total": 2,
+      "airborne": 0,
+      "military": 1
+    }
+  }
+}

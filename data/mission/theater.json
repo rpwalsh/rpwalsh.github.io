@@ -1,0 +1,123 @@
+{
+  "theaterTitle": "AO terrain — Iran theater",
+  "theaterSubtitle": "DEM surface for selected AO site",
+  "mapTitle": "CENTCOM AO — operational sites",
+  "mapSubtitle": "METOC, seismic, comms, ADS-B, and cyber feeds",
+  "timeframeLabel": "Live",
+  "mapCenter": [51, 32],
+  "mapZoom": 3.5,
+  "defaultRegionId": "iran-ao",
+  "defaultSiteId": "tehran",
+  "regions": [
+    {
+      "id": "iran-ao",
+      "label": "Iran AO",
+      "mapCenter": [51, 32],
+      "mapZoom": 4.0,
+      "siteIds": ["tehran", "isfahan", "bandar-abbas", "tabriz", "shiraz"],
+      "mapLocationIds": ["loc-tehran", "loc-isfahan", "loc-bandar-abbas", "loc-tabriz", "loc-shiraz", "loc-al-udeid"]
+    },
+    {
+      "id": "centcom",
+      "label": "CENTCOM",
+      "mapCenter": [50, 30],
+      "mapZoom": 3.0,
+      "siteIds": ["tehran", "isfahan", "bandar-abbas", "tabriz", "shiraz", "al-udeid"],
+      "mapLocationIds": ["loc-tehran", "loc-isfahan", "loc-bandar-abbas", "loc-tabriz", "loc-shiraz", "loc-al-udeid"]
+    },
+    {
+      "id": "global",
+      "label": "Global feeds",
+      "mapCenter": [20, 25],
+      "mapZoom": 2,
+      "siteIds": ["tehran", "isfahan", "bandar-abbas", "tabriz", "shiraz", "al-udeid"],
+      "mapLocationIds": ["loc-tehran", "loc-isfahan", "loc-bandar-abbas", "loc-tabriz", "loc-shiraz", "loc-al-udeid"]
+    }
+  ],
+  "sites": [
+    {
+      "id": "tehran",
+      "name": "Tehran",
+      "country": "IRI",
+      "lat": 35.69,
+      "lon": 51.39,
+      "threat": "high",
+      "status": "active",
+      "note": "OBJ Alpha – capital C2 node, METOC + seismic active",
+      "terrainDatasetId": "tehran-dem"
+    },
+    {
+      "id": "isfahan",
+      "name": "Isfahan",
+      "country": "IRI",
+      "lat": 32.65,
+      "lon": 51.68,
+      "threat": "high",
+      "status": "active",
+      "note": "OBJ Bravo – nuclear complex, METOC active",
+      "terrainDatasetId": "isfahan-dem"
+    },
+    {
+      "id": "bandar-abbas",
+      "name": "Bandar Abbas",
+      "country": "IRI",
+      "lat": 27.19,
+      "lon": 56.27,
+      "threat": "high",
+      "status": "active",
+      "note": "OBJ Charlie – Strait of Hormuz port, METOC active",
+      "terrainDatasetId": "bandar-abbas-dem"
+    },
+    {
+      "id": "tabriz",
+      "name": "Tabriz",
+      "country": "IRI",
+      "lat": 38.08,
+      "lon": 46.29,
+      "threat": "moderate",
+      "status": "active",
+      "note": "OBJ Delta – northern LOC, METOC active",
+      "terrainDatasetId": "tabriz-dem"
+    },
+    {
+      "id": "shiraz",
+      "name": "Shiraz",
+      "country": "IRI",
+      "lat": 29.59,
+      "lon": 52.58,
+      "threat": "moderate",
+      "status": "active",
+      "note": "OBJ Echo – southern staging, METOC active",
+      "terrainDatasetId": "shiraz-dem"
+    },
+    {
+      "id": "al-udeid",
+      "name": "Al Udeid AB",
+      "country": "QAT",
+      "lat": 25.12,
+      "lon": 51.31,
+      "threat": "low",
+      "status": "nominal",
+      "note": "FARP / CENTCOM forward, METOC active",
+      "terrainDatasetId": "al-udeid-dem"
+    }
+  ],
+  "mapLocations": [
+    { "id": "loc-tehran", "label": "Tehran (OBJ Alpha)", "lon": 51.39, "lat": 35.69, "value": 96 },
+    { "id": "loc-isfahan", "label": "Isfahan (OBJ Bravo)", "lon": 51.68, "lat": 32.65, "value": 90 },
+    { "id": "loc-bandar-abbas", "label": "Bandar Abbas (OBJ Charlie)", "lon": 56.27, "lat": 27.19, "value": 85 },
+    { "id": "loc-tabriz", "label": "Tabriz (OBJ Delta)", "lon": 46.29, "lat": 38.08, "value": 70 },
+    { "id": "loc-shiraz", "label": "Shiraz (OBJ Echo)", "lon": 52.58, "lat": 29.59, "value": 65 },
+    { "id": "loc-al-udeid", "label": "Al Udeid AB (FARP)", "lon": 51.31, "lat": 25.12, "value": 50 }
+  ],
+  "panelChartTypes": {
+    "theater": "terrain3d",
+    "tracker": "table",
+    "correlation": "map",
+    "graph": "networkTopology",
+    "timeline": "timeline",
+    "indicators": "solidGauge",
+    "activity": "streamgraph",
+    "gaps": "bulletChart"
+  }
+}

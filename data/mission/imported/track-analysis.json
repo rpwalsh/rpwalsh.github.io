@@ -1,0 +1,1422 @@
+{
+  "templateId": "track-analysis",
+  "specialization": "Spaceflight",
+  "title": "Apollo 11",
+  "subtitle": "public_historical",
+  "focusArea": "spaceflight",
+  "seed": 1766090441,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "7"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "2"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "4"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "4"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "1969-07-20T20:17:40Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Milestone",
+      "summary": "Lunar landing achieved.",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "a2",
+      "openedAt": "1969-07-24T16:50:35Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Recovery",
+      "summary": "Splashdown complete; recovery operations in progress.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "1969-07-16T13:32:00Z",
+      "title": "Launch",
+      "detail": "Apollo 11 launch from Kennedy Space Center.",
+      "severity": "info",
+      "status": "ph_launch",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "1969-07-16T16:22:13Z",
+      "title": "Trans Lunar Injection",
+      "detail": "Trans-lunar injection complete; mission proceeds toward the Moon.",
+      "severity": "info",
+      "status": "ph_launch",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "1969-07-19T17:21:50Z",
+      "title": "Lunar Orbit Insertion",
+      "detail": "Apollo 11 enters lunar orbit.",
+      "severity": "info",
+      "status": "ph_lunar",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e4",
+      "timestamp": "1969-07-20T20:17:40Z",
+      "title": "Landing",
+      "detail": "LM Eagle lands on the lunar surface.",
+      "severity": "error",
+      "status": "ph_lunar",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e5",
+      "timestamp": "1969-07-21T02:56:15Z",
+      "title": "Eva",
+      "detail": "First lunar surface step by Neil Armstrong.",
+      "severity": "error",
+      "status": "ph_lunar",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e6",
+      "timestamp": "1969-07-21T17:54:00Z",
+      "title": "Lunar Liftoff",
+      "detail": "LM ascent stage departs lunar surface for rendezvous.",
+      "severity": "info",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e7",
+      "timestamp": "1969-07-24T16:50:35Z",
+      "title": "Splashdown",
+      "detail": "Command module splashes down in Pacific Ocean.",
+      "severity": "error",
+      "status": "ph_return",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "csm_columbia",
+      "label": "CSM Columbia",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "28 samples",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-24T05:54:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "lm_eagle",
+      "label": "LM Eagle",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "9 samples",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-21T14:17:40Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "recovery_tf",
+      "label": "Pacific Recovery Force",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "4 samples",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-24T12:00:00Z",
+      "confidence": 0.6
+    },
+    {
+      "id": "sensor-saturnv",
+      "label": "Saturn V",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-24T16:50:35Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-csm_columbia",
+      "label": "CSM Columbia",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-24T05:54:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-lm_eagle",
+      "label": "LM Eagle",
+      "kind": "sensor",
+      "status": "degraded",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-21T14:17:40Z",
+      "confidence": 0.72
+    },
+    {
+      "id": "sensor-recovery_tf",
+      "label": "Pacific Recovery Force",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "spaceflight",
+      "lastSeen": "1969-07-24T12:00:00Z",
+      "confidence": 0.64
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "1969-07-16T13:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-16T14:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-16T15:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-16T16:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "1969-07-17T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-17T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-18T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-18T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-19T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-19T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-19T17:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "1969-07-19T23:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-20T05:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-20T11:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-20T17:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-20T20:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "1969-07-20T23:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T02:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-21T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T08:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T11:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T14:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T17:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "1969-07-22T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-22T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T16:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "1969-07-16T13:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-16T14:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-16T15:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-16T16:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-17T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-17T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-18T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-18T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-19T04:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-19T16:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-19T17:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-19T23:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-20T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-20T11:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-20T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-20T20:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-20T23:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T02:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T08:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T11:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T14:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-21T17:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1969-07-22T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-22T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-23T17:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T05:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1969-07-24T16:00:00.000Z",
+          "y": 1
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-saturnv",
+      "name": "Saturn V",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "spaceflight",
+      "location": {
+        "lat": 0,
+        "lon": 0
+      },
+      "healthScore": 62,
+      "lastSeenAt": "1969-07-24T16:50:35Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-csm_columbia",
+      "name": "CSM Columbia",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "spaceflight",
+      "location": {
+        "lat": 13.3,
+        "lon": -172.47
+      },
+      "healthScore": 62,
+      "lastSeenAt": "1969-07-24T05:54:00Z",
+      "confidence": 0.8
+    },
+    {
+      "id": "sensor-lm_eagle",
+      "name": "LM Eagle",
+      "kind": "facility",
+      "status": "degraded",
+      "region": "spaceflight",
+      "location": {
+        "lat": 5,
+        "lon": -145
+      },
+      "healthScore": 62,
+      "lastSeenAt": "1969-07-21T14:17:40Z",
+      "confidence": 0.72
+    },
+    {
+      "id": "sensor-recovery_tf",
+      "name": "Pacific Recovery Force",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "spaceflight",
+      "location": {
+        "lat": 13.3,
+        "lon": -172.47
+      },
+      "healthScore": 88,
+      "lastSeenAt": "1969-07-24T12:00:00Z",
+      "confidence": 0.64
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "csm_columbia",
+      "label": "CSM Columbia",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "spaceflight",
+      "confidence": 0.8,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1969-07-16T13:32:00Z",
+          "lat": 28.608389,
+          "lon": -80.604333,
+          "speed": 14773,
+          "heading": 100
+        },
+        {
+          "timestamp": "1969-07-16T14:02:00Z",
+          "lat": 27.486711,
+          "lon": -82.483466,
+          "speed": 14773,
+          "heading": 100
+        },
+        {
+          "timestamp": "1969-07-16T14:32:00Z",
+          "lat": 26.365033,
+          "lon": -84.3626,
+          "speed": 14773,
+          "heading": 100
+        },
+        {
+          "timestamp": "1969-07-16T15:02:00Z",
+          "lat": 25.243356,
+          "lon": -86.241733,
+          "speed": 14773,
+          "heading": 100
+        },
+        {
+          "timestamp": "1969-07-16T15:32:00Z",
+          "lat": 24.121678,
+          "lon": -88.120867,
+          "speed": 14773,
+          "heading": 100
+        },
+        {
+          "timestamp": "1969-07-16T16:02:00Z",
+          "lat": 23,
+          "lon": -90,
+          "speed": 14773,
+          "heading": 100
+        },
+        {
+          "timestamp": "1969-07-16T16:22:13Z",
+          "lat": 23,
+          "lon": -90,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-17T04:22:13Z",
+          "lat": 19.166667,
+          "lon": -100.833333,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-17T16:22:13Z",
+          "lat": 15.333333,
+          "lon": -111.666667,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-18T04:22:13Z",
+          "lat": 11.5,
+          "lon": -122.5,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-18T16:22:13Z",
+          "lat": 7.666667,
+          "lon": -133.333333,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-19T04:22:13Z",
+          "lat": 3.833333,
+          "lon": -144.166667,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-19T16:22:13Z",
+          "lat": 0,
+          "lon": -155,
+          "speed": 19438,
+          "heading": 110
+        },
+        {
+          "timestamp": "1969-07-19T17:21:50Z",
+          "lat": 0,
+          "lon": -155,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-19T23:21:50Z",
+          "lat": 0.625,
+          "lon": -153.75,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T05:21:50Z",
+          "lat": 1.25,
+          "lon": -152.5,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T11:21:50Z",
+          "lat": 1.875,
+          "lon": -151.25,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T17:21:50Z",
+          "lat": 2.5,
+          "lon": -150,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T23:21:50Z",
+          "lat": 3.125,
+          "lon": -148.75,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T05:21:50Z",
+          "lat": 3.75,
+          "lon": -147.5,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T11:21:50Z",
+          "lat": 4.375,
+          "lon": -146.25,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T17:21:50Z",
+          "lat": 5,
+          "lon": -145,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T17:54:00Z",
+          "lat": 5,
+          "lon": -145,
+          "speed": 17495,
+          "heading": 70
+        },
+        {
+          "timestamp": "1969-07-22T05:54:00Z",
+          "lat": 6.66,
+          "lon": -150.494,
+          "speed": 17495,
+          "heading": 70
+        },
+        {
+          "timestamp": "1969-07-22T17:54:00Z",
+          "lat": 8.32,
+          "lon": -155.988,
+          "speed": 17495,
+          "heading": 70
+        },
+        {
+          "timestamp": "1969-07-23T05:54:00Z",
+          "lat": 9.98,
+          "lon": -161.482,
+          "speed": 17495,
+          "heading": 70
+        },
+        {
+          "timestamp": "1969-07-23T17:54:00Z",
+          "lat": 11.64,
+          "lon": -166.976,
+          "speed": 17495,
+          "heading": 70
+        },
+        {
+          "timestamp": "1969-07-24T05:54:00Z",
+          "lat": 13.3,
+          "lon": -172.47,
+          "speed": 17495,
+          "heading": 70
+        }
+      ]
+    },
+    {
+      "id": "lm_eagle",
+      "label": "LM Eagle",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "spaceflight",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1969-07-19T17:21:50Z",
+          "lat": 0,
+          "lon": -155,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-19T23:21:50Z",
+          "lat": 0.5,
+          "lon": -153.75,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T05:21:50Z",
+          "lat": 1,
+          "lon": -152.5,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T11:21:50Z",
+          "lat": 1.5,
+          "lon": -151.25,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T17:21:50Z",
+          "lat": 2,
+          "lon": -150,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-20T20:17:40Z",
+          "lat": 2,
+          "lon": -150,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T02:17:40Z",
+          "lat": 3,
+          "lon": -148.333333,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T08:17:40Z",
+          "lat": 4,
+          "lon": -146.666667,
+          "speed": 3110,
+          "heading": 90
+        },
+        {
+          "timestamp": "1969-07-21T14:17:40Z",
+          "lat": 5,
+          "lon": -145,
+          "speed": 3110,
+          "heading": 90
+        }
+      ]
+    },
+    {
+      "id": "recovery_tf",
+      "label": "Pacific Recovery Force",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "spaceflight",
+      "confidence": 0.6,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1969-07-23T00:00:00Z",
+          "lat": 12.8,
+          "lon": -173.5,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "1969-07-23T12:00:00Z",
+          "lat": 12.966667,
+          "lon": -173.156667,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "1969-07-24T00:00:00Z",
+          "lat": 13.133333,
+          "lon": -172.813333,
+          "speed": 16,
+          "heading": 45
+        },
+        {
+          "timestamp": "1969-07-24T12:00:00Z",
+          "lat": 13.3,
+          "lon": -172.47,
+          "speed": 16,
+          "heading": 45
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_launch",
+      "name": "z_launch",
+      "type": "site",
+      "region": "spaceflight",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "1969-07-24T16:50:35Z"
+    },
+    {
+      "id": "z_recovery",
+      "name": "z_recovery",
+      "type": "site",
+      "region": "spaceflight",
+      "status": "healthy",
+      "utilization": 65,
+      "lastServiceAt": "1969-07-24T16:50:35Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-saturnv",
+      "label": "Saturn V",
+      "group": "launch",
+      "status": "warning",
+      "importance": 85
+    },
+    {
+      "id": "node-csm_columbia",
+      "label": "CSM Columbia",
+      "group": "crew",
+      "status": "warning",
+      "importance": 78
+    },
+    {
+      "id": "node-lm_eagle",
+      "label": "LM Eagle",
+      "group": "crew",
+      "status": "warning",
+      "importance": 71
+    },
+    {
+      "id": "node-recovery_tf",
+      "label": "Pacific Recovery Force",
+      "group": "recovery",
+      "status": "healthy",
+      "importance": 64
+    },
+    {
+      "id": "phase-ph_launch",
+      "label": "launch",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_translunar",
+      "label": "trans_lunar_coast",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_lunar",
+      "label": "lunar_operations",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    },
+    {
+      "id": "phase-ph_return",
+      "label": "return_coast",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-saturnv-ph_launch",
+      "source": "node-saturnv",
+      "target": "phase-ph_launch",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-csm_columbia-ph_translunar",
+      "source": "node-csm_columbia",
+      "target": "phase-ph_translunar",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-lm_eagle-ph_lunar",
+      "source": "node-lm_eagle",
+      "target": "phase-ph_lunar",
+      "label": "assigned",
+      "weight": 3,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-recovery_tf-ph_return",
+      "source": "node-recovery_tf",
+      "target": "phase-ph_return",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "csm_alt",
+      "label": "Altitude M",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1969-07-16T13:32:00Z",
+          "value": 0
+        },
+        {
+          "timestamp": "1969-07-18T13:32:00Z",
+          "value": 185000
+        },
+        {
+          "timestamp": "1969-07-20T13:32:00Z",
+          "value": 384400
+        },
+        {
+          "timestamp": "1969-07-22T13:32:00Z",
+          "value": 110000
+        },
+        {
+          "timestamp": "1969-07-24T13:32:00Z",
+          "value": 384400
+        },
+        {
+          "timestamp": "1969-07-26T13:32:00Z",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": "csm_signal",
+      "label": "Comm Link Quality",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1969-07-16T13:32:00Z",
+          "value": 1
+        },
+        {
+          "timestamp": "1969-07-18T13:32:00Z",
+          "value": 0.99
+        },
+        {
+          "timestamp": "1969-07-20T13:32:00Z",
+          "value": 0.95
+        },
+        {
+          "timestamp": "1969-07-22T13:32:00Z",
+          "value": 0.88
+        },
+        {
+          "timestamp": "1969-07-24T13:32:00Z",
+          "value": 0.97
+        },
+        {
+          "timestamp": "1969-07-26T13:32:00Z",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "csm_power",
+      "label": "Power Margin Pct",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1969-07-16T13:32:00Z",
+          "value": 100
+        },
+        {
+          "timestamp": "1969-07-18T13:32:00Z",
+          "value": 92
+        },
+        {
+          "timestamp": "1969-07-20T13:32:00Z",
+          "value": 84
+        },
+        {
+          "timestamp": "1969-07-22T13:32:00Z",
+          "value": 72
+        },
+        {
+          "timestamp": "1969-07-24T13:32:00Z",
+          "value": 61
+        },
+        {
+          "timestamp": "1969-07-26T13:32:00Z",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "id": "lm_consumables",
+      "label": "Consumables Margin Pct",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1969-07-19T17:21:50Z",
+          "value": 100
+        },
+        {
+          "timestamp": "1969-07-20T05:21:50Z",
+          "value": 82
+        },
+        {
+          "timestamp": "1969-07-20T17:21:50Z",
+          "value": 55
+        },
+        {
+          "timestamp": "1969-07-21T05:21:50Z",
+          "value": 18
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "csm_alt-0",
+      "timestamp": "1969-07-16T13:32:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Altitude M 0",
+      "region": "spaceflight"
+    },
+    {
+      "id": "csm_alt-1",
+      "timestamp": "1969-07-18T13:32:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 80,
+      "status": "nominal",
+      "summary": "Altitude M 185000",
+      "region": "spaceflight"
+    },
+    {
+      "id": "csm_alt-2",
+      "timestamp": "1969-07-20T13:32:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 85,
+      "status": "nominal",
+      "summary": "Altitude M 384400",
+      "region": "spaceflight"
+    },
+    {
+      "id": "csm_signal-0",
+      "timestamp": "1969-07-16T13:32:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 155,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "spaceflight"
+    },
+    {
+      "id": "csm_signal-1",
+      "timestamp": "1969-07-18T13:32:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 163,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "spaceflight"
+    },
+    {
+      "id": "csm_signal-2",
+      "timestamp": "1969-07-20T13:32:00Z",
+      "band": "SATCOM",
+      "frequencyMHz": 171,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Comm Link Quality 1",
+      "region": "spaceflight"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "1969-07-20T20:10:00Z",
+      "author": "mission-pack",
+      "text": "Continue powered descent.",
+      "linkedRefs": []
+    },
+    {
+      "id": "annotation-2",
+      "timestamp": "1969-07-21T17:40:00Z",
+      "author": "mission-pack",
+      "text": "Proceed with ascent and rendezvous sequence.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "1969-07-16T13:32:00Z",
+      "kind": "note",
+      "title": "Crewed lunar landing",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "1969-07-16T16:32:00Z",
+      "kind": "note",
+      "title": "Surface operations",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-1",
+      "createdAt": "1969-07-16T13:32:00Z",
+      "kind": "bookmark",
+      "title": "Launch and orbital insertion",
+      "summary": "Imported task",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-2",
+      "createdAt": "1969-07-16T16:32:00Z",
+      "kind": "bookmark",
+      "title": "Trans-lunar injection and coast monitoring",
+      "summary": "Imported task",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-3",
+      "createdAt": "1969-07-19T17:21:50Z",
+      "kind": "bookmark",
+      "title": "Lunar landing",
+      "summary": "Imported task",
+      "linkedRefs": []
+    },
+    {
+      "id": "task-4",
+      "createdAt": "1969-07-21T17:54:00Z",
+      "kind": "bookmark",
+      "title": "Surface EVA and sample collection",
+      "summary": "Imported task",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_launch",
+      "timestamp": "1969-07-16T13:32:00Z",
+      "title": "launch",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_translunar",
+      "timestamp": "1969-07-16T16:32:00Z",
+      "title": "trans_lunar_coast",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_lunar",
+      "timestamp": "1969-07-19T17:21:50Z",
+      "title": "lunar_operations",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_return",
+      "timestamp": "1969-07-21T17:54:00Z",
+      "title": "return_coast",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "41 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "7 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "2 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "2 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "Apollo 11",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "launch · complete",
+        "trans_lunar_coast · complete",
+        "lunar_operations · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "2 objectives · 5 tasks",
+      "bullets": [
+        "Crewed lunar landing",
+        "Surface operations"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "36 time slices",
+      "bullets": [
+        "launch · 1969-07-16T13:32:00Z",
+        "trans_lunar_coast · 1969-07-16T16:32:00Z",
+        "lunar_operations · 1969-07-19T17:21:50Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-csm_columbia",
+        "label": "CSM Columbia",
+        "role": "facility",
+        "lat": 13.3,
+        "lon": -172.47,
+        "windSpeed": 15,
+        "windGusts": 19,
+        "windDir": 234,
+        "temp": 3,
+        "vis": 29251,
+        "cloudCover": 94,
+        "precipProb": 12,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 76,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "sensor-lm_eagle",
+        "label": "LM Eagle",
+        "role": "facility",
+        "lat": 5,
+        "lon": -145,
+        "windSpeed": 8,
+        "windGusts": 13,
+        "windDir": 125,
+        "temp": 12,
+        "vis": 20750,
+        "cloudCover": 15,
+        "precipProb": 35,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 71,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "sensor-recovery_tf",
+        "label": "Pacific Recovery Force",
+        "role": "facility",
+        "lat": 13.3,
+        "lon": -172.47,
+        "windSpeed": 11,
+        "windGusts": 17,
+        "windDir": 332,
+        "temp": 21,
+        "vis": 14119,
+        "cloudCover": 12,
+        "precipProb": 22,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 86,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "csm_columbia",
+        "label": "CSM Columbia",
+        "role": "spaceflight",
+        "lat": 28.608389,
+        "lon": -80.604333,
+        "windSpeed": 7,
+        "windGusts": 14,
+        "windDir": 172,
+        "temp": 27,
+        "vis": 23669,
+        "cloudCover": 68,
+        "precipProb": 30,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 88,
+        "dzStatus": "GO"
+      },
+      {
+        "siteId": "lm_eagle",
+        "label": "LM Eagle",
+        "role": "spaceflight",
+        "lat": 0,
+        "lon": -155,
+        "windSpeed": 14,
+        "windGusts": 22,
+        "windDir": 303,
+        "temp": -2,
+        "vis": 41412,
+        "cloudCover": 75,
+        "precipProb": 19,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 65,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "recovery_tf",
+        "label": "Pacific Recovery Force",
+        "role": "spaceflight",
+        "lat": 12.8,
+        "lon": -173.5,
+        "windSpeed": 19,
+        "windGusts": 28,
+        "windDir": 30,
+        "temp": 23,
+        "vis": 21219,
+        "cloudCover": 88,
+        "precipProb": 8,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 88,
+        "dzStatus": "GO"
+      }
+    ],
+    "hfScore": 88,
+    "satcomScore": 61,
+    "gpsScore": 82,
+    "avgDzScore": 79,
+    "adsbSummary": {
+      "total": 3,
+      "airborne": 0,
+      "military": 2
+    }
+  }
+}

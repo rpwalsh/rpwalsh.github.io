@@ -1,0 +1,848 @@
+{
+  "templateId": "spectrum-awareness",
+  "specialization": "Surveillance",
+  "title": "Baltic SIGINT Composite 1978",
+  "subtitle": "public_history_hybrid",
+  "focusArea": "surveillance",
+  "seed": 197591214,
+  "kpis": [
+    {
+      "id": "kpi-events",
+      "label": "Events",
+      "value": "3"
+    },
+    {
+      "id": "kpi-alerts",
+      "label": "Alerts",
+      "value": "1"
+    },
+    {
+      "id": "kpi-assets",
+      "label": "Assets",
+      "value": "2"
+    },
+    {
+      "id": "kpi-phases",
+      "label": "Phases",
+      "value": "3"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "a1",
+      "openedAt": "1978-09-05T12:00:00Z",
+      "severity": "info",
+      "state": "new",
+      "title": "Activity",
+      "summary": "Elevated activity in composite sector.",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "timestamp": "1978-09-04T06:00:00Z",
+      "title": "Sector Onstation",
+      "detail": "Composite collection sector active.",
+      "severity": "info",
+      "status": "ph_collection",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e2",
+      "timestamp": "1978-09-05T12:00:00Z",
+      "title": "Emitter Activity",
+      "detail": "Elevated emitter activity in composite sector timeline.",
+      "severity": "info",
+      "status": "ph_collection",
+      "entityRefs": [],
+      "sensorRefs": []
+    },
+    {
+      "id": "e3",
+      "timestamp": "1978-09-06T18:00:00Z",
+      "title": "Collection Peak",
+      "detail": "Composite intercept yield peak.",
+      "severity": "info",
+      "status": "ph_collection",
+      "entityRefs": [],
+      "sensorRefs": []
+    }
+  ],
+  "entities": [
+    {
+      "id": "air_col_1",
+      "label": "Air Collection Aircraft",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "18 samples",
+      "region": "surveillance",
+      "lastSeen": "1978-09-07T00:00:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "surf_col_1",
+      "label": "Surface Collection Vessel",
+      "kind": "track",
+      "status": "monitoring",
+      "detail": "9 samples",
+      "region": "surveillance",
+      "lastSeen": "1978-09-07T00:00:00Z",
+      "confidence": 0.4
+    },
+    {
+      "id": "sensor-air_col_1",
+      "label": "Air Collection Aircraft",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "camera",
+      "region": "surveillance",
+      "lastSeen": "1978-09-07T00:00:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-surf_col_1",
+      "label": "Surface Collection Vessel",
+      "kind": "sensor",
+      "status": "healthy",
+      "detail": "facility",
+      "region": "surveillance",
+      "lastSeen": "1978-09-07T00:00:00Z",
+      "confidence": 0.8
+    }
+  ],
+  "series": [
+    {
+      "id": "imported-activity",
+      "name": "Imported activity",
+      "type": "line",
+      "data": [
+        {
+          "x": "1978-09-03T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-03T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-03T12:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-03T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-04T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-04T06:00:00.000Z",
+          "y": 3
+        },
+        {
+          "x": "1978-09-04T12:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-04T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-05T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-05T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-05T12:00:00.000Z",
+          "y": 4
+        },
+        {
+          "x": "1978-09-05T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-06T00:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-06T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-06T12:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-06T18:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-07T00:00:00.000Z",
+          "y": 2
+        }
+      ]
+    }
+  ],
+  "secondarySeries": [
+    {
+      "id": "imported-alerts",
+      "name": "Imported alerts",
+      "type": "bar",
+      "data": [
+        {
+          "x": "1978-09-03T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-03T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-03T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-03T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-04T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-04T06:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-04T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-04T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-05T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-05T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-05T12:00:00.000Z",
+          "y": 2
+        },
+        {
+          "x": "1978-09-05T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-06T00:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-06T06:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-06T12:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-06T18:00:00.000Z",
+          "y": 1
+        },
+        {
+          "x": "1978-09-07T00:00:00.000Z",
+          "y": 1
+        }
+      ]
+    }
+  ],
+  "sensors": [
+    {
+      "id": "sensor-air_col_1",
+      "name": "Air Collection Aircraft",
+      "kind": "camera",
+      "status": "healthy",
+      "region": "surveillance",
+      "location": {
+        "lat": 57.8,
+        "lon": 20.2
+      },
+      "healthScore": 88,
+      "lastSeenAt": "1978-09-07T00:00:00Z",
+      "confidence": 0.88
+    },
+    {
+      "id": "sensor-surf_col_1",
+      "name": "Surface Collection Vessel",
+      "kind": "facility",
+      "status": "healthy",
+      "region": "surveillance",
+      "location": {
+        "lat": 57.5,
+        "lon": 19.5
+      },
+      "healthScore": 88,
+      "lastSeenAt": "1978-09-07T00:00:00Z",
+      "confidence": 0.8
+    }
+  ],
+  "observations": [],
+  "tracks": [
+    {
+      "id": "air_col_1",
+      "label": "Air Collection Aircraft",
+      "classification": "air",
+      "status": "monitoring",
+      "region": "surveillance",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1978-09-03T00:00:00Z",
+          "lat": 56,
+          "lon": 17,
+          "speed": 311,
+          "heading": 60
+        },
+        {
+          "timestamp": "1978-09-03T06:00:00Z",
+          "lat": 56.3,
+          "lon": 17.5,
+          "speed": 311,
+          "heading": 60
+        },
+        {
+          "timestamp": "1978-09-03T12:00:00Z",
+          "lat": 56.6,
+          "lon": 18,
+          "speed": 311,
+          "heading": 60
+        },
+        {
+          "timestamp": "1978-09-03T18:00:00Z",
+          "lat": 56.9,
+          "lon": 18.5,
+          "speed": 311,
+          "heading": 60
+        },
+        {
+          "timestamp": "1978-09-04T00:00:00Z",
+          "lat": 57.2,
+          "lon": 19,
+          "speed": 311,
+          "heading": 60
+        },
+        {
+          "timestamp": "1978-09-04T06:00:00Z",
+          "lat": 57.5,
+          "lon": 19.5,
+          "speed": 311,
+          "heading": 60
+        },
+        {
+          "timestamp": "1978-09-04T06:00:00Z",
+          "lat": 57.5,
+          "lon": 19.5,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-04T12:00:00Z",
+          "lat": 57.527273,
+          "lon": 19.563636,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-04T18:00:00Z",
+          "lat": 57.554545,
+          "lon": 19.627273,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-05T00:00:00Z",
+          "lat": 57.581818,
+          "lon": 19.690909,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-05T06:00:00Z",
+          "lat": 57.609091,
+          "lon": 19.754545,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-05T12:00:00Z",
+          "lat": 57.636364,
+          "lon": 19.818182,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-05T18:00:00Z",
+          "lat": 57.663636,
+          "lon": 19.881818,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-06T00:00:00Z",
+          "lat": 57.690909,
+          "lon": 19.945455,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-06T06:00:00Z",
+          "lat": 57.718182,
+          "lon": 20.009091,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-06T12:00:00Z",
+          "lat": 57.745455,
+          "lon": 20.072727,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-06T18:00:00Z",
+          "lat": 57.772727,
+          "lon": 20.136364,
+          "speed": 350,
+          "heading": 90
+        },
+        {
+          "timestamp": "1978-09-07T00:00:00Z",
+          "lat": 57.8,
+          "lon": 20.2,
+          "speed": 350,
+          "heading": 90
+        }
+      ]
+    },
+    {
+      "id": "surf_col_1",
+      "label": "Surface Collection Vessel",
+      "classification": "unknown",
+      "status": "monitoring",
+      "region": "surveillance",
+      "confidence": 0.4,
+      "routeDeviation": false,
+      "points": [
+        {
+          "timestamp": "1978-09-03T00:00:00Z",
+          "lat": 56.9,
+          "lon": 17.8,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-03T12:00:00Z",
+          "lat": 56.975,
+          "lon": 18.0125,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-04T00:00:00Z",
+          "lat": 57.05,
+          "lon": 18.225,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-04T12:00:00Z",
+          "lat": 57.125,
+          "lon": 18.4375,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-05T00:00:00Z",
+          "lat": 57.2,
+          "lon": 18.65,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-05T12:00:00Z",
+          "lat": 57.275,
+          "lon": 18.8625,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-06T00:00:00Z",
+          "lat": 57.35,
+          "lon": 19.075,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-06T12:00:00Z",
+          "lat": 57.425,
+          "lon": 19.2875,
+          "speed": 12,
+          "heading": 40
+        },
+        {
+          "timestamp": "1978-09-07T00:00:00Z",
+          "lat": 57.5,
+          "lon": 19.5,
+          "speed": 12,
+          "heading": 40
+        }
+      ]
+    }
+  ],
+  "facilities": [
+    {
+      "id": "z_sector_a",
+      "name": "z_sector_a",
+      "type": "site",
+      "region": "surveillance",
+      "status": "healthy",
+      "utilization": 55,
+      "lastServiceAt": "1978-09-06T18:00:00Z"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-air_col_1",
+      "label": "Air Collection Aircraft",
+      "group": "air",
+      "status": "healthy",
+      "importance": 85
+    },
+    {
+      "id": "node-surf_col_1",
+      "label": "Surface Collection Vessel",
+      "group": "surface",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_transit",
+      "label": "transit_to_sector",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 78
+    },
+    {
+      "id": "phase-ph_collection",
+      "label": "sector_collection",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 72
+    },
+    {
+      "id": "phase-ph_return",
+      "label": "return",
+      "group": "phase",
+      "status": "healthy",
+      "importance": 66
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-air_col_1-ph_transit",
+      "source": "node-air_col_1",
+      "target": "phase-ph_transit",
+      "label": "assigned",
+      "weight": 1,
+      "status": "healthy"
+    },
+    {
+      "id": "edge-surf_col_1-ph_collection",
+      "source": "node-surf_col_1",
+      "target": "phase-ph_collection",
+      "label": "assigned",
+      "weight": 2,
+      "status": "healthy"
+    }
+  ],
+  "environmentalSeries": [
+    {
+      "id": "emitter_activity",
+      "label": "Emitter Activity Index",
+      "metric": "temperature",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1978-09-04T06:00:00Z",
+          "value": 0.22
+        },
+        {
+          "timestamp": "1978-09-05T12:00:00Z",
+          "value": 0.61
+        },
+        {
+          "timestamp": "1978-09-06T18:00:00Z",
+          "value": 0.74
+        }
+      ]
+    },
+    {
+      "id": "sector_coverage",
+      "label": "Sector Coverage Score",
+      "metric": "visibility",
+      "unit": "",
+      "values": [
+        {
+          "timestamp": "1978-09-03T00:00:00Z",
+          "value": 0.15
+        },
+        {
+          "timestamp": "1978-09-04T00:00:00Z",
+          "value": 0.58
+        },
+        {
+          "timestamp": "1978-09-05T00:00:00Z",
+          "value": 0.79
+        },
+        {
+          "timestamp": "1978-09-06T00:00:00Z",
+          "value": 0.84
+        },
+        {
+          "timestamp": "1978-09-07T00:00:00Z",
+          "value": 0.52
+        }
+      ]
+    }
+  ],
+  "signalEvents": [
+    {
+      "id": "emitter_activity-0",
+      "timestamp": "1978-09-04T06:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 30,
+      "strength": 55,
+      "status": "nominal",
+      "summary": "Emitter Activity Index 0",
+      "region": "surveillance"
+    },
+    {
+      "id": "emitter_activity-1",
+      "timestamp": "1978-09-05T12:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 38,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Emitter Activity Index 1",
+      "region": "surveillance"
+    },
+    {
+      "id": "emitter_activity-2",
+      "timestamp": "1978-09-06T18:00:00Z",
+      "band": "HF",
+      "frequencyMHz": 46,
+      "strength": 56,
+      "status": "nominal",
+      "summary": "Emitter Activity Index 1",
+      "region": "surveillance"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "annotation-1",
+      "timestamp": "1978-09-04T06:00:00Z",
+      "author": "mission-pack",
+      "text": "Hold air/surface coverage on Sector A.",
+      "linkedRefs": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "objective-1",
+      "createdAt": "1978-09-03T00:00:00Z",
+      "kind": "note",
+      "title": "Maintain collection sector presence",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    },
+    {
+      "id": "objective-2",
+      "createdAt": "1978-09-04T00:00:00Z",
+      "kind": "note",
+      "title": "Produce collection summary",
+      "summary": "Imported objective",
+      "linkedRefs": []
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "bookmark-ph_transit",
+      "timestamp": "1978-09-03T00:00:00Z",
+      "title": "transit_to_sector",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_collection",
+      "timestamp": "1978-09-04T00:00:00Z",
+      "title": "sector_collection",
+      "summary": "complete"
+    },
+    {
+      "id": "bookmark-ph_return",
+      "timestamp": "1978-09-07T00:00:00Z",
+      "title": "return",
+      "summary": "complete"
+    }
+  ],
+  "feedHealth": [
+    {
+      "id": "feed-tracks",
+      "label": "Imported track samples",
+      "status": "healthy",
+      "detail": "27 samples"
+    },
+    {
+      "id": "feed-events",
+      "label": "Imported events",
+      "status": "healthy",
+      "detail": "3 events"
+    },
+    {
+      "id": "feed-alerts",
+      "label": "Imported alerts",
+      "status": "healthy",
+      "detail": "1 alerts"
+    },
+    {
+      "id": "feed-telemetry",
+      "label": "Imported telemetry",
+      "status": "healthy",
+      "detail": "1 streams"
+    }
+  ],
+  "surfaces": {
+    "primary": {
+      "title": "Baltic SIGINT Composite 1978",
+      "body": "Imported mission pack scenario",
+      "bullets": [
+        "transit_to_sector · complete",
+        "sector_collection · complete",
+        "return · complete"
+      ]
+    },
+    "secondary": {
+      "title": "Objectives",
+      "body": "2 objectives · 0 tasks",
+      "bullets": [
+        "Maintain collection sector presence",
+        "Produce collection summary"
+      ]
+    },
+    "tertiary": {
+      "title": "Playback windows",
+      "body": "17 time slices",
+      "bullets": [
+        "transit_to_sector · 1978-09-03T00:00:00Z",
+        "sector_collection · 1978-09-04T00:00:00Z",
+        "return · 1978-09-07T00:00:00Z"
+      ]
+    }
+  },
+  "_operational": {
+    "siteMetoc": [
+      {
+        "siteId": "sensor-air_col_1",
+        "label": "Air Collection Aircraft",
+        "role": "camera",
+        "lat": 57.8,
+        "lon": 20.2,
+        "windSpeed": 8,
+        "windGusts": 12,
+        "windDir": 319,
+        "temp": 22,
+        "vis": 34948,
+        "cloudCover": 99,
+        "precipProb": 5,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 62,
+        "dzStatus": "NO-GO"
+      },
+      {
+        "siteId": "sensor-surf_col_1",
+        "label": "Surface Collection Vessel",
+        "role": "facility",
+        "lat": 57.5,
+        "lon": 19.5,
+        "windSpeed": 17,
+        "windGusts": 22,
+        "windDir": 18,
+        "temp": 23,
+        "vis": 36203,
+        "cloudCover": 10,
+        "precipProb": 28,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 73,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "air_col_1",
+        "label": "Air Collection Aircraft",
+        "role": "surveillance",
+        "lat": 56,
+        "lon": 17,
+        "windSpeed": 21,
+        "windGusts": 27,
+        "windDir": 130,
+        "temp": -1,
+        "vis": 33405,
+        "cloudCover": 62,
+        "precipProb": 32,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 79,
+        "dzStatus": "MARGINAL"
+      },
+      {
+        "siteId": "surf_col_1",
+        "label": "Surface Collection Vessel",
+        "role": "surveillance",
+        "lat": 56.9,
+        "lon": 17.8,
+        "windSpeed": 12,
+        "windGusts": 19,
+        "windDir": 325,
+        "temp": 28,
+        "vis": 21460,
+        "cloudCover": 55,
+        "precipProb": 27,
+        "sunrise": "06:00",
+        "sunset": "18:00",
+        "dzScore": 70,
+        "dzStatus": "MARGINAL"
+      }
+    ],
+    "hfScore": 80,
+    "satcomScore": 88,
+    "gpsScore": 88,
+    "avgDzScore": 71,
+    "adsbSummary": {
+      "total": 2,
+      "airborne": 1,
+      "military": 1
+    }
+  }
+}

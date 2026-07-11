@@ -1,0 +1,92 @@
+{
+  "mission-overview": {
+    "consoleCode": "OPS-01",
+    "workbenchTab": "overview",
+    "paletteOffset": 0,
+    "fallbackPalette": ["#8ba47d", "#647a63", "#d3a061", "#b76647", "#aab78a"],
+    "title": "Mission operating picture",
+    "purpose": "OPORD summary — DZ suitability, HF/SATCOM/GPS status, airspace, seismic, and cyber threat awareness.",
+    "axisLabel": "Threat pressure"
+  },
+  "track-analysis": {
+    "consoleCode": "TRK-02",
+    "workbenchTab": "analysis",
+    "paletteOffset": 1,
+    "fallbackPalette": ["#8ca27f", "#647c64", "#d49e5a", "#bf6c45", "#a5b48c"],
+    "title": "Air picture",
+    "purpose": "ADS-B aircraft tracks, airspace deconfliction, and seismic ground contacts.",
+    "axisLabel": "Track activity"
+  },
+  "sensor-fleet": {
+    "consoleCode": "SNS-03",
+    "workbenchTab": "collection",
+    "paletteOffset": 2,
+    "fallbackPalette": ["#7e9d7d", "#5e7464", "#cfa769", "#b46849", "#9fb38c"],
+    "title": "Collection assets",
+    "purpose": "METOC stations, NOAA sensors, ADS-B receivers, and CISA feed status.",
+    "axisLabel": "Sensor throughput"
+  },
+  "alert-triage": {
+    "consoleCode": "ALT-04",
+    "workbenchTab": "processing",
+    "paletteOffset": 3,
+    "fallbackPalette": ["#c79254", "#a25d41", "#7b8d73", "#cdb07a", "#7f6658"],
+    "title": "Threat triage",
+    "purpose": "Seismic hazards, cyber vulnerabilities, and space weather alerts by severity.",
+    "axisLabel": "Alert pressure"
+  },
+  "replay-review": {
+    "consoleCode": "RPL-05",
+    "workbenchTab": "analysis",
+    "paletteOffset": 4,
+    "fallbackPalette": ["#7d9179", "#a88c5d", "#9d6a52", "#6f7f68", "#b3a17c"],
+    "title": "Replay review",
+    "purpose": "Event timelines, bookmarks, and evidence artifacts.",
+    "axisLabel": "Replay pressure"
+  },
+  "environmental-ops": {
+    "consoleCode": "ENV-06",
+    "workbenchTab": "overview",
+    "paletteOffset": 5,
+    "fallbackPalette": ["#7a9b85", "#5c746f", "#9ab08d", "#d2a264", "#b86b46"],
+    "title": "METOC ops",
+    "purpose": "Surface weather, DZ wind/vis/ceiling, dust/PM, and air quality for all AO sites.",
+    "axisLabel": "METOC trend"
+  },
+  "spectrum-awareness": {
+    "consoleCode": "SIG-07",
+    "workbenchTab": "exploit",
+    "paletteOffset": 6,
+    "fallbackPalette": ["#8c8f72", "#667267", "#c79d5d", "#a55f46", "#8ba585"],
+    "title": "RF / space weather",
+    "purpose": "HF propagation (K-index), SATCOM solar conditions, GPS solar-wind conditions, and cyber alerts.",
+    "axisLabel": "Spectrum status"
+  },
+  "network-ops": {
+    "consoleCode": "NET-08",
+    "workbenchTab": "exploit",
+    "paletteOffset": 7,
+    "fallbackPalette": ["#75907a", "#65726a", "#cf9a5d", "#b16547", "#9eb083"],
+    "title": "Feed network",
+    "purpose": "Data feed topology, collection dependencies, and feed health status.",
+    "axisLabel": "Feed throughput"
+  },
+  "infrastructure-monitor": {
+    "consoleCode": "INF-09",
+    "workbenchTab": "overview",
+    "paletteOffset": 8,
+    "fallbackPalette": ["#c89a58", "#6f7764", "#8fa283", "#b56244", "#a7b48e"],
+    "title": "AO site monitor",
+    "purpose": "Per-site DZ readiness, METOC conditions, and operational status across Iran AO.",
+    "axisLabel": "Site readiness"
+  },
+  "case-evidence-workbench": {
+    "consoleCode": "CAS-10",
+    "workbenchTab": "reports",
+    "paletteOffset": 9,
+    "fallbackPalette": ["#c8ad73", "#6b7766", "#8ca17f", "#ae6448", "#a89a7d"],
+    "title": "Case evidence workbench",
+    "purpose": "Evidence items, bookmarks, linked references, and annotations.",
+    "axisLabel": "Case activity"
+  }
+}
