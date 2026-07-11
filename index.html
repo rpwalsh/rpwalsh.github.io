@@ -1,1269 +1,1474 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RiskLab - Playground</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>R</text></svg>" />
-  <style>
-    :root {
-      --uc-ease-standard: cubic-bezier(0.22, 0.68, 0.14, 1);
-      --uc-ease-spring: cubic-bezier(0.2, 0.8, 0.2, 1);
-      --uc-ease-out: cubic-bezier(0.17, 0.84, 0.44, 1);
-      --uc-dur-fast: 120ms;
-      --uc-dur-mid: 210ms;
-      --uc-dur-slow: 360ms;
-      --uc-header-max: 1760px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', 'Segoe UI Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background:
-        radial-gradient(140% 90% at 15% -10%, rgba(56, 189, 248, 0.16), transparent 42%),
-        radial-gradient(90% 70% at 88% -12%, rgba(129, 140, 248, 0.14), transparent 46%),
-        linear-gradient(180deg, #040b15 0%, #0a1322 48%, #0d1829 100%);
-      color: #dbe6f5;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
-    body.light-mode {
-      background:
-        radial-gradient(120% 80% at 16% -10%, rgba(59, 130, 246, 0.09), transparent 44%),
-        radial-gradient(120% 80% at 85% -20%, rgba(14, 165, 233, 0.08), transparent 48%),
-        linear-gradient(180deg, #f6f8fc 0%, #edf2f8 52%, #e7edf5 100%);
-      color: #0f172a;
-    }
-    header {
-      max-width: var(--uc-header-max);
-      margin: 0 auto;
-      text-align: left;
-      padding: 0.72rem 1.35rem 0.4rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 0.55rem 1rem;
-    }
-    header h1 {
-      font-size: 0.98rem;
-      margin-bottom: 0;
-      color: #eef5ff;
-      letter-spacing: -0.02em;
-      font-weight: 730;
-    }
-    header p { display: none; }
-    header .editor-link {
-      display: inline-block;
-      margin-top: 0;
-      padding: 0.08rem 0;
-      border-radius: 0;
-      background: transparent;
-      color: #8da0ba;
-      font-size: 0.76rem;
-      font-weight: 720;
-      text-decoration: none;
-      border: 0;
-      cursor: pointer;
-      font-family: inherit;
-      transition:
-        color var(--uc-dur-fast) var(--uc-ease-standard),
-        text-decoration-color var(--uc-dur-fast) var(--uc-ease-standard),
-        opacity var(--uc-dur-fast) var(--uc-ease-standard);
-    }
-    header .editor-link:hover {
-      color: #eef5ff;
-    }
-    header .editor-link.active {
-      color: #eef5ff;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.32rem;
-      text-decoration-color: rgba(129, 140, 248, 0.9);
-    }
-    header .header-links {
-      display: flex;
-      justify-content: flex-end;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
-    body.light-mode header h1 { color: #0f172a; }
-    body.light-mode header p { color: #64748b; }
-    body.light-mode header .editor-link { color: #64748b; }
-    body.light-mode header .editor-link:hover {
-      color: #0f172a;
-    }
-    body.light-mode header .editor-link.active { color: #0f172a; }
-    .tabs {
-      display: flex;
-      justify-content: flex-start;
-      gap: 6px;
-      padding: 0 1.25rem;
-      margin: 0 auto 1.2rem;
-      flex-wrap: wrap;
-      max-width: 1280px;
-    }
-    .tab {
-      padding: 9px 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(71, 85, 105, 0.6);
-      background: rgba(15, 23, 42, 0.68);
-      color: #9fb1c3;
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.15s;
-    }
-    .tab:hover { border-color: rgba(129, 140, 248, 0.55); color: #eef5ff; }
-    .tab.active { border-color: rgba(129, 140, 248, 0.55); background: rgba(79, 70, 229, 0.18); color: #dbeafe; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
-      gap: 1.5rem;
-      max-width: 1600px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem 4rem;
-    }
-    .card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      border: 1px solid #334155;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .card:hover { border-color: #6366f1; box-shadow: 0 0 20px rgba(99,102,241,0.1); }
-    .card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: #f1f5f9;
-    }
-    .chart-box {
-      width: 100%;
-      height: 380px;
-      background: #0f172a;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: crosshair;
-      position: relative;
-    }
-    .sdk-shell {
-      max-width: 1760px;
-      margin: 0 auto;
-      padding: 0.9rem 1.35rem 2rem;
-      display: grid;
-      grid-template-columns: 340px minmax(0, 1fr);
-      gap: 0.9rem;
-      align-items: start;
-    }
-    .sdk-sidebar,
-    .sdk-panel {
-      background: rgba(9, 17, 31, 0.8);
-      border: 1px solid rgba(71, 85, 105, 0.5);
-      border-radius: 12px;
-      box-shadow: 0 14px 28px rgba(2, 8, 23, 0.16);
-      transition:
-        border-color var(--uc-dur-mid) var(--uc-ease-standard),
-        box-shadow var(--uc-dur-mid) var(--uc-ease-standard),
-        background var(--uc-dur-mid) var(--uc-ease-standard),
-        transform var(--uc-dur-mid) var(--uc-ease-standard);
-    }
-    .sdk-sidebar {
-      position: sticky;
-      top: 62px;
-      max-height: calc(100vh - 80px);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .sdk-sidebar-head {
-      padding: 0.88rem 0.95rem 0.4rem;
-    }
-    .sdk-kicker {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #7dd3fc;
-      font-weight: 800;
-      margin-bottom: 0.3rem;
-    }
-    .sdk-sidebar-head h2,
-    .sdk-main-head h2 {
-      font-size: 1.2rem;
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      color: #f8fafc;
-      margin-bottom: 0.34rem;
-    }
-    .sdk-sidebar-head p,
-    .sdk-main-head p {
-      color: #8ba0b8;
-      font-size: 0.76rem;
-      line-height: 1.45;
-    }
-    .sdk-search-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 0.42rem;
-      padding: 0.55rem 1rem 0.55rem;
-    }
-    .sdk-search-wrap span {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #64748b;
-    }
-    .sdk-search {
-      width: 100%;
-      padding: 0.72rem 0.84rem;
-      border-radius: 10px;
-      border: 1px solid rgba(71, 85, 105, 0.62);
-      background: rgba(7, 13, 24, 0.86);
-      color: #e2e8f0;
-      font: inherit;
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        background var(--uc-dur-fast) var(--uc-ease-standard),
-        box-shadow var(--uc-dur-fast) var(--uc-ease-standard);
-    }
-    .sdk-search:focus,
-    .sdk-editor:focus {
-      outline: none;
-      border-color: rgba(56, 189, 248, 0.8);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
-    }
-    .sdk-filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.2rem 0.65rem;
-      padding: 0 1rem 0.3rem;
-    }
-    .sdk-filter {
-      padding: 0;
-      border-radius: 0;
-      border: 0;
-      background: transparent;
-      color: #7f8ea3;
-      font: inherit;
-      font-size: 0.78rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition:
-        color var(--uc-dur-fast) var(--uc-ease-standard),
-        opacity var(--uc-dur-fast) var(--uc-ease-standard),
-        text-decoration-color var(--uc-dur-fast) var(--uc-ease-standard);
-    }
-    .sdk-filter:hover,
-    .sdk-filter.active,
-    .sdk-nav-item:hover,
-    .sdk-nav-item.active {
-      color: #eef2ff;
-    }
-    .sdk-filter.active {
-      color: #eef2ff;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.32rem;
-      text-decoration-color: rgba(129, 140, 248, 0.9);
-    }
-    .sdk-action {
-      padding: 0.46rem 0.68rem;
-      border-radius: 9px;
-      border: 1px solid rgba(71, 85, 105, 0.65);
-      background: rgba(12, 20, 35, 0.72);
-      color: #cdd9e8;
-      font: inherit;
-      font-size: 0.76rem;
-      font-weight: 680;
-      cursor: pointer;
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        background var(--uc-dur-fast) var(--uc-ease-standard),
-        color var(--uc-dur-fast) var(--uc-ease-standard),
-        transform var(--uc-dur-fast) var(--uc-ease-out),
-        box-shadow var(--uc-dur-fast) var(--uc-ease-standard);
-    }
-    .sdk-tab {
-      padding: 0.46rem 0.68rem;
-      border-radius: 9px;
-      border: 1px solid rgba(71, 85, 105, 0.65);
-      background: rgba(12, 20, 35, 0.72);
-      color: #cdd9e8;
-      font: inherit;
-      font-size: 0.76rem;
-      font-weight: 680;
-      cursor: pointer;
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        background var(--uc-dur-fast) var(--uc-ease-standard),
-        color var(--uc-dur-fast) var(--uc-ease-standard),
-        transform var(--uc-dur-fast) var(--uc-ease-out),
-        box-shadow var(--uc-dur-fast) var(--uc-ease-standard);
-    }
-    .sdk-action:hover,
-    .sdk-tab:hover,
-    .sdk-tab.active {
-      border-color: rgba(56, 189, 248, 0.55);
-      background: rgba(56, 189, 248, 0.12);
-      color: #f0f7ff;
-      box-shadow: 0 8px 16px rgba(2, 8, 23, 0.18);
-    }
-    .sdk-action:active,
-    .sdk-tab:active { transform: translateY(1px) scale(0.99); }
-    .sdk-action:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .sdk-nav {
-      flex: 1;
-      min-height: 0;
-      padding: 0.7rem 0.45rem 0.7rem 0.9rem;
-      overflow: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-    .sdk-nav-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-    }
-    .sdk-nav-group-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.7rem;
-      padding-right: 0.35rem;
-    }
-    .sdk-nav-group-head span,
-    .sdk-nav-group-head em {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #64748b;
-      font-weight: 800;
-      font-style: normal;
-    }
-    .sdk-nav-item {
-      width: calc(100% - 0.35rem);
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 0.34rem;
-      padding: 0.66rem 0.72rem;
-      border-radius: 10px;
-      border: 1px solid rgba(71, 85, 105, 0.45);
-      background: rgba(10, 17, 30, 0.62);
-      color: #e2e8f0;
-      font: inherit;
-      cursor: pointer;
-      transition:
-        transform var(--uc-dur-mid) var(--uc-ease-standard),
-        background var(--uc-dur-mid) var(--uc-ease-standard),
-        border-color var(--uc-dur-mid) var(--uc-ease-standard),
-        box-shadow var(--uc-dur-mid) var(--uc-ease-standard);
-    }
-    .sdk-nav-item:hover,
-    .sdk-nav-item.active {
-      transform: translateX(2px);
-      border-color: rgba(56, 189, 248, 0.55);
-      background: rgba(12, 24, 42, 0.82);
-      box-shadow: 0 10px 18px rgba(2, 8, 23, 0.18);
-    }
-    .sdk-nav-item-top {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .sdk-nav-item-title {
-      color: #f8fafc;
-      font-size: 0.84rem;
-      font-weight: 700;
-      line-height: 1.35;
-    }
-    .sdk-nav-item-meta {
-      color: #94a3b8;
-      font-size: 0.73rem;
-    }
-    .sdk-main {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      min-width: 0;
-    }
-    .sdk-main-head,
-    .sdk-panel-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .sdk-main-head h2 {
-      font-size: 1.48rem;
-      line-height: 1.02;
-      margin-bottom: 0.25rem;
-    }
-    .sdk-main-head p {
-      color: #8da0ba;
-      font-size: 0.78rem;
-      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-      letter-spacing: -0.01em;
-    }
-    .sdk-panel-head-side {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem 0.75rem;
-      align-items: center;
-      justify-content: flex-end;
-    }
-    .sdk-panel-actions,
-    .sdk-tab-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .sdk-panel {
-      padding: 0.78rem 0.84rem;
-      min-width: 0;
-    }
-    .sdk-panel-head strong {
-      color: #f8fafc;
-      font-size: 0.92rem;
-      letter-spacing: -0.03em;
-    }
-    .sdk-panel-state,
-    .sdk-preview-status {
-      font-size: 0.74rem;
-      color: #94a3b8;
-      font-weight: 600;
-    }
-    .sdk-preview-status.error {
-      color: #fca5a5;
-    }
-    .sdk-preview-box {
-      width: 100%;
-      height: clamp(520px, 58vh, 720px);
-      border-radius: 10px;
-      overflow: hidden;
-      background:
-        radial-gradient(120% 120% at 15% 0%, rgba(56, 189, 248, 0.09), transparent 46%),
-        #08111f;
-      border: 1px solid rgba(71, 85, 105, 0.56);
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        box-shadow var(--uc-dur-fast) var(--uc-ease-standard),
-        background var(--uc-dur-fast) var(--uc-ease-standard);
-      position: relative;
-    }
-    .sdk-preview-box.is-loading::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(56, 189, 248, 0.03) 0%, rgba(56, 189, 248, 0.14) 45%, rgba(56, 189, 248, 0.03) 100%);
-      transform: translateX(-100%);
-      animation: uc-preview-shimmer 860ms var(--uc-ease-standard) infinite;
-      pointer-events: none;
-    }
-    .sdk-preview-box:focus-within,
-    .sdk-preview-box:hover {
-      border-color: rgba(56, 189, 248, 0.62);
-      box-shadow: 0 12px 24px rgba(2, 8, 23, 0.2);
-    }
-    @keyframes uc-preview-shimmer {
-      to { transform: translateX(100%); }
-    }
-    .sdk-preview-foot {
-      min-height: 0;
-    }
-    .sdk-preview-status:empty {
-      display: none;
-    }
-    .sdk-workspace {
-      display: grid;
-      grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1fr);
-      gap: 0.65rem;
-      min-width: 0;
-    }
-    .sdk-editor {
-      width: 100%;
-      min-height: 360px;
-      margin-top: 0.64rem;
-      padding: 0.92rem;
-      border-radius: 10px;
-      border: 1px solid rgba(71, 85, 105, 0.56);
-      background: rgba(6, 12, 22, 0.92);
-      color: #dbe7f5;
-      font: 13px/1.58 'Consolas', 'SFMono-Regular', Menlo, monospace;
-      resize: vertical;
-      white-space: pre;
-      overflow: auto;
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        box-shadow var(--uc-dur-fast) var(--uc-ease-standard),
-        background var(--uc-dur-fast) var(--uc-ease-standard);
-    }
-    .sdk-code-block {
-      margin-top: 0.64rem;
-      min-height: 360px;
-      max-height: 520px;
-      overflow: auto;
-      padding: 0.92rem;
-      border-radius: 10px;
-      border: 1px solid rgba(71, 85, 105, 0.56);
-      background: rgba(6, 12, 22, 0.92);
-      color: #dbe7f5;
-      font: 13px/1.58 'Consolas', 'SFMono-Regular', Menlo, monospace;
-      white-space: pre;
-    }
-    .sdk-code-block code {
-      display: block;
-      white-space: inherit;
-    }
-    .sdk-empty {
-      padding: 0.95rem 0.95rem 1.05rem;
-      border-radius: 14px;
-      border: 1px dashed rgba(71, 85, 105, 0.75);
-      background: rgba(15, 23, 42, 0.52);
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      color: #94a3b8;
-    }
-    .sdk-empty strong {
-      color: #f8fafc;
-      font-size: 0.9rem;
-    }
-    body.light-mode .sdk-sidebar,
-    body.light-mode .sdk-panel {
-      background: rgba(255, 255, 255, 0.88);
-      border-color: rgba(148, 163, 184, 0.28);
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
-    }
-    body.light-mode .sdk-kicker { color: #0369a1; }
-    body.light-mode .sdk-sidebar-head h2,
-    body.light-mode .sdk-main-head h2,
-    body.light-mode .sdk-panel-head strong,
-    body.light-mode .sdk-nav-item-title,
-    body.light-mode .sdk-empty strong { color: #0f172a; }
-    body.light-mode .sdk-sidebar-head p,
-    body.light-mode .sdk-main-head p,
-    body.light-mode .sdk-panel-state,
-    body.light-mode .sdk-preview-status,
-    body.light-mode .sdk-nav-item-meta,
-    body.light-mode .sdk-empty,
-    body.light-mode .sdk-nav-group-head span,
-    body.light-mode .sdk-nav-group-head em { color: #64748b; }
-    body.light-mode .sdk-search,
-    body.light-mode .sdk-editor,
-    body.light-mode .sdk-code-block,
-    body.light-mode .sdk-preview-box {
-      background: #ffffff;
-      color: #0f172a;
-      border-color: #cbd5e1;
-    }
-    body.light-mode .sdk-filter,
-    body.light-mode .sdk-action,
-    body.light-mode .sdk-tab { color: #475569; }
-    body.light-mode .sdk-filter:hover,
-    body.light-mode .sdk-filter.active,
-    body.light-mode .sdk-nav-item:hover,
-    body.light-mode .sdk-nav-item.active { color: #0f172a; }
-    body.light-mode .sdk-action,
-    body.light-mode .sdk-tab {
-      background: rgba(255, 255, 255, 0.92);
-      border-color: #cbd5e1;
-    }
-    body.light-mode .sdk-action:hover,
-    body.light-mode .sdk-tab:hover,
-    body.light-mode .sdk-tab.active {
-      background: rgba(14, 165, 233, 0.11);
-      border-color: #38bdf8;
-      color: #0c4a6e;
-    }
-    body.light-mode .sdk-nav-item {
-      background: rgba(255, 255, 255, 0.92);
-      border-color: rgba(148, 163, 184, 0.28);
-      color: #0f172a;
-    }
-    /* Global tooltip overlay styling */
-    .uc-tooltip-overlay {
-      pointer-events: none;
-      z-index: 9999 !important;
-      font-family: 'Inter', -apple-system, sans-serif;
-    }
-    .uc-tooltip-overlay > div {
-      animation: uc-tooltip-in 0.15s ease-out;
-    }
-    @keyframes uc-tooltip-in {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    /* Reset zoom button */
-    .uc-reset-zoom {
-      transition: background 0.15s, color 0.15s;
-    }
-    .uc-reset-zoom:hover { background: #4f46e5 !important; color: #fff !important; }
-    /* Pinned tooltip glow */
-    .chart-box .uc-tooltip-overlay[style*="pointer-events: auto"] > div {
-      box-shadow: 0 0 0 2px rgba(99,102,241,0.4), 0 8px 30px rgba(0,0,0,0.18) !important;
-    }
-    footer {
-      text-align: center;
-      padding: 1.25rem 2rem 2rem;
-      color: #7b8da1;
-      font-size: 0.76rem;
-    }
-    footer a { color: #818cf8; text-decoration: none; }
-    body.light-mode footer { color: #64748b; }
-    body.light-mode footer a { color: #4338ca; }
-    .mission-shell {
-      width: min(1600px, calc(100% - 2.5rem));
-      margin: 0 auto 4rem;
-      display: grid;
-      gap: 1.4rem;
-    }
-    .mission-hero,
-    .mission-card,
-    .mission-command-card,
-    .mission-meta-card {
-      border: 1px solid rgba(71, 85, 105, 0.58);
-      background: rgba(8, 15, 28, 0.78);
-      border-radius: 18px;
-      box-shadow: 0 18px 48px rgba(2, 8, 23, 0.34);
-    }
-    body.light-mode .mission-hero,
-    body.light-mode .mission-card,
-    body.light-mode .mission-command-card,
-    body.light-mode .mission-meta-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(148, 163, 184, 0.3);
-      box-shadow: 0 14px 32px rgba(148, 163, 184, 0.18);
-    }
-    .mission-hero {
-      padding: 1.6rem 1.7rem;
-      display: grid;
-      gap: 1rem;
-    }
-    .mission-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 0.28rem 0.72rem;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.28);
-      color: #8bd6ff;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    body.light-mode .mission-eyebrow {
-      color: #075985;
-      background: rgba(14, 165, 233, 0.1);
-      border-color: rgba(14, 165, 233, 0.22);
-    }
-    .mission-hero h2 {
-      font-size: clamp(1.9rem, 2.8vw, 2.7rem);
-      letter-spacing: -0.03em;
-      color: #f8fbff;
-    }
-    .mission-hero p,
-    .mission-meta-card p,
-    .mission-command-card p,
-    .mission-card-summary {
-      color: #9eb2c8;
-      line-height: 1.6;
-    }
-    body.light-mode .mission-hero h2 { color: #0f172a; }
-    body.light-mode .mission-hero p,
-    body.light-mode .mission-meta-card p,
-    body.light-mode .mission-command-card p,
-    body.light-mode .mission-card-summary { color: #475569; }
-    .mission-command-grid,
-    .mission-meta-grid,
-    .mission-template-grid,
-    .mission-card-grid {
-      display: grid;
-      gap: 1rem;
-    }
-    .mission-command-grid,
-    .mission-meta-grid {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-    .mission-template-grid {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    }
-    .mission-command-card,
-    .mission-meta-card {
-      padding: 1rem 1.05rem;
-      display: grid;
-      gap: 0.8rem;
-    }
-    .mission-command-label,
-    .mission-meta-title,
-    .mission-card h3,
-    .mission-card-section h4 {
-      color: #eef5ff;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    body.light-mode .mission-command-label,
-    body.light-mode .mission-meta-title,
-    body.light-mode .mission-card h3,
-    body.light-mode .mission-card-section h4 { color: #0f172a; }
-    .mission-card {
-      padding: 1.25rem;
-      display: grid;
-      gap: 1rem;
-    }
-    .mission-card-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .mission-card-kicker {
-      color: #7dd3fc;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 0.25rem;
-    }
-    body.light-mode .mission-card-kicker { color: #0369a1; }
-    .mission-status,
-    .mission-chip {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      border: 1px solid rgba(99, 102, 241, 0.28);
-      background: rgba(79, 70, 229, 0.14);
-      color: #dbeafe;
-      padding: 0.28rem 0.68rem;
-      font-size: 0.76rem;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .mission-chip-row {
-      display: flex;
-      gap: 0.55rem;
-      flex-wrap: wrap;
-    }
-    .mission-chip--mono,
-    .mission-code code,
-    .mission-card code {
-      font-family: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
-    }
-    .mission-chip--mono {
-      font-size: 0.72rem;
-    }
-    body.light-mode .mission-status,
-    body.light-mode .mission-chip {
-      color: #312e81;
-      background: rgba(99, 102, 241, 0.08);
-      border-color: rgba(99, 102, 241, 0.2);
-    }
-    .mission-card-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .mission-card-section {
-      display: grid;
-      gap: 0.65rem;
-    }
-    .mission-list {
-      list-style: none;
-      display: grid;
-      gap: 0.45rem;
-      color: #d7e5f5;
-      font-size: 0.92rem;
-    }
-    body.light-mode .mission-list { color: #1e293b; }
-    .mission-list li {
-      position: relative;
-      padding-left: 0.95rem;
-    }
-    .mission-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.5rem;
-      width: 0.35rem;
-      height: 0.35rem;
-      border-radius: 999px;
-      background: #38bdf8;
-    }
-    .mission-list--features .mission-feature.is-disabled {
-      color: #6b7280;
-    }
-    .mission-list--features .mission-feature.is-disabled::before {
-      background: #475569;
-    }
-    .mission-list--features .mission-feature.is-enabled::before {
-      background: #22c55e;
-    }
-    body.light-mode .mission-list--features .mission-feature.is-disabled {
-      color: #94a3b8;
-    }
-    .mission-code {
-      margin: 0;
-      overflow-x: auto;
-      padding: 0.82rem 0.9rem;
-      border-radius: 12px;
-      border: 1px solid rgba(56, 189, 248, 0.18);
-      background: rgba(2, 8, 23, 0.72);
-      color: #dbeafe;
-      font-size: 0.8rem;
-      line-height: 1.5;
-    }
-    body.light-mode .mission-code {
-      background: #f8fafc;
-      color: #0f172a;
-      border-color: rgba(148, 163, 184, 0.3);
-    }
-    .mission-browser {
-      width: min(1720px, calc(100% - 2rem));
-      margin: 0 auto 3rem;
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      gap: 1rem;
-      align-items: start;
-    }
-    .mission-sidebar,
-    .mission-stage,
-    .mission-detail-panel {
-      border: 1px solid rgba(71, 85, 105, 0.58);
-      background: rgba(8, 15, 28, 0.82);
-      border-radius: 18px;
-      box-shadow: 0 18px 48px rgba(2, 8, 23, 0.34);
-    }
-    body.light-mode .mission-sidebar,
-    body.light-mode .mission-stage,
-    body.light-mode .mission-detail-panel {
-      background: rgba(255, 255, 255, 0.92);
-      border-color: rgba(148, 163, 184, 0.3);
-      box-shadow: 0 14px 32px rgba(148, 163, 184, 0.18);
-    }
-    .mission-sidebar {
-      position: sticky;
-      top: 4.75rem;
-      padding: 1rem;
-      display: grid;
-      gap: 1rem;
-    }
-    .mission-sidebar__head {
-      display: grid;
-      gap: 0.35rem;
-    }
-    .mission-sidebar__head h2,
-    .mission-stage__header h2,
-    .mission-detail-panel h3 {
-      color: #eef5ff;
-      letter-spacing: -0.02em;
-    }
-    body.light-mode .mission-sidebar__head h2,
-    body.light-mode .mission-stage__header h2,
-    body.light-mode .mission-detail-panel h3 { color: #0f172a; }
-    .mission-sidebar__head p,
-    .mission-stage__header p,
-    .mission-template-tab__summary {
-      color: #9eb2c8;
-      line-height: 1.55;
-    }
-    body.light-mode .mission-sidebar__head p,
-    body.light-mode .mission-stage__header p,
-    body.light-mode .mission-template-tab__summary { color: #475569; }
-    .mission-template-tabs {
-      display: grid;
-      gap: 0.65rem;
-    }
-    .mission-template-tab {
-      width: 100%;
-      border-radius: 14px;
-      border: 1px solid rgba(71, 85, 105, 0.65);
-      background: rgba(15, 23, 42, 0.72);
-      color: inherit;
-      padding: 0.9rem 0.95rem;
-      text-align: left;
-      display: grid;
-      gap: 0.35rem;
-      cursor: pointer;
-      transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
-    }
-    .mission-template-tab:hover,
-    .mission-template-tab:focus-visible {
-      border-color: rgba(56, 189, 248, 0.52);
-      background: rgba(30, 41, 59, 0.88);
-    }
-    .mission-template-tab.active {
-      border-color: rgba(56, 189, 248, 0.58);
-      background: linear-gradient(180deg, rgba(37, 99, 235, 0.18), rgba(15, 23, 42, 0.88));
-      transform: translateY(-1px);
-    }
-    body.light-mode .mission-template-tab {
-      background: #f8fafc;
-      border-color: rgba(148, 163, 184, 0.35);
-    }
-    body.light-mode .mission-template-tab:hover,
-    body.light-mode .mission-template-tab:focus-visible,
-    body.light-mode .mission-template-tab.active {
-      background: rgba(219, 234, 254, 0.72);
-      border-color: rgba(59, 130, 246, 0.35);
-    }
-    .mission-template-tab__title,
-    .mission-stage__eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .mission-template-tab__title { color: #dbeafe; }
-    .mission-stage__eyebrow { color: #8bd6ff; }
-    body.light-mode .mission-template-tab__title { color: #0f172a; }
-    body.light-mode .mission-stage__eyebrow { color: #075985; }
-    .mission-stage {
-      min-width: 0;
-      padding: 1rem;
-      display: grid;
-      gap: 1rem;
-    }
-    .mission-stage__header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-    .mission-stage__meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      justify-content: flex-end;
-    }
-    .mission-meta-chip {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      border: 1px solid rgba(99, 102, 241, 0.28);
-      background: rgba(79, 70, 229, 0.14);
-      color: #dbeafe;
-      padding: 0.32rem 0.74rem;
-      font-size: 0.76rem;
-      font-weight: 600;
-      line-height: 1;
-    }
-    body.light-mode .mission-meta-chip {
-      color: #312e81;
-      background: rgba(99, 102, 241, 0.08);
-      border-color: rgba(99, 102, 241, 0.2);
-    }
-    .mission-stage__preview {
-      min-width: 0;
-    }
-    .mission-demo-frame {
-      min-height: 860px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(71, 85, 105, 0.52);
-      background: rgba(2, 8, 23, 0.88);
-    }
-    body.light-mode .mission-demo-frame {
-      background: #f8fafc;
-      border-color: rgba(148, 163, 184, 0.3);
-    }
-    .mission-demo-frame .rlwb-shell,
-    .mission-demo-frame .rlmission-shell {
-      min-height: auto;
-    }
-    .mission-demo-frame .rlwb-shell__workspace {
-      min-height: 0;
-    }
-    .mission-stage__details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .mission-detail-panel {
-      padding: 1rem;
-      display: grid;
-      gap: 0.75rem;
-    }
-    .mission-detail-panel h3 {
-      font-size: 0.95rem;
-    }
-    @media (max-width: 1200px) {
-      .mission-browser {
-        grid-template-columns: 1fr;
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RiskLab Mission Lane is a synthetic public demo of dense geospatial, temporal, 3D, charting, and mission visualization surfaces.">
+    <meta name="author" content="Ryan P. Walsh">
+    <meta name="robots" content="index,follow">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23020711'/%3E%3Cpath d='M12 48V16h18c8 0 13 4 13 11 0 5-3 9-8 10l12 11H36L25 37h-4v11H12Zm9-19h8c3 0 5-2 5-5s-2-5-5-5h-8v10Z' fill='%2347dff3'/%3E%3Cpath d='M48 16v32h-7V16h7Z' fill='%23f2b85b'/%3E%3C/svg%3E">
+    <title>RiskLab Mission Lane</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #020711;
+        --bg-2: #061525;
+        --panel: rgba(8, 24, 39, 0.76);
+        --panel-strong: rgba(9, 31, 52, 0.9);
+        --line: rgba(181, 225, 255, 0.36);
+        --line-strong: rgba(211, 239, 255, 0.66);
+        --ink: #edf8ff;
+        --muted: #9eb9ca;
+        --soft: #5f7d91;
+        --cyan: #47dff3;
+        --blue: #74baff;
+        --gold: #f2b85b;
+        --green: #83e28d;
+        --violet: #b99cff;
+        --danger: #ff776f;
+        --shadow: 0 18px 55px rgba(0, 0, 0, 0.48);
+        --radius: 8px;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
-      .mission-sidebar {
-        position: static;
+
+      * {
+        box-sizing: border-box;
       }
-    }
-    @media (max-width: 720px) {
-      .mission-browser {
-        width: min(100%, calc(100% - 1rem));
+
+      html {
+        min-height: 100%;
+        background: var(--bg);
       }
-      .mission-stage,
-      .mission-sidebar,
-      .mission-detail-panel {
-        padding: 0.9rem;
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        background:
+          linear-gradient(180deg, rgba(2, 7, 17, 0.72), rgba(2, 7, 17, 0.96)),
+          repeating-linear-gradient(90deg, rgba(91, 188, 255, 0.05) 0 1px, transparent 1px 92px),
+          repeating-linear-gradient(0deg, rgba(91, 188, 255, 0.035) 0 1px, transparent 1px 88px),
+          linear-gradient(135deg, #020711, #071827 48%, #020711);
+        overflow-x: clip;
       }
-      .mission-stage__header {
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+      }
+
+      .app-shell {
+        width: min(1920px, 100%);
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 14px;
+        display: grid;
+        grid-template-rows: auto minmax(620px, 1fr) auto auto;
+        gap: 12px;
+      }
+
+      .topbar,
+      .chart-deck,
+      .capability-ledger,
+      .site-footer {
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(12, 33, 54, 0.9), rgba(4, 16, 28, 0.82));
+        box-shadow: var(--shadow);
+        border-radius: var(--radius);
+        backdrop-filter: blur(18px);
+      }
+
+      .topbar {
+        min-height: 76px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: minmax(220px, 340px) 1fr minmax(150px, 210px);
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .brand {
+        display: grid;
+        grid-template-columns: 54px minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+        color: inherit;
+        text-decoration: none;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 54px;
+        height: 54px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(116, 186, 255, 0.85);
+        border-radius: var(--radius);
+        color: var(--cyan);
+        letter-spacing: 0;
+        box-shadow: inset 0 0 28px rgba(71, 223, 243, 0.15), 0 0 20px rgba(71, 223, 243, 0.12);
+      }
+
+      .brand strong {
+        display: block;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.05;
+      }
+
+      .brand small,
+      .metric-inline small,
+      .eyebrow,
+      .panel-label,
+      .axis-label {
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.72rem;
+      }
+
+      .modebar {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(78px, 1fr));
+        gap: 6px;
+        min-width: 0;
+      }
+
+      .mode-button {
+        min-height: 54px;
+        padding: 8px 6px;
+        border: 1px solid rgba(181, 225, 255, 0.22);
+        border-radius: var(--radius);
+        background: rgba(4, 14, 25, 0.84);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+      }
+
+      .mode-button:hover,
+      .mode-button:focus-visible {
+        border-color: rgba(71, 223, 243, 0.78);
+        outline: none;
+      }
+
+      .mode-button[aria-pressed="true"] {
+        color: #ffffff;
+        border-color: rgba(242, 184, 91, 0.92);
+        background: linear-gradient(180deg, rgba(32, 44, 48, 0.94), rgba(12, 27, 38, 0.92));
+      }
+
+      .metric-inline {
+        min-width: 0;
+        border: 1px solid rgba(181, 225, 255, 0.22);
+        border-radius: var(--radius);
+        background: rgba(4, 14, 25, 0.72);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .metric-inline strong {
+        display: block;
+        color: var(--gold);
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+        line-height: 0.95;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+      }
+
+      .mission-grid {
+        min-height: 0;
+        display: grid;
+        grid-template-columns: minmax(230px, 300px) minmax(0, 1fr) minmax(280px, 360px);
+        gap: 12px;
+        align-items: start;
+      }
+
+      .rail,
+      .map-stage,
+      .inspector {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(7, 22, 36, 0.88), rgba(3, 12, 22, 0.9));
+        box-shadow: var(--shadow);
+        overflow: clip;
+      }
+
+      .rail,
+      .inspector {
+        padding: 12px;
+        display: flex;
         flex-direction: column;
+        gap: 12px;
       }
-      .mission-stage__meta {
-        justify-content: flex-start;
+
+      .mission-title h1 {
+        margin: 4px 0 8px;
+        font-size: clamp(1.7rem, 2.7vw, 2.8rem);
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0;
       }
-      .mission-demo-frame {
-        min-height: 720px;
+
+      .mission-title p,
+      .readout p,
+      .event-row p,
+      .site-footer p {
+        margin: 0;
+        color: #d7e7f3;
+        line-height: 1.5;
       }
-    }
-    .hidden { display: none !important; }
-    :is(button, input, textarea, select, .theme-swatch):focus-visible {
-      outline: 2px solid rgba(56, 189, 248, 0.78);
-      outline-offset: 2px;
-    }
-    .sensor-toggle {
-      float: right;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #94a3b8;
-      cursor: pointer;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-    .sensor-toggle input { vertical-align: middle; accent-color: #6366f1; cursor: pointer; }
-    .sensor-toggle:hover { color: #e2e8f0; }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 1ms !important;
-        scroll-behavior: auto !important;
+
+      .package-stack {
+        display: grid;
+        gap: 8px;
       }
-      .sdk-shell { animation: none !important; }
-    }
-    .theme-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      max-width: var(--uc-header-max);
-      margin: 0 auto 0.75rem;
-      background: rgba(6, 14, 25, 0.84);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(71, 85, 105, 0.5);
-      border-radius: 10px;
-      padding: 5px 0.78rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      overflow: visible;
-      transition:
-        border-color var(--uc-dur-mid) var(--uc-ease-standard),
-        background var(--uc-dur-mid) var(--uc-ease-standard),
-        box-shadow var(--uc-dur-mid) var(--uc-ease-standard);
-    }
-    body.light-mode .theme-bar {
-      background: rgba(255, 255, 255, 0.8);
-      border-color: rgba(148, 163, 184, 0.3);
-    }
-    .theme-bar::-webkit-scrollbar { height: 4px; }
-    .theme-bar::-webkit-scrollbar-track { background: transparent; }
-    .theme-bar::-webkit-scrollbar-thumb { background: #475569; border-radius: 2px; }
-    .theme-bar-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    body.light-mode .theme-bar-label { color: #64748b; }
-    .theme-count {
-      flex-shrink: 0;
-      min-width: 28px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.28);
-      background: rgba(56, 189, 248, 0.13);
-      color: #bae6fd;
-      font-size: 0.68rem;
-      font-weight: 700;
-      text-align: center;
-      font-variant-numeric: tabular-nums;
-    }
-    body.light-mode .theme-count {
-      background: rgba(14, 165, 233, 0.08);
-      border-color: rgba(56, 189, 248, 0.24);
-      color: #0c4a6e;
-    }
-    .theme-swatch {
-      flex-shrink: 0;
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        transform var(--uc-dur-fast) var(--uc-ease-out),
-        box-shadow var(--uc-dur-fast) var(--uc-ease-standard),
-        opacity var(--uc-dur-fast) var(--uc-ease-standard);
-      position: relative;
-    }
-    .theme-swatch:hover { transform: scale(1.08); }
-    .theme-swatch.active { border-color: #38bdf8; transform: scale(1.04); box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.28); }
-    .theme-swatch[title]::after {
-      content: attr(title);
-      position: absolute;
-      bottom: -22px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 8px;
-      color: #94a3b8;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.15s;
-    }
-    .theme-swatch:hover[title]::after { opacity: 1; }
-    body.light-mode .theme-swatch[title]::after { color: #475569; }
-    .theme-mode-toggle {
-      flex-shrink: 0;
-      padding: 4px 9px;
-      border-radius: 6px;
-      border: 1px solid rgba(71, 85, 105, 0.65);
-      background: rgba(12, 20, 35, 0.72);
-      color: #e2e8f0;
-      font-size: 0.72rem;
-      cursor: pointer;
-      transition:
-        border-color var(--uc-dur-fast) var(--uc-ease-standard),
-        background var(--uc-dur-fast) var(--uc-ease-standard),
-        color var(--uc-dur-fast) var(--uc-ease-standard),
-        transform var(--uc-dur-fast) var(--uc-ease-out);
-      white-space: nowrap;
-    }
-    .theme-mode-toggle:hover { border-color: rgba(56, 189, 248, 0.58); background: rgba(56, 189, 248, 0.12); color: #f0f7ff; }
-    .theme-mode-toggle:active { transform: translateY(1px); }
-    body.light-mode .theme-mode-toggle {
-      background: #ffffff;
-      border-color: #cbd5e1;
-      color: #0f172a;
-    }
-    body.light-mode .theme-mode-toggle:hover {
-      background: rgba(14, 165, 233, 0.1);
-      border-color: #38bdf8;
-      color: #0c4a6e;
-    }
-    body.sdk-browser-mode .theme-bar {
-      max-width: 1760px;
-      margin-bottom: 0.7rem;
-      padding: 4px 0.65rem;
-      gap: 5px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-    }
-    body.sdk-browser-mode .theme-bar-label,
-    body.sdk-browser-mode .theme-count,
-    body.sdk-browser-mode .theme-mode-toggle {
-      flex-shrink: 0;
-    }
-    body.sdk-browser-mode .theme-swatch {
-      width: 14px;
-      height: 14px;
-      border-radius: 4px;
-    }
-    body.sdk-browser-mode footer { display: none; }
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; padding: 1rem; }
-      header h1 { font-size: 1.8rem; }
-      .theme-bar { position: static; }
-    }
-    @media (max-width: 980px) {
-      .sdk-shell {
-        padding: 0.9rem 1rem 2.5rem;
-        grid-template-columns: 1fr;
+
+      .package-row,
+      .readout,
+      .event-row,
+      .ledger-group {
+        border: 1px solid rgba(181, 225, 255, 0.18);
+        border-radius: var(--radius);
+        background: rgba(4, 14, 25, 0.66);
       }
-      .sdk-sidebar {
-        position: static;
-        max-height: none;
+
+      .package-row {
+        padding: 10px;
+        display: grid;
+        gap: 6px;
       }
-      .sdk-workspace {
-        grid-template-columns: 1fr;
+
+      .package-row strong {
+        color: #ffffff;
       }
-      .sdk-preview-box {
-        height: 420px;
+
+      .package-row span {
+        color: var(--muted);
+        line-height: 1.35;
+        font-size: 0.9rem;
       }
-      .sdk-editor,
-      .sdk-code-block {
-        min-height: 360px;
-      }
-    }
-    @media (max-width: 640px) {
-      .sdk-shell {
-        padding-inline: 0.75rem;
-      }
-      .mission-shell {
-        width: min(100%, calc(100% - 1rem));
-      }
-      .mission-hero,
-      .mission-card {
-        padding: 1rem;
-      }
-      .sdk-preview-box {
-        height: 320px;
-      }
-      .sdk-editor,
-      .sdk-code-block {
-        min-height: 300px;
-      }
-      .sdk-main-head,
-      .sdk-panel-head {
-        flex-direction: column;
-      }
-      .sdk-panel-head-side,
-      .sdk-panel-actions,
-      .sdk-tab-row {
+
+      .bar {
         width: 100%;
-        justify-content: flex-start;
+        height: 5px;
+        overflow: clip;
+        border-radius: 999px;
+        background: rgba(181, 225, 255, 0.12);
       }
-      .sdk-nav-item {
+
+      .bar i {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--cyan), var(--blue), var(--gold));
+      }
+
+      .map-stage {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+      }
+
+      .stage-toolbar {
+        min-height: 46px;
+        padding: 8px 10px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(181, 225, 255, 0.18);
+        background: rgba(2, 9, 18, 0.78);
+      }
+
+      .stage-toolbar strong {
+        display: block;
+        color: #ffffff;
+      }
+
+      .status-pills {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .pill {
+        border: 1px solid rgba(181, 225, 255, 0.18);
+        border-radius: 999px;
+        padding: 5px 8px;
+        color: var(--muted);
+        background: rgba(7, 22, 36, 0.7);
+        font-size: 0.76rem;
+        white-space: nowrap;
+      }
+
+      .canvas-wrap {
+        height: clamp(520px, 64vh, 760px);
+        min-height: 520px;
+        position: relative;
+        background:
+          linear-gradient(180deg, rgba(1, 8, 15, 0.2), rgba(1, 8, 15, 0.78)),
+          linear-gradient(135deg, rgba(71, 223, 243, 0.1), transparent 38%, rgba(242, 184, 91, 0.08) 72%, transparent);
+      }
+
+      #mission-canvas {
         width: 100%;
+        height: 100%;
+        min-height: 0;
+        display: block;
       }
-      .sdk-nav-item-top {
-        align-items: flex-start;
+
+      .hud {
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        pointer-events: none;
       }
-    }
-  </style>
-  <script type="module" crossorigin src="./assets/main-DbE8Wv9g.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/index-CRbE5iiy.js">
-  <link rel="stylesheet" crossorigin href="./assets/main-Jlt2jVsD.css">
-</head>
-<body>
-  <header>
-    <h1>Charts</h1>
-    <p></p>
-    <div class="header-links">
-      <button class="editor-link active" onclick="window.__uc_goto?.('all')" title="Charts">Charts</button>
-      <button class="editor-link" onclick="window.__uc_goto?.('mission')" title="Mission Templates">Mission</button>
-      <button class="editor-link editor-link--utility" onclick="window.__uc_openBuilder?.()" title="Builder">Builder</button>
-      <button class="editor-link editor-link--utility" onclick="window.__uc_openWiki?.()" title="Wiki">Wiki</button>
+
+      .hud-item {
+        border: 1px solid rgba(181, 225, 255, 0.2);
+        border-radius: var(--radius);
+        padding: 9px;
+        background: rgba(4, 14, 25, 0.76);
+        backdrop-filter: blur(14px);
+      }
+
+      .hud-item span {
+        display: block;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.66rem;
+      }
+
+      .hud-item strong {
+        display: block;
+        margin-top: 4px;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+
+      .stage-caption {
+        padding: 9px 10px;
+        border-top: 1px solid rgba(181, 225, 255, 0.18);
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.45;
+        background: rgba(2, 9, 18, 0.78);
+      }
+
+      .readout {
+        padding: 10px;
+      }
+
+      .readout h2,
+      .chart-panel h2,
+      .capability-ledger h2 {
+        margin: 0 0 8px;
+        font-size: 0.94rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #dff6ff;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .metric {
+        border-top: 1px solid rgba(181, 225, 255, 0.16);
+        padding-top: 8px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 2px;
+        font-size: 1.15rem;
+      }
+
+      .event-stream {
+        display: grid;
+        gap: 8px;
+      }
+
+      .event-row {
+        padding: 9px;
+        display: grid;
+        grid-template-columns: 46px 1fr;
+        gap: 8px;
+      }
+
+      .event-row time {
+        color: var(--gold);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .event-row strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .chart-deck {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .chart-panel {
+        min-width: 0;
+        min-height: 174px;
+        border: 1px solid rgba(181, 225, 255, 0.18);
+        border-radius: var(--radius);
+        background: rgba(4, 14, 25, 0.68);
+        padding: 10px;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        gap: 6px;
+      }
+
+      .chart-panel canvas {
+        width: 100%;
+        height: 92px;
+        min-height: 92px;
+        display: block;
+      }
+
+      .chart-panel p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.8rem;
+        line-height: 1.35;
+      }
+
+      .capability-ledger {
+        padding: 12px;
+      }
+
+      .ledger-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: end;
+        margin-bottom: 10px;
+      }
+
+      .ledger-head p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .ledger-count {
+        color: var(--gold);
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 0.95;
+        white-space: nowrap;
+      }
+
+      .ledger-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .ledger-group {
+        padding: 10px;
+        min-height: 220px;
+      }
+
+      .ledger-group h3 {
+        margin: 0 0 8px;
+        font-size: 0.85rem;
+        color: #ffffff;
+      }
+
+      .capability-list {
+        display: flex;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .capability-list span {
+        border: 1px solid rgba(181, 225, 255, 0.15);
+        border-radius: 999px;
+        padding: 4px 7px;
+        color: #cfe3ef;
+        background: rgba(2, 9, 18, 0.6);
+        font-size: 0.72rem;
+        line-height: 1.1;
+      }
+
+      .site-footer {
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        color: var(--muted);
+      }
+
+      .site-footer strong {
+        color: #ffffff;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: clip;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (max-width: 1320px) {
+        .topbar {
+          grid-template-columns: 1fr;
+        }
+
+        .modebar {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .mission-grid {
+          grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+        }
+
+        .inspector {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          align-items: start;
+        }
+
+        .chart-deck {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .ledger-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 860px) {
+        .app-shell {
+          padding: 8px;
+          grid-template-rows: auto auto auto auto;
+        }
+
+        .modebar,
+        .mission-grid,
+        .inspector,
+        .chart-deck,
+        .ledger-grid,
+        .ledger-head,
+        .hud {
+          grid-template-columns: 1fr;
+        }
+
+        .brand {
+          grid-template-columns: 44px 1fr;
+        }
+
+        .brand-mark {
+          width: 44px;
+          height: 44px;
+        }
+
+        .canvas-wrap {
+          height: 430px;
+          min-height: 430px;
+        }
+
+        #mission-canvas {
+          min-height: 0;
+        }
+
+        .hud {
+          position: static;
+          padding: 10px;
+          background: rgba(2, 9, 18, 0.68);
+        }
+
+        .site-footer {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="RiskLab Mission Lane home">
+          <span class="brand-mark" role="presentation">RL</span>
+          <span>
+            <strong>RiskLab Mission Lane</strong>
+            <small>risklab-ui + risklab-charts + risklab-mission</small>
+          </span>
+        </a>
+
+        <nav class="modebar" aria-label="Mission visualization modes">
+          <button class="mode-button" type="button" data-mode="tracks" aria-pressed="true">Tracks</button>
+          <button class="mode-button" type="button" data-mode="geojson" aria-pressed="false">GeoJSON</button>
+          <button class="mode-button" type="button" data-mode="kml" aria-pressed="false">KML</button>
+          <button class="mode-button" type="button" data-mode="laser" aria-pressed="false">Laser Points</button>
+          <button class="mode-button" type="button" data-mode="cones" aria-pressed="false">Cones</button>
+          <button class="mode-button" type="button" data-mode="surface" aria-pressed="false">3D Surface</button>
+          <button class="mode-button" type="button" data-mode="network" aria-pressed="false">Network</button>
+        </nav>
+
+        <div class="metric-inline" aria-label="Visualization family coverage">
+          <strong id="family-count">156</strong>
+          <small>visualization families</small>
+        </div>
+      </header>
+
+      <main class="mission-grid">
+        <aside class="rail" aria-label="RiskLab package integration">
+          <section class="mission-title">
+            <div class="eyebrow">Single Lane Demo</div>
+            <h1>Mission visuals without the old chart stack.</h1>
+            <p>One public lane shows the UI shell, chart engine, and mission templates working together across maps, time series, signal views, 3D geometry, and operational readouts.</p>
+          </section>
+
+          <section class="package-stack" id="package-stack" aria-label="Integrated RiskLab packages"></section>
+
+          <section class="readout">
+            <h2>Public Data Contract</h2>
+            <p>GeoJSON, KML, tracks, sensors, laser points, cones, surfaces, event streams, and chart series are loaded from one saved synthetic JSON file.</p>
+          </section>
+
+          <section class="readout">
+            <h2>Replacement Scope</h2>
+            <p>RiskLab Charts covers core charts, advanced analytics, map layers, 3D renderers, graph views, and mission visualizations from the same product lane.</p>
+          </section>
+        </aside>
+
+        <section class="map-stage" aria-label="Interactive synthetic mission visualization">
+          <div class="stage-toolbar">
+            <div>
+              <span class="eyebrow">Operating Picture</span>
+              <strong id="mode-title">Track Analysis</strong>
+            </div>
+            <div class="status-pills" aria-label="Active data layers">
+              <span class="pill">GeoJSON AOI</span>
+              <span class="pill">KML Route</span>
+              <span class="pill">Laser Map</span>
+              <span class="pill">Cone Field</span>
+              <span class="pill">3D Surface</span>
+            </div>
+          </div>
+
+          <div class="canvas-wrap">
+            <canvas id="mission-canvas" aria-label="Synthetic mission map rendering GeoJSON boundaries, KML route geometry, correlated tracks, laser point returns, cones, sensors, surface columns, and network overlays."></canvas>
+            <div class="hud" aria-label="Live mission metrics">
+              <div class="hud-item">
+                <span>Mode</span>
+                <strong id="hud-mode">Tracks</strong>
+              </div>
+              <div class="hud-item">
+                <span>Tracks</span>
+                <strong id="hud-tracks">4 correlated</strong>
+              </div>
+              <div class="hud-item">
+                <span>Spatial Layers</span>
+                <strong id="hud-layers">5 active</strong>
+              </div>
+              <div class="hud-item">
+                <span>Data Source</span>
+                <strong>Synthetic JSON</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage-caption" id="mode-description">
+            Track mode correlates synthetic surface, air, and ground paths against the saved operating area, route, sensors, and timeline.
+          </div>
+        </section>
+
+        <aside class="inspector" aria-label="Mission inspector">
+          <section class="readout">
+            <h2>Mission Readout</h2>
+            <div class="metric-grid">
+              <div class="metric">
+                <span>AOI</span>
+                <strong id="metric-aoi">3 zones</strong>
+              </div>
+              <div class="metric">
+                <span>KML</span>
+                <strong id="metric-kml">7 nodes</strong>
+              </div>
+              <div class="metric">
+                <span>Laser</span>
+                <strong id="metric-laser">12 returns</strong>
+              </div>
+              <div class="metric">
+                <span>Cones</span>
+                <strong id="metric-cones">6 fields</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="readout">
+            <h2>Mode Signal</h2>
+            <p id="mode-signal">The lane keeps map state, chart state, event state, and operational context synchronized in one workbench.</p>
+          </section>
+
+          <section class="event-stream" id="event-stream" aria-label="Synthetic mission event stream"></section>
+        </aside>
+      </main>
+
+      <section class="chart-deck" aria-label="RiskLab chart surfaces">
+        <div class="chart-panel">
+          <h2>Risk + Confidence</h2>
+          <canvas id="chart-risk" aria-label="Line and area chart showing synthetic risk and confidence series."></canvas>
+          <p>Multi-series time chart with paired operating signals.</p>
+        </div>
+        <div class="chart-panel">
+          <h2>Spectrum</h2>
+          <canvas id="chart-spectrum" aria-label="Synthetic spectrum awareness heat strip."></canvas>
+          <p>Signal occupancy view for spectrum awareness templates.</p>
+        </div>
+        <div class="chart-panel">
+          <h2>Waterfall</h2>
+          <canvas id="chart-waterfall" aria-label="Synthetic waterfall chart for staged release progress."></canvas>
+          <p>Staged contribution chart with release-state deltas.</p>
+        </div>
+        <div class="chart-panel">
+          <h2>Timeline</h2>
+          <canvas id="chart-timeline" aria-label="Synthetic mission timeline and Gantt-like lane chart."></canvas>
+          <p>Mission time, track windows, and readiness lanes.</p>
+        </div>
+        <div class="chart-panel">
+          <h2>Market Shape</h2>
+          <canvas id="chart-market" aria-label="Synthetic candlestick and volume profile chart."></canvas>
+          <p>Financial chart surface without external dependencies.</p>
+        </div>
+        <div class="chart-panel">
+          <h2>Graph</h2>
+          <canvas id="chart-graph" aria-label="Synthetic network graph showing mission relationships."></canvas>
+          <p>Entity graph, route graph, and dependency surface preview.</p>
+        </div>
+      </section>
+
+      <section class="capability-ledger" aria-label="RiskLab visualization family coverage">
+        <div class="ledger-head">
+          <div>
+            <h2>One engine, one lane, production coverage</h2>
+            <p>Core charts, advanced analytics, 3D, graphs, geospatial overlays, mission timelines, KML, GeoJSON, laser point mapping, cone fields, and signal views are represented in one public demo contract.</p>
+          </div>
+          <div class="ledger-count"><span id="ledger-count">156</span> total</div>
+        </div>
+        <div class="ledger-grid" id="catalog-grid"></div>
+      </section>
+
+      <footer class="site-footer">
+        <p><strong>RiskLab Mission Lane.</strong> Synthetic public demo data. No private methods, proprietary formulas, or non-public source material are included.</p>
+        <p>Copyright (c) 2026 Ryan Walsh. All rights reserved.</p>
+      </footer>
     </div>
-  </header>
-  <div class="theme-bar" id="theme-bar"></div>
-  <nav class="tabs" id="tabs"></nav>
-  <main class="grid" id="grid"></main>
-  <footer>
-    <p><a href="https://github.com/rpwalsh/rpwalsh.github.io">RiskLab Demo</a> | Apache-2.0</p>
-  </footer>
-</body>
+
+    <script>
+      const canvas = document.getElementById("mission-canvas");
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      const state = {
+        mode: "tracks",
+        data: null,
+        bounds: null,
+        routes: [],
+        frame: 0,
+        dpr: Math.min(window.devicePixelRatio || 1, 2)
+      };
+
+      const modeCopy = {
+        tracks: {
+          title: "Track Analysis",
+          description: "Track mode correlates synthetic surface, air, and ground paths against the saved operating area, route, sensors, and timeline.",
+          signal: "The mission shell keeps track state, chart state, event state, and operating context synchronized in one workbench."
+        },
+        geojson: {
+          title: "GeoJSON Operating Area",
+          description: "GeoJSON mode emphasizes the saved operating box, corridor polygon, and sensor range polygon as styled, inspectable mission layers.",
+          signal: "GeoJSON boundaries are treated as first-class mission objects, not background decoration."
+        },
+        kml: {
+          title: "KML Route Visualization",
+          description: "KML mode parses a saved route string from the synthetic JSON payload and renders it as a controlled path through the mission space.",
+          signal: "KML routes can be loaded, styled, inspected, and correlated with time-series and track data."
+        },
+        laser: {
+          title: "Laser Point Mapping",
+          description: "Laser mode resolves mapped returns with height and intensity, then projects them into the same operating picture as tracks and sensors.",
+          signal: "Laser point mapping is part of the same lane as charting, geospatial review, and mission inspection."
+        },
+        cones: {
+          title: "Cone Field Review",
+          description: "Cone mode shows directional coverage, radius, heading, and confidence as map geometry that can sit beside tracks and sensor rings.",
+          signal: "Cones, vectors, corridors, and projected fields can share a renderer with operational map layers."
+        },
+        surface: {
+          title: "3D Surface and Terrain",
+          description: "Surface mode renders a synthetic elevated mesh as extruded columns to show 3D terrain, contour, and field capability in the lane.",
+          signal: "The public demo uses simple synthetic geometry while showing the 3D visualization surface clearly."
+        },
+        network: {
+          title: "Mission Network Graph",
+          description: "Network mode overlays relationships among sensors, tracks, events, and route nodes to preview graph and dependency views.",
+          signal: "Graph views connect the operating picture to entities, dependencies, and decision paths."
+        }
+      };
+
+      function byId(id) {
+        return document.getElementById(id);
+      }
+
+      function colorFor(value) {
+        const colors = {
+          green: "#83e28d",
+          amber: "#f2b85b",
+          blue: "#74baff",
+          violet: "#b99cff",
+          surface: "#47dff3",
+          route: "#f2b85b",
+          aoi: "#74baff"
+        };
+        return colors[value] || "#d8f4ff";
+      }
+
+      function resizeCanvas(target) {
+        const rect = target.getBoundingClientRect();
+        const width = Math.max(1, Math.floor(rect.width * state.dpr));
+        const height = Math.max(1, Math.floor(rect.height * state.dpr));
+        if (target.width !== width || target.height !== height) {
+          target.width = width;
+          target.height = height;
+        }
+      }
+
+      function collectCoordinates(data) {
+        const coords = [];
+        data.geojson.features.forEach((feature) => {
+          feature.geometry.coordinates.flat(2).forEach((value, index, arr) => {
+            if (index % 2 === 0 && typeof value === "number" && typeof arr[index + 1] === "number") {
+              coords.push([value, arr[index + 1]]);
+            }
+          });
+        });
+        data.tracks.forEach((track) => track.points.forEach((point) => coords.push(point)));
+        data.sensors.forEach((sensor) => coords.push([sensor.lon, sensor.lat]));
+        data.laserPoints.forEach((point) => coords.push([point.lon, point.lat]));
+        data.cones.forEach((cone) => coords.push([cone.lon, cone.lat]));
+        return coords;
+      }
+
+      function getBounds(data) {
+        const coords = collectCoordinates(data);
+        const lons = coords.map((point) => point[0]);
+        const lats = coords.map((point) => point[1]);
+        const padLon = 0.018;
+        const padLat = 0.014;
+        return {
+          minLon: Math.min(...lons) - padLon,
+          maxLon: Math.max(...lons) + padLon,
+          minLat: Math.min(...lats) - padLat,
+          maxLat: Math.max(...lats) + padLat
+        };
+      }
+
+      function parseKmlCoordinates(kml) {
+        const match = kml.match(/<coordinates>([\s\S]*?)<\/coordinates>/i);
+        if (!match) return [];
+        return match[1].trim().split(/\s+/).map((chunk) => {
+          const [lon, lat, height] = chunk.split(",").map(Number);
+          return [lon, lat, height || 0];
+        });
+      }
+
+      function makeProjector(width, height) {
+        const bounds = state.bounds;
+        const mapWidth = width * 0.78;
+        const mapHeight = height * 0.62;
+        const centerX = width * 0.5;
+        const floorY = height * 0.82;
+        return (lon, lat, heightValue = 0) => {
+          const x = (lon - bounds.minLon) / (bounds.maxLon - bounds.minLon);
+          const y = (lat - bounds.minLat) / (bounds.maxLat - bounds.minLat);
+          const px = centerX + (x - 0.5) * mapWidth + (y - 0.5) * mapWidth * 0.22;
+          const py = floorY - y * mapHeight + (x - 0.5) * mapHeight * 0.08 - heightValue * 0.055 * state.dpr;
+          return [px, py];
+        };
+      }
+
+      function drawFloor(width, height) {
+        const horizon = height * 0.21;
+        const floor = height * 0.86;
+        const gradient = ctx.createLinearGradient(0, horizon, 0, floor);
+        gradient.addColorStop(0, "rgba(7, 26, 45, 0.1)");
+        gradient.addColorStop(1, "rgba(4, 24, 40, 0.76)");
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+
+        ctx.save();
+        ctx.strokeStyle = "rgba(116, 186, 255, 0.12)";
+        ctx.lineWidth = 1 * state.dpr;
+        for (let i = 0; i < 22; i += 1) {
+          const t = i / 21;
+          const y = horizon + Math.pow(t, 1.8) * (floor - horizon);
+          ctx.beginPath();
+          ctx.moveTo(width * (0.12 - t * 0.16), y);
+          ctx.lineTo(width * (0.88 + t * 0.16), y);
+          ctx.stroke();
+        }
+        for (let i = -11; i <= 11; i += 1) {
+          const offset = i / 11;
+          ctx.beginPath();
+          ctx.moveTo(width * 0.5 + offset * width * 0.14, horizon);
+          ctx.lineTo(width * 0.5 + offset * width * 0.58, floor);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      function drawGeoJson(project) {
+        state.data.geojson.features.forEach((feature, index) => {
+          const coords = feature.geometry.coordinates[0];
+          const color = index === 0 ? "#74baff" : index === 1 ? "#47dff3" : "#83e28d";
+          ctx.beginPath();
+          coords.forEach((coord, i) => {
+            const [x, y] = project(coord[0], coord[1], 0);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          });
+          ctx.closePath();
+          ctx.fillStyle = index === 0 ? "rgba(116, 186, 255, 0.08)" : "rgba(71, 223, 243, 0.08)";
+          ctx.strokeStyle = color;
+          ctx.lineWidth = (state.mode === "geojson" ? 2.4 : 1.25) * state.dpr;
+          ctx.setLineDash(index === 2 ? [8 * state.dpr, 8 * state.dpr] : []);
+          ctx.fill();
+          ctx.stroke();
+          ctx.setLineDash([]);
+        });
+      }
+
+      function drawRoute(project) {
+        const route = state.routes;
+        if (!route.length) return;
+        ctx.save();
+        ctx.beginPath();
+        route.forEach((coord, index) => {
+          const [x, y] = project(coord[0], coord[1], coord[2]);
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.strokeStyle = "rgba(242, 184, 91, 0.9)";
+        ctx.lineWidth = (state.mode === "kml" ? 4 : 2) * state.dpr;
+        ctx.shadowColor = "rgba(242, 184, 91, 0.45)";
+        ctx.shadowBlur = 18 * state.dpr;
+        ctx.stroke();
+        route.forEach((coord, index) => {
+          const [x, y] = project(coord[0], coord[1], coord[2]);
+          ctx.beginPath();
+          ctx.arc(x, y, (index === 0 || index === route.length - 1 ? 5 : 3) * state.dpr, 0, Math.PI * 2);
+          ctx.fillStyle = "#f8d18a";
+          ctx.fill();
+        });
+        ctx.restore();
+      }
+
+      function drawSensors(project) {
+        state.data.sensors.forEach((sensor) => {
+          const [x, y] = project(sensor.lon, sensor.lat, 0);
+          const r = sensor.range * 2.8 * state.dpr;
+          ctx.beginPath();
+          ctx.arc(x, y, r, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(71, 223, 243, 0.035)";
+          ctx.strokeStyle = "rgba(71, 223, 243, 0.22)";
+          ctx.lineWidth = 1 * state.dpr;
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(x, y, 5 * state.dpr, 0, Math.PI * 2);
+          ctx.fillStyle = "#dff6ff";
+          ctx.fill();
+          ctx.strokeStyle = "#47dff3";
+          ctx.stroke();
+        });
+      }
+
+      function drawTracks(project) {
+        state.data.tracks.forEach((track, trackIndex) => {
+          ctx.save();
+          ctx.beginPath();
+          track.points.forEach((point, index) => {
+            const [x, y] = project(point[0], point[1], point[2]);
+            if (index === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          });
+          ctx.strokeStyle = colorFor(track.status);
+          ctx.globalAlpha = state.mode === "tracks" ? 0.95 : 0.55;
+          ctx.lineWidth = (state.mode === "tracks" ? 2.8 : 1.4) * state.dpr;
+          ctx.shadowColor = colorFor(track.status);
+          ctx.shadowBlur = state.mode === "tracks" ? 14 * state.dpr : 4 * state.dpr;
+          ctx.stroke();
+
+          const progress = (state.frame / 120 + trackIndex * 0.17) % 1;
+          const segment = Math.min(track.points.length - 2, Math.floor(progress * (track.points.length - 1)));
+          const local = progress * (track.points.length - 1) - segment;
+          const a = track.points[segment];
+          const b = track.points[segment + 1];
+          const lon = a[0] + (b[0] - a[0]) * local;
+          const lat = a[1] + (b[1] - a[1]) * local;
+          const height = a[2] + (b[2] - a[2]) * local;
+          const [x, y] = project(lon, lat, height);
+          ctx.beginPath();
+          ctx.arc(x, y, 6 * state.dpr, 0, Math.PI * 2);
+          ctx.fillStyle = "#ffffff";
+          ctx.fill();
+          ctx.strokeStyle = colorFor(track.status);
+          ctx.lineWidth = 2 * state.dpr;
+          ctx.stroke();
+          ctx.restore();
+        });
+      }
+
+      function drawLaserPoints(project) {
+        state.data.laserPoints.forEach((point) => {
+          const [baseX, baseY] = project(point.lon, point.lat, 0);
+          const [topX, topY] = project(point.lon, point.lat, point.height);
+          ctx.save();
+          ctx.globalAlpha = state.mode === "laser" ? 1 : 0.56;
+          ctx.strokeStyle = `rgba(71, 223, 243, ${0.25 + point.intensity * 0.55})`;
+          ctx.lineWidth = (1.4 + point.intensity * 1.7) * state.dpr;
+          ctx.shadowColor = "rgba(71, 223, 243, 0.8)";
+          ctx.shadowBlur = state.mode === "laser" ? 22 * state.dpr : 8 * state.dpr;
+          ctx.beginPath();
+          ctx.moveTo(baseX, baseY);
+          ctx.lineTo(topX, topY);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(topX, topY, (3 + point.intensity * 4) * state.dpr, 0, Math.PI * 2);
+          ctx.fillStyle = "#dffcff";
+          ctx.fill();
+          ctx.restore();
+        });
+      }
+
+      function drawCones(project) {
+        state.data.cones.forEach((cone) => {
+          const [x, y] = project(cone.lon, cone.lat, 0);
+          const angle = (cone.heading - 90) * Math.PI / 180;
+          const spread = 0.45;
+          const length = cone.radius * (state.mode === "cones" ? 7.2 : 5.2) * state.dpr;
+          const p1 = [x + Math.cos(angle - spread) * length, y + Math.sin(angle - spread) * length * 0.72];
+          const p2 = [x + Math.cos(angle + spread) * length, y + Math.sin(angle + spread) * length * 0.72];
+          ctx.save();
+          ctx.globalAlpha = state.mode === "cones" ? 0.86 : 0.42;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(p1[0], p1[1]);
+          ctx.lineTo(p2[0], p2[1]);
+          ctx.closePath();
+          ctx.fillStyle = "rgba(242, 184, 91, 0.12)";
+          ctx.strokeStyle = "rgba(242, 184, 91, 0.78)";
+          ctx.lineWidth = 1.4 * state.dpr;
+          ctx.fill();
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(x, y, 4 * state.dpr, 0, Math.PI * 2);
+          ctx.fillStyle = "#f2b85b";
+          ctx.fill();
+          ctx.restore();
+        });
+      }
+
+      function drawSurface(project) {
+        const grid = state.data.surface;
+        const rows = grid.length;
+        const cols = grid[0].length;
+        const bounds = state.bounds;
+        ctx.save();
+        ctx.globalAlpha = state.mode === "surface" ? 0.95 : 0.28;
+        for (let row = 0; row < rows; row += 1) {
+          for (let col = 0; col < cols; col += 1) {
+            const lon = bounds.minLon + (col + 0.5) / cols * (bounds.maxLon - bounds.minLon);
+            const lat = bounds.minLat + (row + 0.5) / rows * (bounds.maxLat - bounds.minLat);
+            const value = grid[row][col];
+            const [x, y] = project(lon, lat, 0);
+            const height = value * 80 * state.dpr;
+            const width = 13 * state.dpr;
+            const hue = value > 0.76 ? "242, 184, 91" : value > 0.5 ? "71, 223, 243" : "116, 186, 255";
+            ctx.fillStyle = `rgba(${hue}, ${0.24 + value * 0.3})`;
+            ctx.strokeStyle = `rgba(${hue}, 0.72)`;
+            ctx.lineWidth = 1 * state.dpr;
+            ctx.beginPath();
+            ctx.rect(x - width / 2, y - height, width, height);
+            ctx.fill();
+            ctx.stroke();
+          }
+        }
+        ctx.restore();
+      }
+
+      function drawNetwork(project, width, height) {
+        const routeNodes = state.routes.map((point) => project(point[0], point[1], point[2]));
+        const sensorNodes = state.data.sensors.map((sensor) => project(sensor.lon, sensor.lat, 0));
+        const nodes = routeNodes.concat(sensorNodes);
+        ctx.save();
+        ctx.globalAlpha = state.mode === "network" ? 0.9 : 0.2;
+        ctx.strokeStyle = "rgba(185, 156, 255, 0.42)";
+        ctx.lineWidth = 1.1 * state.dpr;
+        for (let i = 0; i < nodes.length; i += 1) {
+          for (let j = i + 1; j < nodes.length; j += 3) {
+            const a = nodes[i];
+            const b = nodes[j];
+            const dx = a[0] - b[0];
+            const dy = a[1] - b[1];
+            if (Math.hypot(dx, dy) < width * 0.34) {
+              ctx.beginPath();
+              ctx.moveTo(a[0], a[1]);
+              ctx.quadraticCurveTo((a[0] + b[0]) / 2, (a[1] + b[1]) / 2 - height * 0.08, b[0], b[1]);
+              ctx.stroke();
+            }
+          }
+        }
+        nodes.forEach((node, index) => {
+          ctx.beginPath();
+          ctx.arc(node[0], node[1], (index < routeNodes.length ? 4 : 6) * state.dpr, 0, Math.PI * 2);
+          ctx.fillStyle = index < routeNodes.length ? "#f2b85b" : "#b99cff";
+          ctx.fill();
+        });
+        ctx.restore();
+      }
+
+      function drawLabels(project) {
+        ctx.save();
+        ctx.font = `${12 * state.dpr}px Inter, sans-serif`;
+        ctx.fillStyle = "rgba(237, 248, 255, 0.86)";
+        ctx.strokeStyle = "rgba(2, 7, 17, 0.8)";
+        ctx.lineWidth = 4 * state.dpr;
+        state.data.sensors.forEach((sensor) => {
+          const [x, y] = project(sensor.lon, sensor.lat, 0);
+          ctx.strokeText(sensor.id, x + 8 * state.dpr, y - 8 * state.dpr);
+          ctx.fillText(sensor.id, x + 8 * state.dpr, y - 8 * state.dpr);
+        });
+        ctx.restore();
+      }
+
+      function drawScene() {
+        if (!state.data) return;
+        resizeCanvas(canvas);
+        const width = canvas.width;
+        const height = canvas.height;
+        const project = makeProjector(width, height);
+        ctx.clearRect(0, 0, width, height);
+        drawFloor(width, height);
+        drawSurface(project);
+        drawGeoJson(project);
+        drawRoute(project);
+        drawSensors(project);
+        drawCones(project);
+        drawLaserPoints(project);
+        drawTracks(project);
+        drawNetwork(project, width, height);
+        drawLabels(project);
+      }
+
+      function canvas2d(id) {
+        const target = byId(id);
+        resizeCanvas(target);
+        const context = target.getContext("2d");
+        context.clearRect(0, 0, target.width, target.height);
+        return { target, context, width: target.width, height: target.height };
+      }
+
+      function drawLineChart() {
+        const { context, width, height } = canvas2d("chart-risk");
+        const risk = state.data.series.risk;
+        const confidence = state.data.series.confidence;
+        const drawSeries = (values, color, fill) => {
+          const min = Math.min(...values) - 8;
+          const max = Math.max(...values) + 8;
+          context.beginPath();
+          values.forEach((value, index) => {
+            const x = width * 0.06 + index / (values.length - 1) * width * 0.88;
+            const y = height * 0.88 - (value - min) / (max - min) * height * 0.72;
+            if (index === 0) context.moveTo(x, y);
+            else context.lineTo(x, y);
+          });
+          context.strokeStyle = color;
+          context.lineWidth = 2.2 * state.dpr;
+          context.stroke();
+          if (fill) {
+            context.lineTo(width * 0.94, height * 0.9);
+            context.lineTo(width * 0.06, height * 0.9);
+            context.closePath();
+            context.fillStyle = fill;
+            context.fill();
+          }
+        };
+        context.strokeStyle = "rgba(181,225,255,0.14)";
+        for (let i = 0; i < 4; i += 1) {
+          const y = height * (0.18 + i * 0.2);
+          context.beginPath();
+          context.moveTo(width * 0.04, y);
+          context.lineTo(width * 0.96, y);
+          context.stroke();
+        }
+        drawSeries(confidence, "#83e28d", "rgba(131,226,141,0.08)");
+        drawSeries(risk, "#f2b85b", null);
+      }
+
+      function drawSpectrum() {
+        const { context, width, height } = canvas2d("chart-spectrum");
+        const cols = 26;
+        const rows = 12;
+        const cellW = width / cols;
+        const cellH = height / rows;
+        for (let y = 0; y < rows; y += 1) {
+          for (let x = 0; x < cols; x += 1) {
+            const v = (Math.sin(x * 0.58) + Math.cos(y * 0.9) + Math.sin((x + y) * 0.31) + 3) / 5;
+            const cyan = Math.floor(70 + v * 120);
+            const gold = Math.floor(65 + Math.pow(v, 2) * 170);
+            context.fillStyle = `rgba(${gold}, ${cyan}, 245, ${0.18 + v * 0.52})`;
+            context.fillRect(x * cellW, y * cellH, cellW - 1, cellH - 1);
+          }
+        }
+      }
+
+      function drawWaterfall() {
+        const { context, width, height } = canvas2d("chart-waterfall");
+        const values = [8, 11, -4, 18, 7, -6, 22, 14, -5, 19];
+        let running = 30;
+        const scale = height * 0.011;
+        const gap = width * 0.018;
+        const barW = (width * 0.9 - gap * values.length) / values.length;
+        values.forEach((value, index) => {
+          const start = running;
+          running += value;
+          const x = width * 0.05 + index * (barW + gap);
+          const y1 = height * 0.88 - start * scale;
+          const y2 = height * 0.88 - running * scale;
+          const top = Math.min(y1, y2);
+          const h = Math.abs(y2 - y1);
+          context.fillStyle = value >= 0 ? "rgba(71,223,243,0.68)" : "rgba(255,119,111,0.6)";
+          context.strokeStyle = value >= 0 ? "#47dff3" : "#ff776f";
+          context.fillRect(x, top, barW, Math.max(h, 2 * state.dpr));
+          context.strokeRect(x, top, barW, Math.max(h, 2 * state.dpr));
+        });
+      }
+
+      function drawTimeline() {
+        const { context, width, height } = canvas2d("chart-timeline");
+        const lanes = [
+          ["GeoJSON", 0.05, 0.36, "#74baff"],
+          ["KML", 0.18, 0.56, "#f2b85b"],
+          ["Laser", 0.31, 0.74, "#47dff3"],
+          ["Cones", 0.44, 0.84, "#b99cff"],
+          ["Close", 0.62, 0.94, "#83e28d"]
+        ];
+        lanes.forEach((lane, index) => {
+          const y = height * (0.18 + index * 0.16);
+          context.strokeStyle = "rgba(181,225,255,0.12)";
+          context.beginPath();
+          context.moveTo(width * 0.04, y);
+          context.lineTo(width * 0.96, y);
+          context.stroke();
+          const x = width * lane[1];
+          const w = width * (lane[2] - lane[1]);
+          context.fillStyle = `${lane[3]}66`;
+          context.strokeStyle = lane[3];
+          context.fillRect(x, y - 5 * state.dpr, w, 10 * state.dpr);
+          context.strokeRect(x, y - 5 * state.dpr, w, 10 * state.dpr);
+        });
+      }
+
+      function drawMarket() {
+        const { context, width, height } = canvas2d("chart-market");
+        const base = state.data.series.throughput;
+        const count = 16;
+        const gap = width * 0.018;
+        const candleW = (width * 0.86 - gap * count) / count;
+        for (let i = 0; i < count; i += 1) {
+          const open = base[i] + Math.sin(i) * 7;
+          const close = base[i + 4] + Math.cos(i * 0.6) * 6;
+          const high = Math.max(open, close) + 9 + Math.sin(i * 0.7) * 3;
+          const low = Math.min(open, close) - 8 - Math.cos(i * 0.4) * 3;
+          const x = width * 0.07 + i * (candleW + gap) + candleW / 2;
+          const y = (v) => height * 0.86 - (v - 4) / 78 * height * 0.72;
+          const up = close >= open;
+          context.strokeStyle = up ? "#83e28d" : "#ff776f";
+          context.fillStyle = up ? "rgba(131,226,141,0.6)" : "rgba(255,119,111,0.55)";
+          context.beginPath();
+          context.moveTo(x, y(low));
+          context.lineTo(x, y(high));
+          context.stroke();
+          context.fillRect(x - candleW / 2, Math.min(y(open), y(close)), candleW, Math.max(Math.abs(y(close) - y(open)), 2 * state.dpr));
+        }
+      }
+
+      function drawGraphChart() {
+        const { context, width, height } = canvas2d("chart-graph");
+        const nodes = [
+          [0.18, 0.55, "#47dff3"], [0.34, 0.25, "#74baff"], [0.51, 0.58, "#f2b85b"],
+          [0.68, 0.28, "#b99cff"], [0.82, 0.62, "#83e28d"], [0.43, 0.78, "#ffffff"]
+        ];
+        const links = [[0,1],[0,2],[1,3],[2,3],[2,5],[3,4],[5,4],[1,5]];
+        context.strokeStyle = "rgba(181,225,255,0.28)";
+        context.lineWidth = 1.2 * state.dpr;
+        links.forEach(([a, b]) => {
+          const n1 = nodes[a];
+          const n2 = nodes[b];
+          context.beginPath();
+          context.moveTo(n1[0] * width, n1[1] * height);
+          context.lineTo(n2[0] * width, n2[1] * height);
+          context.stroke();
+        });
+        nodes.forEach((node) => {
+          context.beginPath();
+          context.arc(node[0] * width, node[1] * height, 7 * state.dpr, 0, Math.PI * 2);
+          context.fillStyle = node[2];
+          context.fill();
+          context.strokeStyle = "rgba(255,255,255,0.8)";
+          context.stroke();
+        });
+      }
+
+      function drawCharts() {
+        if (!state.data) return;
+        drawLineChart();
+        drawSpectrum();
+        drawWaterfall();
+        drawTimeline();
+        drawMarket();
+        drawGraphChart();
+      }
+
+      function renderPackages() {
+        const stack = byId("package-stack");
+        stack.innerHTML = state.data.packages.map((item, index) => {
+          const progress = [96, 92, 89][index];
+          return `
+            <article class="package-row">
+              <strong>${item.name}</strong>
+              <span>${item.role}</span>
+              <div class="bar" role="presentation"><i style="width:${progress}%"></i></div>
+            </article>
+          `;
+        }).join("");
+      }
+
+      function renderEvents() {
+        byId("event-stream").innerHTML = state.data.events.map((event) => `
+          <article class="event-row">
+            <time>${event.time}</time>
+            <div>
+              <strong>${event.kind}</strong>
+              <p>${event.message}</p>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      function renderCatalog() {
+        const count = state.data.capabilityCatalog.reduce((total, group) => total + group.items.length, 0);
+        byId("family-count").textContent = count;
+        byId("ledger-count").textContent = count;
+        byId("catalog-grid").innerHTML = state.data.capabilityCatalog.map((group) => `
+          <article class="ledger-group">
+            <h3>${group.group} (${group.items.length})</h3>
+            <div class="capability-list">
+              ${group.items.map((item) => `<span>${item}</span>`).join("")}
+            </div>
+          </article>
+        `).join("");
+      }
+
+      function updateMode(mode) {
+        state.mode = mode;
+        document.querySelectorAll(".mode-button").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.mode === mode));
+        });
+        const copy = modeCopy[mode];
+        byId("mode-title").textContent = copy.title;
+        byId("mode-description").textContent = copy.description;
+        byId("mode-signal").textContent = copy.signal;
+        byId("hud-mode").textContent = copy.title.replace(" Visualization", "");
+        drawScene();
+      }
+
+      function updateMetrics() {
+        byId("hud-tracks").textContent = `${state.data.tracks.length} correlated`;
+        byId("hud-layers").textContent = "5 active";
+        byId("metric-aoi").textContent = `${state.data.geojson.features.length} zones`;
+        byId("metric-kml").textContent = `${state.routes.length} nodes`;
+        byId("metric-laser").textContent = `${state.data.laserPoints.length} returns`;
+        byId("metric-cones").textContent = `${state.data.cones.length} fields`;
+      }
+
+      function animate() {
+        state.frame += 1;
+        drawScene();
+        requestAnimationFrame(animate);
+      }
+
+      async function init() {
+        const response = await fetch("assets/risklab-lane.synthetic.json");
+        state.data = await response.json();
+        state.bounds = getBounds(state.data);
+        state.routes = parseKmlCoordinates(state.data.kml);
+        renderPackages();
+        renderEvents();
+        renderCatalog();
+        updateMetrics();
+        updateMode("tracks");
+        drawCharts();
+        animate();
+      }
+
+      document.querySelectorAll(".mode-button").forEach((button) => {
+        button.addEventListener("click", () => updateMode(button.dataset.mode));
+      });
+
+      window.addEventListener("resize", () => {
+        drawScene();
+        drawCharts();
+      });
+
+      init().catch((error) => {
+        document.body.insertAdjacentHTML("afterbegin", `<p role="alert" style="padding:12px;color:#ffb8b3;background:#220b0a">RiskLab demo data failed to load: ${error.message}</p>`);
+      });
+    </script>
+  </body>
 </html>
