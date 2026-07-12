@@ -135190,8 +135190,20 @@
           "layers": 7,
           "initialAzimuth": -0.54,
           "initialPolar": 0.62,
-          "initialDistance": 13.8,
-          "zoom": 1.04
+          "initialDistance": 9,
+          "zoom": 1.28,
+          "axes": {
+            "x": {
+              "label": "Adaptation cycle"
+            },
+            "y": {
+              "label": "Operational scale"
+            },
+            "z": {
+              "label": "Fused confidence",
+              "unit": "score"
+            }
+          }
         },
         "accessibility": {
           "enabled": true,
