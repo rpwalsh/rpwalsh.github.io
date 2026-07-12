@@ -111359,7 +111359,12 @@
           "initialAzimuth": -0.54,
           "initialPolar": 0.78,
           "initialDistance": 12,
-          "zoom": 1.04
+          "zoom": 1.65,
+          "axes": {
+            "x": { "label": "Finish position" },
+            "y": { "label": "Scenario" },
+            "z": { "label": "Probability" }
+          }
         },
         "accessibility": {
           "enabled": true,
