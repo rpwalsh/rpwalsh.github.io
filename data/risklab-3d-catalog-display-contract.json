@@ -120109,17 +120109,23 @@
             "wheel": true
           }
         },
-        "graph3d": {
-          "layout": "auto",
-          "autoRotate": true,
-          "nodeBaseSize": 16,
-          "edgeOpacity": 0.58,
-          "initialDistance": 14.5,
-          "walks": {
-            "enabled": true,
-            "count": 6,
-            "speed": 0.41000000000000003,
-            "trailLength": 138
+        "challenge3d": {
+          "initialAzimuth": -0.42,
+          "initialPolar": 0.62,
+          "initialDistance": 8,
+          "zoom": 1.45,
+          "axes": {
+            "x": {
+              "label": "Observation window",
+              "unit": "sample"
+            },
+            "y": {
+              "label": "Evidence lane"
+            },
+            "z": {
+              "label": "Deviation",
+              "unit": "sigma"
+            }
           }
         }
       }
