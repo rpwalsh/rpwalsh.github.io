@@ -118604,10 +118604,23 @@
         "challenge3d": {
           "alpha": 0.72,
           "layers": 7,
-          "initialAzimuth": -0.54,
-          "initialPolar": 0.74,
-          "initialDistance": 12,
-          "zoom": 1.04
+          "initialAzimuth": -0.38,
+          "initialPolar": 0.58,
+          "initialDistance": 8,
+          "zoom": 1.55,
+          "axes": {
+            "x": {
+              "label": "Observation window",
+              "unit": "sample"
+            },
+            "y": {
+              "label": "Evidence lane"
+            },
+            "z": {
+              "label": "Behavior score",
+              "unit": "index"
+            }
+          }
         },
         "accessibility": {
           "enabled": true,
