@@ -99795,8 +99795,8 @@
           "contours": false,
           "contourInterval": 340,
           "initialAzimuth": -0.6799999999999999,
-          "initialPolar": 1.02,
-          "initialDistance": 82,
+          "initialPolar": 0.62,
+          "initialDistance": 5.8,
           "wireframe": false
         }
       }
@@ -108627,7 +108627,7 @@
           "contourInterval": 190,
           "initialAzimuth": -0.31999999999999995,
           "initialPolar": 1.02,
-          "initialDistance": 82,
+          "initialDistance": 3.4,
           "wireframe": false
         }
       }
@@ -117010,7 +117010,7 @@
           "contourInterval": 140,
           "initialAzimuth": -0.6799999999999999,
           "initialPolar": 1.02,
-          "initialDistance": 82,
+          "initialDistance": 3.2,
           "wireframe": true
         },
         "title": {
@@ -131832,7 +131832,7 @@
           "contourInterval": 190,
           "initialAzimuth": -0.6799999999999999,
           "initialPolar": 1.02,
-          "initialDistance": 82,
+          "initialDistance": 3.4,
           "wireframe": false
         }
       }
