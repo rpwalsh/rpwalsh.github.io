@@ -117006,17 +117006,22 @@
           }
         },
         "terrain3d": {
-          "gridWidth": 42,
-          "gridHeight": 34,
+          "gridWidth": 16,
+          "gridHeight": 15,
           "colormap": "gray",
           "exaggeration": 0.82,
           "lighting": true,
-          "contours": false,
-          "contourInterval": 140,
+          "contours": true,
+          "contourInterval": 0.5,
           "initialAzimuth": -0.6799999999999999,
           "initialPolar": 1.02,
           "initialDistance": 3.2,
-          "wireframe": true
+          "wireframe": true,
+          "axes": {
+            "x": { "label": "Longitude", "unit": "°" },
+            "y": { "label": "Latitude", "unit": "°" },
+            "z": { "label": "Threat intensity" }
+          }
         },
         "title": {
           "text": "Operational Threat Surface"
