@@ -198,6 +198,9 @@
       font-weight: 760;
       color: var(--text);
     }
+    .json-tools { display: flex; align-items: center; gap: 0.38rem; }
+    .json-tools button { border: 1px solid var(--border); background: var(--bg-input); color: var(--text-muted); padding: 0.28rem 0.48rem; font: 700 0.66rem/1 Inter, sans-serif; cursor: pointer; }
+    .json-tools button:hover { border-color: var(--accent); color: var(--text); }
 
     .panel-head small {
       color: var(--text-muted);
@@ -403,9 +406,9 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="../assets/builder-BKD3YAmQ.js"></script>
+  <script type="module" crossorigin src="../assets/builder-WFGekbLW.js"></script>
   <link rel="modulepreload" crossorigin href="../assets/header-DjhvEMjA.js">
-  <link rel="modulepreload" crossorigin href="../assets/charts-core-sUyceADZ.js">
+  <link rel="modulepreload" crossorigin href="../assets/charts-core-BR2BOhBd.js">
 </head>
 <body>
   <header id="site-header">
@@ -508,7 +511,7 @@
     <section class="panel">
       <div class="panel-head">
         <h2>Chart JSON</h2>
-        <small id="json-state">Live</small>
+        <div class="json-tools"><small id="json-state">Live</small><button id="json-format-btn" type="button">Format</button><button id="json-reset-btn" type="button">Reset</button></div>
       </div>
       <div class="json-body">
         <div class="json-meta">
