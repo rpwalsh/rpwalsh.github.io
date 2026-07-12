@@ -1503,15 +1503,15 @@
     body.sdk-browser-mode footer { display: none; }
     /* ── SDK browser mode (Charts) – full-height tactical style ────── */
     body.sdk-browser-mode {
-      height: 100dvh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      min-height: 100dvh;
+      height: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: block;
     }
     body.sdk-browser-mode main.grid {
-      flex: 1 1 0%;
-      min-height: 0;
-      overflow-y: auto;
+      min-height: calc(100dvh - 48px);
+      overflow-y: visible;
       overflow-x: hidden;
       display: block;
     }
@@ -1704,15 +1704,15 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="./assets/main-D38jwaTy.js"></script>
+  <script type="module" crossorigin src="./assets/main-B99UvxLu.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/header-DjhvEMjA.js">
   <link rel="modulepreload" crossorigin href="./assets/react-runtime-D6y62UW6.js">
   <link rel="modulepreload" crossorigin href="./assets/ui-runtime-DQAsaMoQ.js">
-  <link rel="modulepreload" crossorigin href="./assets/charts-core-DsKHz58B.js">
+  <link rel="modulepreload" crossorigin href="./assets/charts-core-C10HlHED.js">
   <link rel="modulepreload" crossorigin href="./assets/site-data-C8YcNxDh.js">
-  <link rel="modulepreload" crossorigin href="./assets/mission-runtime-D2Df4_hh.js">
+  <link rel="modulepreload" crossorigin href="./assets/mission-runtime-C9ObbS_Y.js">
   <link rel="stylesheet" crossorigin href="./assets/ui-runtime-YbmqX44M.css">
-  <link rel="stylesheet" crossorigin href="./assets/mission-runtime-oSzRPVWe.css">
+  <link rel="stylesheet" crossorigin href="./assets/mission-runtime-wEkdoSUk.css">
 </head>
 <body>
   <header>
