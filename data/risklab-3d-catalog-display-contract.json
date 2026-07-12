@@ -114540,16 +114540,16 @@
           }
         },
         "graph3d": {
-          "layout": "force",
-          "autoRotate": true,
-          "nodeBaseSize": 16,
-          "edgeOpacity": 0.58,
-          "initialDistance": 15.5,
+          "layout": "fixed",
+          "autoRotate": false,
+          "nodeBaseSize": 11,
+          "edgeOpacity": 0.42,
+          "initialDistance": 4.8,
           "walks": {
-            "enabled": true,
-            "count": 7,
-            "speed": 0.41000000000000003,
-            "trailLength": 134
+            "enabled": false,
+            "count": 0,
+            "speed": 0.2,
+            "trailLength": 0
           }
         },
         "title": {
