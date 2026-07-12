@@ -108623,7 +108623,7 @@
           "colormap": "gray",
           "exaggeration": 1.04,
           "lighting": true,
-          "contours": false,
+          "contours": true,
           "contourInterval": 190,
           "initialAzimuth": -0.31999999999999995,
           "initialPolar": 1.02,
@@ -109825,7 +109825,7 @@
           "initialAzimuth": -0.54,
           "initialPolar": 0.62,
           "initialDistance": 13.6,
-          "zoom": 1.04
+          "zoom": 1.6
         },
         "accessibility": {
           "enabled": true,
