@@ -101432,16 +101432,16 @@
           }
         },
         "graph3d": {
-          "layout": "auto",
-          "autoRotate": true,
-          "nodeBaseSize": 16,
-          "edgeOpacity": 0.58,
-          "initialDistance": 11.5,
+          "layout": "fixed",
+          "autoRotate": false,
+          "nodeBaseSize": 13,
+          "edgeOpacity": 0.46,
+          "initialDistance": 7.6,
           "walks": {
             "enabled": true,
-            "count": 3,
-            "speed": 0.41000000000000003,
-            "trailLength": 130
+            "count": 2,
+            "speed": 0.2,
+            "trailLength": 72
           }
         }
       }
