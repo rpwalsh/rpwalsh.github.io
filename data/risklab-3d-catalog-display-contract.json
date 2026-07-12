@@ -91010,7 +91010,12 @@
           "initialAzimuth": -0.54,
           "initialPolar": 0.62,
           "initialDistance": 13.4,
-          "zoom": 1.04
+          "zoom": 1.45,
+          "axes": {
+            "x": { "label": "Correlation axis" },
+            "y": { "label": "Source separation" },
+            "z": { "label": "Fusion sequence" }
+          }
         },
         "accessibility": {
           "enabled": true,
