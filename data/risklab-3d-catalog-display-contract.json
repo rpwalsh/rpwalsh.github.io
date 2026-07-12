@@ -120141,8 +120141,8 @@
             "data": [
               {
                 "x": -4.5,
-                "y": 0,
-                "z": -0.5,
+                "y": -1.75,
+                "z": 1.15,
                 "label": "Policy Change",
                 "color": "#ef4444",
                 "meta": {
@@ -120155,8 +120155,8 @@
               },
               {
                 "x": -3.2199999999999998,
-                "y": 0,
-                "z": 0,
+                "y": -1.25,
+                "z": 1.83,
                 "label": "Contract Award",
                 "color": "#f97316",
                 "meta": {
@@ -120169,8 +120169,8 @@
               },
               {
                 "x": -1.94,
-                "y": 0,
-                "z": 0.5,
+                "y": -0.75,
+                "z": -1.2,
                 "label": "Off-Balance Transaction",
                 "color": "#eab308",
                 "meta": {
@@ -120183,8 +120183,8 @@
               },
               {
                 "x": -0.6600000000000001,
-                "y": 0,
-                "z": -0.5,
+                "y": -0.25,
+                "z": -0.52,
                 "label": "Counsel Review",
                 "color": "#a3e635",
                 "meta": {
@@ -120197,8 +120197,8 @@
               },
               {
                 "x": 0.6200000000000001,
-                "y": 0,
-                "z": 0,
+                "y": 0.25,
+                "z": 0.16,
                 "label": "Escrow Hold",
                 "color": "#22c55e",
                 "meta": {
@@ -120211,8 +120211,8 @@
               },
               {
                 "x": 1.9000000000000004,
-                "y": 0,
-                "z": 0.5,
+                "y": 0.75,
+                "z": 0.84,
                 "label": "Leadership Change",
                 "color": "#14b8a6",
                 "meta": {
@@ -120225,8 +120225,8 @@
               },
               {
                 "x": 3.1799999999999997,
-                "y": 0,
-                "z": -0.5,
+                "y": 1.25,
+                "z": 1.52,
                 "label": "Decision Window",
                 "color": "#38bdf8",
                 "meta": {
@@ -120239,8 +120239,8 @@
               },
               {
                 "x": 4.460000000000001,
-                "y": 0,
-                "z": 0,
+                "y": 1.75,
+                "z": 2.2,
                 "label": "Control Action",
                 "color": "#a78bfa",
                 "meta": {
@@ -120280,10 +120280,23 @@
         "challenge3d": {
           "alpha": 0.72,
           "layers": 7,
-          "initialAzimuth": -0.54,
-          "initialPolar": 0.68,
-          "initialDistance": 12,
-          "zoom": 1.04
+          "initialAzimuth": -0.38,
+          "initialPolar": 0.64,
+          "initialDistance": 8,
+          "zoom": 1.45,
+          "axes": {
+            "x": {
+              "label": "Decision window",
+              "unit": "day"
+            },
+            "y": {
+              "label": "Control owner"
+            },
+            "z": {
+              "label": "Severity",
+              "unit": "index"
+            }
+          }
         },
         "accessibility": {
           "enabled": true,
