@@ -1,11 +1,11 @@
 {
   "mission-overview": {
-    "palette": ["#8ba47d", "#647a63", "#d3a061", "#b76647", "#aab78a", "#526652"],
+    "palette": ["#38bdf8", "#2563eb", "#8b5cf6", "#f59e0b", "#ef4444", "#22d3ee"],
     "visualProfile": {
       "signalVariant": "bars",
       "theaterMode": "fusion",
       "correlationMode": "heatmap",
-      "graphMode": "network",
+      "graphMode": "alphaLaplacianGraph3d",
       "timelineMode": "line",
       "gaugeMode": "donut"
     }
