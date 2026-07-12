@@ -117074,7 +117074,7 @@
                 "id": "contract-77",
                 "x": -1.2,
                 "y": 1.7,
-                "z": 0,
+                "z": 0.65,
                 "label": "Contract 77",
                 "meta": {
                   "id": "contract-77",
@@ -117094,7 +117094,7 @@
                 "id": "vendor-3",
                 "x": 0.2,
                 "y": 1.1,
-                "z": 0,
+                "z": 1.3,
                 "label": "Vendor 3",
                 "meta": {
                   "id": "vendor-3",
@@ -117114,7 +117114,7 @@
                 "id": "payment-441",
                 "x": 1.6,
                 "y": 0.5,
-                "z": 0,
+                "z": 1.95,
                 "label": "Payment 441",
                 "meta": {
                   "id": "payment-441",
@@ -117134,7 +117134,7 @@
                 "id": "trade-19",
                 "x": 2.3,
                 "y": -1,
-                "z": 0,
+                "z": 2.6,
                 "label": "Trade 19",
                 "meta": {
                   "id": "trade-19",
@@ -117149,7 +117149,7 @@
                 "id": "policy-change",
                 "x": -0.7,
                 "y": -1.5,
-                "z": 0,
+                "z": -0.65,
                 "label": "Policy Change",
                 "meta": {
                   "id": "policy-change",
@@ -117192,16 +117192,16 @@
           }
         },
         "graph3d": {
-          "layout": "auto",
-          "autoRotate": true,
-          "nodeBaseSize": 14,
-          "edgeOpacity": 0.58,
-          "initialDistance": 12.5,
+          "layout": "fixed",
+          "autoRotate": false,
+          "nodeBaseSize": 15,
+          "edgeOpacity": 0.68,
+          "initialDistance": 5.8,
           "walks": {
             "enabled": true,
-            "count": 4,
-            "speed": 0.34,
-            "trailLength": 136
+            "count": 2,
+            "speed": 0.2,
+            "trailLength": 72
           }
         },
         "title": {
