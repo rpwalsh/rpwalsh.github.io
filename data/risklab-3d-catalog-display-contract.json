@@ -124672,10 +124672,22 @@
         "challenge3d": {
           "alpha": 0.72,
           "layers": 7,
-          "initialAzimuth": -0.54,
-          "initialPolar": 0.76,
-          "initialDistance": 12,
-          "zoom": 1.04
+          "initialAzimuth": -0.22,
+          "initialPolar": 0.56,
+          "initialDistance": 8.5,
+          "zoom": 1.18,
+          "axes": {
+            "x": {
+              "label": "Telemetry window",
+              "unit": "sample"
+            },
+            "y": {
+              "label": "Sensor channel"
+            },
+            "z": {
+              "label": "Normalized signal"
+            }
+          }
         },
         "accessibility": {
           "enabled": true,
