@@ -131880,14 +131880,26 @@
           "gridWidth": 42,
           "gridHeight": 34,
           "colormap": "viridis",
-          "exaggeration": 1.04,
+          "exaggeration": 0.48,
           "lighting": true,
-          "contours": false,
+          "contours": true,
           "contourInterval": 190,
-          "initialAzimuth": -0.6799999999999999,
-          "initialPolar": 1.02,
-          "initialDistance": 3.4,
-          "wireframe": false
+          "initialAzimuth": -0.58,
+          "initialPolar": 0.65,
+          "initialDistance": 4.4,
+          "wireframe": true,
+          "axes": {
+            "x": {
+              "label": "Resource class"
+            },
+            "y": {
+              "label": "Planning window"
+            },
+            "z": {
+              "label": "Allocation score",
+              "unit": "index"
+            }
+          }
         }
       }
     },
