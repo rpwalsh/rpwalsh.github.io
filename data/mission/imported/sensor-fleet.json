@@ -903,7 +903,7 @@
     "adsbSummary": {
       "total": 1,
       "airborne": 0,
-      "military": 1
+      "priority": 1
     }
   }
 }

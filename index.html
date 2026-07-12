@@ -47,8 +47,10 @@
       min-height: 100vh;
     }
     body.mission-mode {
+      min-height: 100dvh;
       height: 100dvh;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
       background:
         linear-gradient(180deg, var(--uc-page-bg) 0%, color-mix(in srgb, var(--uc-page-bg) 97%, #000 3%) 100%);
     }
@@ -357,6 +359,18 @@
     body.mission-mode .grid.grid--mission {
       display: flex;
       flex-direction: column;
+    }
+    body.mission-mode > header {
+      position: relative;
+      z-index: 10000;
+      flex: 0 0 auto;
+      isolation: isolate;
+    }
+    body.mission-mode > header [role="listbox"],
+    body.mission-mode > header [role="menu"],
+    body.mission-mode > header .theme-popover,
+    body.mission-mode > header .palette-popover {
+      z-index: 10001 !important;
     }
     .card {
       background: var(--uc-page-panel);
@@ -1704,13 +1718,12 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="./assets/main-B99UvxLu.js"></script>
+  <script type="module" crossorigin src="./assets/main-C__iVAdd.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/header-DjhvEMjA.js">
-  <link rel="modulepreload" crossorigin href="./assets/react-runtime-D6y62UW6.js">
-  <link rel="modulepreload" crossorigin href="./assets/ui-runtime-DQAsaMoQ.js">
-  <link rel="modulepreload" crossorigin href="./assets/charts-core-C10HlHED.js">
-  <link rel="modulepreload" crossorigin href="./assets/site-data-C8YcNxDh.js">
-  <link rel="modulepreload" crossorigin href="./assets/mission-runtime-C9ObbS_Y.js">
+  <link rel="modulepreload" crossorigin href="./assets/ui-runtime--XJHDLIg.js">
+  <link rel="modulepreload" crossorigin href="./assets/mission-runtime-DwdT1PVp.js">
+  <link rel="modulepreload" crossorigin href="./assets/charts-core-C3s5eCRV.js">
+  <link rel="modulepreload" crossorigin href="./assets/site-data-DepQQL70.js">
   <link rel="stylesheet" crossorigin href="./assets/ui-runtime-YbmqX44M.css">
   <link rel="stylesheet" crossorigin href="./assets/mission-runtime-wEkdoSUk.css">
 </head>
@@ -1733,6 +1746,6 @@
   <main class="grid" id="grid"></main>
   <footer>
     <p><a href="https://github.com/rpwalsh/rpwalsh.github.io">RiskLab Command Demo</a> | Copyright (c) 2026 Ryan Walsh. All rights reserved.</p>
-  </footer>
+  </footer>
 </body>
 </html>

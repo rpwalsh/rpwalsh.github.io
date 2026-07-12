@@ -1145,7 +1145,7 @@
     "adsbSummary": {
       "total": 2,
       "airborne": 0,
-      "military": 1
+      "priority": 1
     }
   }
 }
