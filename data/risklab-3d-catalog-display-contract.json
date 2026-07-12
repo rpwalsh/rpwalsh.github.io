@@ -75933,7 +75933,7 @@
           {
             "id": "alpha-fabric",
             "name": "Alpha-Laplacian Fabric",
-            "type": "terrain3d",
+            "type": "spectralSurface3d",
             "data": [
               {
                 "x": -3,
@@ -77392,12 +77392,23 @@
           }
         },
         "challenge3d": {
+          "axes": {
+            "x": {
+              "label": "State coordinate"
+            },
+            "y": {
+              "label": "Channel coordinate"
+            },
+            "z": {
+              "label": "Relevance score"
+            }
+          },
           "alpha": 0.72,
           "layers": 7,
           "initialAzimuth": -0.54,
           "initialPolar": 0.62,
           "initialDistance": 13.2,
-          "zoom": 1.04
+          "zoom": 1.75
         },
         "accessibility": {
           "enabled": true,
@@ -77426,7 +77437,7 @@
           "wireframe": true,
           "initialAzimuth": -0.72,
           "initialPolar": 0.86,
-          "initialDistance": 18
+          "initialDistance": 2
         }
       }
     },
@@ -77444,9 +77455,13 @@
                 "x": -4.6,
                 "y": 0.4,
                 "z": -1.5,
-                "label": "Ingest",
+                "label": "Observed State",
                 "meta": {
                   "size": 0.8,
+                  "horizonHours": 0,
+                  "confidencePct": 98,
+                  "observationCount": 4872,
+                  "state": "observed",
                   "edges": [
                     {
                       "target": "model",
@@ -77460,9 +77475,13 @@
                 "x": -2.499,
                 "y": 1.254,
                 "z": -0.542,
-                "label": "Model",
+                "label": "Projected State",
                 "meta": {
                   "size": 0.96,
+                  "horizonHours": 2,
+                  "confidencePct": 94,
+                  "observationCount": 4872,
+                  "state": "projected",
                   "edges": [
                     {
                       "target": "detect",
@@ -77476,9 +77495,13 @@
                 "x": -0.291,
                 "y": 2.058,
                 "z": 0.389,
-                "label": "Detect",
+                "label": "Lead Signal",
                 "meta": {
                   "size": 1.12,
+                  "horizonHours": 8,
+                  "confidencePct": 89,
+                  "observationCount": 3610,
+                  "state": "lead-signal",
                   "edges": [
                     {
                       "target": "decide",
@@ -77496,9 +77519,13 @@
                 "x": 2.117,
                 "y": 1.101,
                 "z": 1.078,
-                "label": "Decide",
+                "label": "Decision Window",
                 "meta": {
                   "size": 1.28,
+                  "horizonHours": 18,
+                  "confidencePct": 82,
+                  "observationCount": 2894,
+                  "state": "decision-window",
                   "edges": [
                     {
                       "target": "control",
@@ -77512,9 +77539,13 @@
                 "x": 4.309,
                 "y": 0.035,
                 "z": 1.63,
-                "label": "Control",
+                "label": "Controlled State",
                 "meta": {
                   "size": 0.8,
+                  "horizonHours": 24,
+                  "confidencePct": 77,
+                  "observationCount": 2218,
+                  "state": "controlled",
                   "edges": []
                 }
               },
@@ -77523,9 +77554,13 @@
                 "x": -0.915,
                 "y": -1.872,
                 "z": 0.768,
-                "label": "Evidence",
+                "label": "Evidence Match",
                 "meta": {
                   "size": 0.96,
+                  "horizonHours": 6,
+                  "confidencePct": 91,
+                  "observationCount": 4127,
+                  "state": "corroborated",
                   "edges": [
                     {
                       "target": "operator",
@@ -77539,9 +77574,13 @@
                 "x": 2.366,
                 "y": -1.604,
                 "z": -0.278,
-                "label": "Operator",
+                "label": "Review Gate",
                 "meta": {
                   "size": 1.12,
+                  "horizonHours": 12,
+                  "confidencePct": 86,
+                  "observationCount": 3276,
+                  "state": "review",
                   "edges": [
                     {
                       "target": "decide",
@@ -77602,31 +77641,45 @@
         },
         "graph3d": {
           "layout": "fixed",
-          "autoRotate": true,
-          "nodeBaseSize": 15,
+          "autoRotate": false,
+          "nodeBaseSize": 18,
           "edgeOpacity": 0.72,
-          "initialDistance": 13,
+          "initialDistance": 6.3,
           "walks": {
             "enabled": true,
             "count": 3,
             "speed": 0.42,
-          "trailLength": 54,
-          "paths": [
-            {
-              "id": "primary-control",
-              "label": "PRIMARY CONTROL",
-              "nodeIds": ["ingest", "model", "detect", "decide", "control"],
-              "color": "#38bdf8",
-              "speed": 0.44
-            },
-            {
-              "id": "evidence-review",
-              "label": "EVIDENCE REVIEW",
-              "nodeIds": ["ingest", "model", "detect", "evidence", "operator", "decide", "control"],
-              "color": "#f59e0b",
-              "speed": 0.36
-            }
-          ]
+            "trailLength": 54,
+            "paths": [
+              {
+                "id": "primary-control",
+                "label": "HIGHEST CONFIDENCE PATH",
+                "nodeIds": [
+                  "ingest",
+                  "model",
+                  "detect",
+                  "decide",
+                  "control"
+                ],
+                "color": "#38bdf8",
+                "speed": 0.44
+              },
+              {
+                "id": "evidence-review",
+                "label": "EVIDENCE-CONSTRAINED PATH",
+                "nodeIds": [
+                  "ingest",
+                  "model",
+                  "detect",
+                  "evidence",
+                  "operator",
+                  "decide",
+                  "control"
+                ],
+                "color": "#f59e0b",
+                "speed": 0.36
+              }
+            ]
           }
         }
       }
@@ -88976,7 +89029,7 @@
           "initialAzimuth": -0.54,
           "initialPolar": 0.62,
           "initialDistance": 11.8,
-          "zoom": 1.04
+          "zoom": 1.7
         },
         "accessibility": {
           "enabled": true,
