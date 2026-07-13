@@ -1,0 +1,10 @@
+{
+  "version": "risklab.site-packages/v1",
+  "generatedAt": "2026-07-12",
+  "packages": {
+    "@risklab/charts": "9db2198f0cea5a8ec735b49c0039e9d575db4b57",
+    "@risklab/ui": "427455cfe95ca5cb0b1883bb6ca2a483b491cca3",
+    "@risklab/styler": "6d70882c3286b9156cb52da3c62e07571545389e",
+    "@risklab/icons": "ab9efacb8d25c7646a163022ff8eb31a076b389d"
+  }
+}

@@ -1,0 +1,4807 @@
+[
+  {
+    "name": "plus",
+    "category": "actions",
+    "keywords": [
+      "add",
+      "create",
+      "new"
+    ]
+  },
+  {
+    "name": "plus-circle",
+    "category": "actions",
+    "keywords": [
+      "add",
+      "create",
+      "new",
+      "round"
+    ]
+  },
+  {
+    "name": "plus-square",
+    "category": "actions",
+    "keywords": [
+      "add",
+      "create",
+      "new",
+      "boxed"
+    ]
+  },
+  {
+    "name": "plus-add",
+    "category": "actions",
+    "keywords": [
+      "add",
+      "create",
+      "new",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "plus-check",
+    "category": "actions",
+    "keywords": [
+      "add",
+      "create",
+      "new",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "minus",
+    "category": "actions",
+    "keywords": [
+      "remove",
+      "subtract"
+    ]
+  },
+  {
+    "name": "minus-circle",
+    "category": "actions",
+    "keywords": [
+      "remove",
+      "subtract",
+      "round"
+    ]
+  },
+  {
+    "name": "minus-square",
+    "category": "actions",
+    "keywords": [
+      "remove",
+      "subtract",
+      "boxed"
+    ]
+  },
+  {
+    "name": "minus-add",
+    "category": "actions",
+    "keywords": [
+      "remove",
+      "subtract",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "minus-check",
+    "category": "actions",
+    "keywords": [
+      "remove",
+      "subtract",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "check",
+    "category": "status",
+    "keywords": [
+      "done",
+      "verified",
+      "success"
+    ]
+  },
+  {
+    "name": "check-circle",
+    "category": "status",
+    "keywords": [
+      "done",
+      "verified",
+      "success",
+      "round"
+    ]
+  },
+  {
+    "name": "check-square",
+    "category": "status",
+    "keywords": [
+      "done",
+      "verified",
+      "success",
+      "boxed"
+    ]
+  },
+  {
+    "name": "check-add",
+    "category": "status",
+    "keywords": [
+      "done",
+      "verified",
+      "success",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "check-check",
+    "category": "status",
+    "keywords": [
+      "done",
+      "verified",
+      "success",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "close",
+    "category": "actions",
+    "keywords": [
+      "cancel",
+      "dismiss"
+    ]
+  },
+  {
+    "name": "close-circle",
+    "category": "actions",
+    "keywords": [
+      "cancel",
+      "dismiss",
+      "round"
+    ]
+  },
+  {
+    "name": "close-square",
+    "category": "actions",
+    "keywords": [
+      "cancel",
+      "dismiss",
+      "boxed"
+    ]
+  },
+  {
+    "name": "close-add",
+    "category": "actions",
+    "keywords": [
+      "cancel",
+      "dismiss",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "close-check",
+    "category": "actions",
+    "keywords": [
+      "cancel",
+      "dismiss",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "arrow-up",
+    "category": "navigation",
+    "keywords": [
+      "north",
+      "upload"
+    ]
+  },
+  {
+    "name": "arrow-up-circle",
+    "category": "navigation",
+    "keywords": [
+      "north",
+      "upload",
+      "round"
+    ]
+  },
+  {
+    "name": "arrow-up-square",
+    "category": "navigation",
+    "keywords": [
+      "north",
+      "upload",
+      "boxed"
+    ]
+  },
+  {
+    "name": "arrow-up-add",
+    "category": "navigation",
+    "keywords": [
+      "north",
+      "upload",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "arrow-up-check",
+    "category": "navigation",
+    "keywords": [
+      "north",
+      "upload",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "arrow-down",
+    "category": "navigation",
+    "keywords": [
+      "south",
+      "download"
+    ]
+  },
+  {
+    "name": "arrow-down-circle",
+    "category": "navigation",
+    "keywords": [
+      "south",
+      "download",
+      "round"
+    ]
+  },
+  {
+    "name": "arrow-down-square",
+    "category": "navigation",
+    "keywords": [
+      "south",
+      "download",
+      "boxed"
+    ]
+  },
+  {
+    "name": "arrow-down-add",
+    "category": "navigation",
+    "keywords": [
+      "south",
+      "download",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "arrow-down-check",
+    "category": "navigation",
+    "keywords": [
+      "south",
+      "download",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "arrow-left",
+    "category": "navigation",
+    "keywords": [
+      "back",
+      "west"
+    ]
+  },
+  {
+    "name": "arrow-left-circle",
+    "category": "navigation",
+    "keywords": [
+      "back",
+      "west",
+      "round"
+    ]
+  },
+  {
+    "name": "arrow-left-square",
+    "category": "navigation",
+    "keywords": [
+      "back",
+      "west",
+      "boxed"
+    ]
+  },
+  {
+    "name": "arrow-left-add",
+    "category": "navigation",
+    "keywords": [
+      "back",
+      "west",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "arrow-left-check",
+    "category": "navigation",
+    "keywords": [
+      "back",
+      "west",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "arrow-right",
+    "category": "navigation",
+    "keywords": [
+      "forward",
+      "east"
+    ]
+  },
+  {
+    "name": "arrow-right-circle",
+    "category": "navigation",
+    "keywords": [
+      "forward",
+      "east",
+      "round"
+    ]
+  },
+  {
+    "name": "arrow-right-square",
+    "category": "navigation",
+    "keywords": [
+      "forward",
+      "east",
+      "boxed"
+    ]
+  },
+  {
+    "name": "arrow-right-add",
+    "category": "navigation",
+    "keywords": [
+      "forward",
+      "east",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "arrow-right-check",
+    "category": "navigation",
+    "keywords": [
+      "forward",
+      "east",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "chevrons",
+    "category": "navigation",
+    "keywords": [
+      "next",
+      "fast"
+    ]
+  },
+  {
+    "name": "chevrons-circle",
+    "category": "navigation",
+    "keywords": [
+      "next",
+      "fast",
+      "round"
+    ]
+  },
+  {
+    "name": "chevrons-square",
+    "category": "navigation",
+    "keywords": [
+      "next",
+      "fast",
+      "boxed"
+    ]
+  },
+  {
+    "name": "chevrons-add",
+    "category": "navigation",
+    "keywords": [
+      "next",
+      "fast",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "chevrons-check",
+    "category": "navigation",
+    "keywords": [
+      "next",
+      "fast",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "refresh",
+    "category": "actions",
+    "keywords": [
+      "reload",
+      "sync"
+    ]
+  },
+  {
+    "name": "refresh-circle",
+    "category": "actions",
+    "keywords": [
+      "reload",
+      "sync",
+      "round"
+    ]
+  },
+  {
+    "name": "refresh-square",
+    "category": "actions",
+    "keywords": [
+      "reload",
+      "sync",
+      "boxed"
+    ]
+  },
+  {
+    "name": "refresh-add",
+    "category": "actions",
+    "keywords": [
+      "reload",
+      "sync",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "refresh-check",
+    "category": "actions",
+    "keywords": [
+      "reload",
+      "sync",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "undo",
+    "category": "actions",
+    "keywords": [
+      "back",
+      "history"
+    ]
+  },
+  {
+    "name": "undo-circle",
+    "category": "actions",
+    "keywords": [
+      "back",
+      "history",
+      "round"
+    ]
+  },
+  {
+    "name": "undo-square",
+    "category": "actions",
+    "keywords": [
+      "back",
+      "history",
+      "boxed"
+    ]
+  },
+  {
+    "name": "undo-add",
+    "category": "actions",
+    "keywords": [
+      "back",
+      "history",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "undo-check",
+    "category": "actions",
+    "keywords": [
+      "back",
+      "history",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "redo",
+    "category": "actions",
+    "keywords": [
+      "forward",
+      "history"
+    ]
+  },
+  {
+    "name": "redo-circle",
+    "category": "actions",
+    "keywords": [
+      "forward",
+      "history",
+      "round"
+    ]
+  },
+  {
+    "name": "redo-square",
+    "category": "actions",
+    "keywords": [
+      "forward",
+      "history",
+      "boxed"
+    ]
+  },
+  {
+    "name": "redo-add",
+    "category": "actions",
+    "keywords": [
+      "forward",
+      "history",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "redo-check",
+    "category": "actions",
+    "keywords": [
+      "forward",
+      "history",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "search",
+    "category": "actions",
+    "keywords": [
+      "find",
+      "query"
+    ]
+  },
+  {
+    "name": "search-circle",
+    "category": "actions",
+    "keywords": [
+      "find",
+      "query",
+      "round"
+    ]
+  },
+  {
+    "name": "search-square",
+    "category": "actions",
+    "keywords": [
+      "find",
+      "query",
+      "boxed"
+    ]
+  },
+  {
+    "name": "search-add",
+    "category": "actions",
+    "keywords": [
+      "find",
+      "query",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "search-check",
+    "category": "actions",
+    "keywords": [
+      "find",
+      "query",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "filter",
+    "category": "actions",
+    "keywords": [
+      "funnel",
+      "refine"
+    ]
+  },
+  {
+    "name": "filter-circle",
+    "category": "actions",
+    "keywords": [
+      "funnel",
+      "refine",
+      "round"
+    ]
+  },
+  {
+    "name": "filter-square",
+    "category": "actions",
+    "keywords": [
+      "funnel",
+      "refine",
+      "boxed"
+    ]
+  },
+  {
+    "name": "filter-add",
+    "category": "actions",
+    "keywords": [
+      "funnel",
+      "refine",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "filter-check",
+    "category": "actions",
+    "keywords": [
+      "funnel",
+      "refine",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "sort",
+    "category": "actions",
+    "keywords": [
+      "order"
+    ]
+  },
+  {
+    "name": "sort-circle",
+    "category": "actions",
+    "keywords": [
+      "order",
+      "round"
+    ]
+  },
+  {
+    "name": "sort-square",
+    "category": "actions",
+    "keywords": [
+      "order",
+      "boxed"
+    ]
+  },
+  {
+    "name": "sort-add",
+    "category": "actions",
+    "keywords": [
+      "order",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "sort-check",
+    "category": "actions",
+    "keywords": [
+      "order",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "edit",
+    "category": "actions",
+    "keywords": [
+      "write",
+      "pencil"
+    ]
+  },
+  {
+    "name": "edit-circle",
+    "category": "actions",
+    "keywords": [
+      "write",
+      "pencil",
+      "round"
+    ]
+  },
+  {
+    "name": "edit-square",
+    "category": "actions",
+    "keywords": [
+      "write",
+      "pencil",
+      "boxed"
+    ]
+  },
+  {
+    "name": "edit-add",
+    "category": "actions",
+    "keywords": [
+      "write",
+      "pencil",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "edit-check",
+    "category": "actions",
+    "keywords": [
+      "write",
+      "pencil",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "trash",
+    "category": "actions",
+    "keywords": [
+      "delete",
+      "remove"
+    ]
+  },
+  {
+    "name": "trash-circle",
+    "category": "actions",
+    "keywords": [
+      "delete",
+      "remove",
+      "round"
+    ]
+  },
+  {
+    "name": "trash-square",
+    "category": "actions",
+    "keywords": [
+      "delete",
+      "remove",
+      "boxed"
+    ]
+  },
+  {
+    "name": "trash-add",
+    "category": "actions",
+    "keywords": [
+      "delete",
+      "remove",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "trash-check",
+    "category": "actions",
+    "keywords": [
+      "delete",
+      "remove",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "upload",
+    "category": "actions",
+    "keywords": [
+      "send",
+      "export"
+    ]
+  },
+  {
+    "name": "upload-circle",
+    "category": "actions",
+    "keywords": [
+      "send",
+      "export",
+      "round"
+    ]
+  },
+  {
+    "name": "upload-square",
+    "category": "actions",
+    "keywords": [
+      "send",
+      "export",
+      "boxed"
+    ]
+  },
+  {
+    "name": "upload-add",
+    "category": "actions",
+    "keywords": [
+      "send",
+      "export",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "upload-check",
+    "category": "actions",
+    "keywords": [
+      "send",
+      "export",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "download",
+    "category": "actions",
+    "keywords": [
+      "save",
+      "import"
+    ]
+  },
+  {
+    "name": "download-circle",
+    "category": "actions",
+    "keywords": [
+      "save",
+      "import",
+      "round"
+    ]
+  },
+  {
+    "name": "download-square",
+    "category": "actions",
+    "keywords": [
+      "save",
+      "import",
+      "boxed"
+    ]
+  },
+  {
+    "name": "download-add",
+    "category": "actions",
+    "keywords": [
+      "save",
+      "import",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "download-check",
+    "category": "actions",
+    "keywords": [
+      "save",
+      "import",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "copy",
+    "category": "actions",
+    "keywords": [
+      "duplicate"
+    ]
+  },
+  {
+    "name": "copy-circle",
+    "category": "actions",
+    "keywords": [
+      "duplicate",
+      "round"
+    ]
+  },
+  {
+    "name": "copy-square",
+    "category": "actions",
+    "keywords": [
+      "duplicate",
+      "boxed"
+    ]
+  },
+  {
+    "name": "copy-add",
+    "category": "actions",
+    "keywords": [
+      "duplicate",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "copy-check",
+    "category": "actions",
+    "keywords": [
+      "duplicate",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "share",
+    "category": "actions",
+    "keywords": [
+      "network",
+      "send"
+    ]
+  },
+  {
+    "name": "share-circle",
+    "category": "actions",
+    "keywords": [
+      "network",
+      "send",
+      "round"
+    ]
+  },
+  {
+    "name": "share-square",
+    "category": "actions",
+    "keywords": [
+      "network",
+      "send",
+      "boxed"
+    ]
+  },
+  {
+    "name": "share-add",
+    "category": "actions",
+    "keywords": [
+      "network",
+      "send",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "share-check",
+    "category": "actions",
+    "keywords": [
+      "network",
+      "send",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "link",
+    "category": "actions",
+    "keywords": [
+      "url",
+      "chain"
+    ]
+  },
+  {
+    "name": "link-circle",
+    "category": "actions",
+    "keywords": [
+      "url",
+      "chain",
+      "round"
+    ]
+  },
+  {
+    "name": "link-square",
+    "category": "actions",
+    "keywords": [
+      "url",
+      "chain",
+      "boxed"
+    ]
+  },
+  {
+    "name": "link-add",
+    "category": "actions",
+    "keywords": [
+      "url",
+      "chain",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "link-check",
+    "category": "actions",
+    "keywords": [
+      "url",
+      "chain",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "eye",
+    "category": "status",
+    "keywords": [
+      "view",
+      "visible"
+    ]
+  },
+  {
+    "name": "eye-circle",
+    "category": "status",
+    "keywords": [
+      "view",
+      "visible",
+      "round"
+    ]
+  },
+  {
+    "name": "eye-square",
+    "category": "status",
+    "keywords": [
+      "view",
+      "visible",
+      "boxed"
+    ]
+  },
+  {
+    "name": "eye-add",
+    "category": "status",
+    "keywords": [
+      "view",
+      "visible",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "eye-check",
+    "category": "status",
+    "keywords": [
+      "view",
+      "visible",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "play",
+    "category": "media",
+    "keywords": [
+      "start",
+      "run"
+    ]
+  },
+  {
+    "name": "play-circle",
+    "category": "media",
+    "keywords": [
+      "start",
+      "run",
+      "round"
+    ]
+  },
+  {
+    "name": "play-square",
+    "category": "media",
+    "keywords": [
+      "start",
+      "run",
+      "boxed"
+    ]
+  },
+  {
+    "name": "play-add",
+    "category": "media",
+    "keywords": [
+      "start",
+      "run",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "play-check",
+    "category": "media",
+    "keywords": [
+      "start",
+      "run",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "pause",
+    "category": "media",
+    "keywords": [
+      "hold"
+    ]
+  },
+  {
+    "name": "pause-circle",
+    "category": "media",
+    "keywords": [
+      "hold",
+      "round"
+    ]
+  },
+  {
+    "name": "pause-square",
+    "category": "media",
+    "keywords": [
+      "hold",
+      "boxed"
+    ]
+  },
+  {
+    "name": "pause-add",
+    "category": "media",
+    "keywords": [
+      "hold",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "pause-check",
+    "category": "media",
+    "keywords": [
+      "hold",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "stop",
+    "category": "media",
+    "keywords": [
+      "end"
+    ]
+  },
+  {
+    "name": "stop-circle",
+    "category": "media",
+    "keywords": [
+      "end",
+      "round"
+    ]
+  },
+  {
+    "name": "stop-square",
+    "category": "media",
+    "keywords": [
+      "end",
+      "boxed"
+    ]
+  },
+  {
+    "name": "stop-add",
+    "category": "media",
+    "keywords": [
+      "end",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "stop-check",
+    "category": "media",
+    "keywords": [
+      "end",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "menu",
+    "category": "navigation",
+    "keywords": [
+      "navigation",
+      "hamburger"
+    ]
+  },
+  {
+    "name": "menu-circle",
+    "category": "navigation",
+    "keywords": [
+      "navigation",
+      "hamburger",
+      "round"
+    ]
+  },
+  {
+    "name": "menu-square",
+    "category": "navigation",
+    "keywords": [
+      "navigation",
+      "hamburger",
+      "boxed"
+    ]
+  },
+  {
+    "name": "menu-add",
+    "category": "navigation",
+    "keywords": [
+      "navigation",
+      "hamburger",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "menu-check",
+    "category": "navigation",
+    "keywords": [
+      "navigation",
+      "hamburger",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "more",
+    "category": "navigation",
+    "keywords": [
+      "overflow",
+      "options"
+    ]
+  },
+  {
+    "name": "more-circle",
+    "category": "navigation",
+    "keywords": [
+      "overflow",
+      "options",
+      "round"
+    ]
+  },
+  {
+    "name": "more-square",
+    "category": "navigation",
+    "keywords": [
+      "overflow",
+      "options",
+      "boxed"
+    ]
+  },
+  {
+    "name": "more-add",
+    "category": "navigation",
+    "keywords": [
+      "overflow",
+      "options",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "more-check",
+    "category": "navigation",
+    "keywords": [
+      "overflow",
+      "options",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "settings",
+    "category": "actions",
+    "keywords": [
+      "gear",
+      "configure"
+    ]
+  },
+  {
+    "name": "settings-circle",
+    "category": "actions",
+    "keywords": [
+      "gear",
+      "configure",
+      "round"
+    ]
+  },
+  {
+    "name": "settings-square",
+    "category": "actions",
+    "keywords": [
+      "gear",
+      "configure",
+      "boxed"
+    ]
+  },
+  {
+    "name": "settings-add",
+    "category": "actions",
+    "keywords": [
+      "gear",
+      "configure",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "settings-check",
+    "category": "actions",
+    "keywords": [
+      "gear",
+      "configure",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "home",
+    "category": "navigation",
+    "keywords": [
+      "house",
+      "start"
+    ]
+  },
+  {
+    "name": "home-circle",
+    "category": "navigation",
+    "keywords": [
+      "house",
+      "start",
+      "round"
+    ]
+  },
+  {
+    "name": "home-square",
+    "category": "navigation",
+    "keywords": [
+      "house",
+      "start",
+      "boxed"
+    ]
+  },
+  {
+    "name": "home-add",
+    "category": "navigation",
+    "keywords": [
+      "house",
+      "start",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "home-check",
+    "category": "navigation",
+    "keywords": [
+      "house",
+      "start",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "star",
+    "category": "status",
+    "keywords": [
+      "favorite"
+    ]
+  },
+  {
+    "name": "star-circle",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "round"
+    ]
+  },
+  {
+    "name": "star-square",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "boxed"
+    ]
+  },
+  {
+    "name": "star-add",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "star-check",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "heart",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "health"
+    ]
+  },
+  {
+    "name": "heart-circle",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "health",
+      "round"
+    ]
+  },
+  {
+    "name": "heart-square",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "health",
+      "boxed"
+    ]
+  },
+  {
+    "name": "heart-add",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "health",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "heart-check",
+    "category": "status",
+    "keywords": [
+      "favorite",
+      "health",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "bell",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "notification"
+    ]
+  },
+  {
+    "name": "bell-circle",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "notification",
+      "round"
+    ]
+  },
+  {
+    "name": "bell-square",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "notification",
+      "boxed"
+    ]
+  },
+  {
+    "name": "bell-add",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "notification",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "bell-check",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "notification",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "flag",
+    "category": "status",
+    "keywords": [
+      "mark",
+      "goal"
+    ]
+  },
+  {
+    "name": "flag-circle",
+    "category": "status",
+    "keywords": [
+      "mark",
+      "goal",
+      "round"
+    ]
+  },
+  {
+    "name": "flag-square",
+    "category": "status",
+    "keywords": [
+      "mark",
+      "goal",
+      "boxed"
+    ]
+  },
+  {
+    "name": "flag-add",
+    "category": "status",
+    "keywords": [
+      "mark",
+      "goal",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "flag-check",
+    "category": "status",
+    "keywords": [
+      "mark",
+      "goal",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "pin",
+    "category": "maps",
+    "keywords": [
+      "location",
+      "map"
+    ]
+  },
+  {
+    "name": "pin-circle",
+    "category": "maps",
+    "keywords": [
+      "location",
+      "map",
+      "round"
+    ]
+  },
+  {
+    "name": "pin-square",
+    "category": "maps",
+    "keywords": [
+      "location",
+      "map",
+      "boxed"
+    ]
+  },
+  {
+    "name": "pin-add",
+    "category": "maps",
+    "keywords": [
+      "location",
+      "map",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "pin-check",
+    "category": "maps",
+    "keywords": [
+      "location",
+      "map",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "compass",
+    "category": "maps",
+    "keywords": [
+      "direction",
+      "heading"
+    ]
+  },
+  {
+    "name": "compass-circle",
+    "category": "maps",
+    "keywords": [
+      "direction",
+      "heading",
+      "round"
+    ]
+  },
+  {
+    "name": "compass-square",
+    "category": "maps",
+    "keywords": [
+      "direction",
+      "heading",
+      "boxed"
+    ]
+  },
+  {
+    "name": "compass-add",
+    "category": "maps",
+    "keywords": [
+      "direction",
+      "heading",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "compass-check",
+    "category": "maps",
+    "keywords": [
+      "direction",
+      "heading",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "globe",
+    "category": "maps",
+    "keywords": [
+      "world",
+      "earth"
+    ]
+  },
+  {
+    "name": "globe-circle",
+    "category": "maps",
+    "keywords": [
+      "world",
+      "earth",
+      "round"
+    ]
+  },
+  {
+    "name": "globe-square",
+    "category": "maps",
+    "keywords": [
+      "world",
+      "earth",
+      "boxed"
+    ]
+  },
+  {
+    "name": "globe-add",
+    "category": "maps",
+    "keywords": [
+      "world",
+      "earth",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "globe-check",
+    "category": "maps",
+    "keywords": [
+      "world",
+      "earth",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "route",
+    "category": "maps",
+    "keywords": [
+      "path",
+      "journey"
+    ]
+  },
+  {
+    "name": "route-circle",
+    "category": "maps",
+    "keywords": [
+      "path",
+      "journey",
+      "round"
+    ]
+  },
+  {
+    "name": "route-square",
+    "category": "maps",
+    "keywords": [
+      "path",
+      "journey",
+      "boxed"
+    ]
+  },
+  {
+    "name": "route-add",
+    "category": "maps",
+    "keywords": [
+      "path",
+      "journey",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "route-check",
+    "category": "maps",
+    "keywords": [
+      "path",
+      "journey",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "layers",
+    "category": "maps",
+    "keywords": [
+      "stack",
+      "map"
+    ]
+  },
+  {
+    "name": "layers-circle",
+    "category": "maps",
+    "keywords": [
+      "stack",
+      "map",
+      "round"
+    ]
+  },
+  {
+    "name": "layers-square",
+    "category": "maps",
+    "keywords": [
+      "stack",
+      "map",
+      "boxed"
+    ]
+  },
+  {
+    "name": "layers-add",
+    "category": "maps",
+    "keywords": [
+      "stack",
+      "map",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "layers-check",
+    "category": "maps",
+    "keywords": [
+      "stack",
+      "map",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "file",
+    "category": "files",
+    "keywords": [
+      "document"
+    ]
+  },
+  {
+    "name": "file-circle",
+    "category": "files",
+    "keywords": [
+      "document",
+      "round"
+    ]
+  },
+  {
+    "name": "file-square",
+    "category": "files",
+    "keywords": [
+      "document",
+      "boxed"
+    ]
+  },
+  {
+    "name": "file-add",
+    "category": "files",
+    "keywords": [
+      "document",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "file-check",
+    "category": "files",
+    "keywords": [
+      "document",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "folder",
+    "category": "files",
+    "keywords": [
+      "directory"
+    ]
+  },
+  {
+    "name": "folder-circle",
+    "category": "files",
+    "keywords": [
+      "directory",
+      "round"
+    ]
+  },
+  {
+    "name": "folder-square",
+    "category": "files",
+    "keywords": [
+      "directory",
+      "boxed"
+    ]
+  },
+  {
+    "name": "folder-add",
+    "category": "files",
+    "keywords": [
+      "directory",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "folder-check",
+    "category": "files",
+    "keywords": [
+      "directory",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "archive",
+    "category": "files",
+    "keywords": [
+      "box",
+      "storage"
+    ]
+  },
+  {
+    "name": "archive-circle",
+    "category": "files",
+    "keywords": [
+      "box",
+      "storage",
+      "round"
+    ]
+  },
+  {
+    "name": "archive-square",
+    "category": "files",
+    "keywords": [
+      "box",
+      "storage",
+      "boxed"
+    ]
+  },
+  {
+    "name": "archive-add",
+    "category": "files",
+    "keywords": [
+      "box",
+      "storage",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "archive-check",
+    "category": "files",
+    "keywords": [
+      "box",
+      "storage",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "image",
+    "category": "files",
+    "keywords": [
+      "photo",
+      "picture"
+    ]
+  },
+  {
+    "name": "image-circle",
+    "category": "files",
+    "keywords": [
+      "photo",
+      "picture",
+      "round"
+    ]
+  },
+  {
+    "name": "image-square",
+    "category": "files",
+    "keywords": [
+      "photo",
+      "picture",
+      "boxed"
+    ]
+  },
+  {
+    "name": "image-add",
+    "category": "files",
+    "keywords": [
+      "photo",
+      "picture",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "image-check",
+    "category": "files",
+    "keywords": [
+      "photo",
+      "picture",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "video",
+    "category": "media",
+    "keywords": [
+      "camera",
+      "movie"
+    ]
+  },
+  {
+    "name": "video-circle",
+    "category": "media",
+    "keywords": [
+      "camera",
+      "movie",
+      "round"
+    ]
+  },
+  {
+    "name": "video-square",
+    "category": "media",
+    "keywords": [
+      "camera",
+      "movie",
+      "boxed"
+    ]
+  },
+  {
+    "name": "video-add",
+    "category": "media",
+    "keywords": [
+      "camera",
+      "movie",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "video-check",
+    "category": "media",
+    "keywords": [
+      "camera",
+      "movie",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "database",
+    "category": "data",
+    "keywords": [
+      "storage",
+      "records"
+    ]
+  },
+  {
+    "name": "database-circle",
+    "category": "data",
+    "keywords": [
+      "storage",
+      "records",
+      "round"
+    ]
+  },
+  {
+    "name": "database-square",
+    "category": "data",
+    "keywords": [
+      "storage",
+      "records",
+      "boxed"
+    ]
+  },
+  {
+    "name": "database-add",
+    "category": "data",
+    "keywords": [
+      "storage",
+      "records",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "database-check",
+    "category": "data",
+    "keywords": [
+      "storage",
+      "records",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "server",
+    "category": "devices",
+    "keywords": [
+      "rack",
+      "compute"
+    ]
+  },
+  {
+    "name": "server-circle",
+    "category": "devices",
+    "keywords": [
+      "rack",
+      "compute",
+      "round"
+    ]
+  },
+  {
+    "name": "server-square",
+    "category": "devices",
+    "keywords": [
+      "rack",
+      "compute",
+      "boxed"
+    ]
+  },
+  {
+    "name": "server-add",
+    "category": "devices",
+    "keywords": [
+      "rack",
+      "compute",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "server-check",
+    "category": "devices",
+    "keywords": [
+      "rack",
+      "compute",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "cloud",
+    "category": "devices",
+    "keywords": [
+      "remote",
+      "storage"
+    ]
+  },
+  {
+    "name": "cloud-circle",
+    "category": "devices",
+    "keywords": [
+      "remote",
+      "storage",
+      "round"
+    ]
+  },
+  {
+    "name": "cloud-square",
+    "category": "devices",
+    "keywords": [
+      "remote",
+      "storage",
+      "boxed"
+    ]
+  },
+  {
+    "name": "cloud-add",
+    "category": "devices",
+    "keywords": [
+      "remote",
+      "storage",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "cloud-check",
+    "category": "devices",
+    "keywords": [
+      "remote",
+      "storage",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "lock",
+    "category": "security",
+    "keywords": [
+      "secure",
+      "private"
+    ]
+  },
+  {
+    "name": "lock-circle",
+    "category": "security",
+    "keywords": [
+      "secure",
+      "private",
+      "round"
+    ]
+  },
+  {
+    "name": "lock-square",
+    "category": "security",
+    "keywords": [
+      "secure",
+      "private",
+      "boxed"
+    ]
+  },
+  {
+    "name": "lock-add",
+    "category": "security",
+    "keywords": [
+      "secure",
+      "private",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "lock-check",
+    "category": "security",
+    "keywords": [
+      "secure",
+      "private",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "key",
+    "category": "security",
+    "keywords": [
+      "access",
+      "credential"
+    ]
+  },
+  {
+    "name": "key-circle",
+    "category": "security",
+    "keywords": [
+      "access",
+      "credential",
+      "round"
+    ]
+  },
+  {
+    "name": "key-square",
+    "category": "security",
+    "keywords": [
+      "access",
+      "credential",
+      "boxed"
+    ]
+  },
+  {
+    "name": "key-add",
+    "category": "security",
+    "keywords": [
+      "access",
+      "credential",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "key-check",
+    "category": "security",
+    "keywords": [
+      "access",
+      "credential",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "shield",
+    "category": "security",
+    "keywords": [
+      "protect",
+      "verified"
+    ]
+  },
+  {
+    "name": "shield-circle",
+    "category": "security",
+    "keywords": [
+      "protect",
+      "verified",
+      "round"
+    ]
+  },
+  {
+    "name": "shield-square",
+    "category": "security",
+    "keywords": [
+      "protect",
+      "verified",
+      "boxed"
+    ]
+  },
+  {
+    "name": "shield-add",
+    "category": "security",
+    "keywords": [
+      "protect",
+      "verified",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "shield-check",
+    "category": "security",
+    "keywords": [
+      "protect",
+      "verified",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "calendar",
+    "category": "time",
+    "keywords": [
+      "date",
+      "schedule"
+    ]
+  },
+  {
+    "name": "calendar-circle",
+    "category": "time",
+    "keywords": [
+      "date",
+      "schedule",
+      "round"
+    ]
+  },
+  {
+    "name": "calendar-square",
+    "category": "time",
+    "keywords": [
+      "date",
+      "schedule",
+      "boxed"
+    ]
+  },
+  {
+    "name": "calendar-add",
+    "category": "time",
+    "keywords": [
+      "date",
+      "schedule",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "calendar-check",
+    "category": "time",
+    "keywords": [
+      "date",
+      "schedule",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "clock",
+    "category": "time",
+    "keywords": [
+      "time",
+      "history"
+    ]
+  },
+  {
+    "name": "clock-circle",
+    "category": "time",
+    "keywords": [
+      "time",
+      "history",
+      "round"
+    ]
+  },
+  {
+    "name": "clock-square",
+    "category": "time",
+    "keywords": [
+      "time",
+      "history",
+      "boxed"
+    ]
+  },
+  {
+    "name": "clock-add",
+    "category": "time",
+    "keywords": [
+      "time",
+      "history",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "clock-check",
+    "category": "time",
+    "keywords": [
+      "time",
+      "history",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "mail",
+    "category": "communication",
+    "keywords": [
+      "email",
+      "message"
+    ]
+  },
+  {
+    "name": "mail-circle",
+    "category": "communication",
+    "keywords": [
+      "email",
+      "message",
+      "round"
+    ]
+  },
+  {
+    "name": "mail-square",
+    "category": "communication",
+    "keywords": [
+      "email",
+      "message",
+      "boxed"
+    ]
+  },
+  {
+    "name": "mail-add",
+    "category": "communication",
+    "keywords": [
+      "email",
+      "message",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "mail-check",
+    "category": "communication",
+    "keywords": [
+      "email",
+      "message",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "chat",
+    "category": "communication",
+    "keywords": [
+      "message",
+      "conversation"
+    ]
+  },
+  {
+    "name": "chat-circle",
+    "category": "communication",
+    "keywords": [
+      "message",
+      "conversation",
+      "round"
+    ]
+  },
+  {
+    "name": "chat-square",
+    "category": "communication",
+    "keywords": [
+      "message",
+      "conversation",
+      "boxed"
+    ]
+  },
+  {
+    "name": "chat-add",
+    "category": "communication",
+    "keywords": [
+      "message",
+      "conversation",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "chat-check",
+    "category": "communication",
+    "keywords": [
+      "message",
+      "conversation",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "phone",
+    "category": "communication",
+    "keywords": [
+      "call",
+      "contact"
+    ]
+  },
+  {
+    "name": "phone-circle",
+    "category": "communication",
+    "keywords": [
+      "call",
+      "contact",
+      "round"
+    ]
+  },
+  {
+    "name": "phone-square",
+    "category": "communication",
+    "keywords": [
+      "call",
+      "contact",
+      "boxed"
+    ]
+  },
+  {
+    "name": "phone-add",
+    "category": "communication",
+    "keywords": [
+      "call",
+      "contact",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "phone-check",
+    "category": "communication",
+    "keywords": [
+      "call",
+      "contact",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "camera",
+    "category": "devices",
+    "keywords": [
+      "photo",
+      "sensor"
+    ]
+  },
+  {
+    "name": "camera-circle",
+    "category": "devices",
+    "keywords": [
+      "photo",
+      "sensor",
+      "round"
+    ]
+  },
+  {
+    "name": "camera-square",
+    "category": "devices",
+    "keywords": [
+      "photo",
+      "sensor",
+      "boxed"
+    ]
+  },
+  {
+    "name": "camera-add",
+    "category": "devices",
+    "keywords": [
+      "photo",
+      "sensor",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "camera-check",
+    "category": "devices",
+    "keywords": [
+      "photo",
+      "sensor",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "monitor",
+    "category": "devices",
+    "keywords": [
+      "display",
+      "screen"
+    ]
+  },
+  {
+    "name": "monitor-circle",
+    "category": "devices",
+    "keywords": [
+      "display",
+      "screen",
+      "round"
+    ]
+  },
+  {
+    "name": "monitor-square",
+    "category": "devices",
+    "keywords": [
+      "display",
+      "screen",
+      "boxed"
+    ]
+  },
+  {
+    "name": "monitor-add",
+    "category": "devices",
+    "keywords": [
+      "display",
+      "screen",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "monitor-check",
+    "category": "devices",
+    "keywords": [
+      "display",
+      "screen",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "device",
+    "category": "devices",
+    "keywords": [
+      "mobile",
+      "handheld"
+    ]
+  },
+  {
+    "name": "device-circle",
+    "category": "devices",
+    "keywords": [
+      "mobile",
+      "handheld",
+      "round"
+    ]
+  },
+  {
+    "name": "device-square",
+    "category": "devices",
+    "keywords": [
+      "mobile",
+      "handheld",
+      "boxed"
+    ]
+  },
+  {
+    "name": "device-add",
+    "category": "devices",
+    "keywords": [
+      "mobile",
+      "handheld",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "device-check",
+    "category": "devices",
+    "keywords": [
+      "mobile",
+      "handheld",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "chip",
+    "category": "devices",
+    "keywords": [
+      "processor",
+      "compute"
+    ]
+  },
+  {
+    "name": "chip-circle",
+    "category": "devices",
+    "keywords": [
+      "processor",
+      "compute",
+      "round"
+    ]
+  },
+  {
+    "name": "chip-square",
+    "category": "devices",
+    "keywords": [
+      "processor",
+      "compute",
+      "boxed"
+    ]
+  },
+  {
+    "name": "chip-add",
+    "category": "devices",
+    "keywords": [
+      "processor",
+      "compute",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "chip-check",
+    "category": "devices",
+    "keywords": [
+      "processor",
+      "compute",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "signal",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "strength"
+    ]
+  },
+  {
+    "name": "signal-circle",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "strength",
+      "round"
+    ]
+  },
+  {
+    "name": "signal-square",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "strength",
+      "boxed"
+    ]
+  },
+  {
+    "name": "signal-add",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "strength",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "signal-check",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "strength",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "user",
+    "category": "people",
+    "keywords": [
+      "person",
+      "account"
+    ]
+  },
+  {
+    "name": "user-circle",
+    "category": "people",
+    "keywords": [
+      "person",
+      "account",
+      "round"
+    ]
+  },
+  {
+    "name": "user-square",
+    "category": "people",
+    "keywords": [
+      "person",
+      "account",
+      "boxed"
+    ]
+  },
+  {
+    "name": "user-add",
+    "category": "people",
+    "keywords": [
+      "person",
+      "account",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "user-check",
+    "category": "people",
+    "keywords": [
+      "person",
+      "account",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "users",
+    "category": "people",
+    "keywords": [
+      "team",
+      "group"
+    ]
+  },
+  {
+    "name": "users-circle",
+    "category": "people",
+    "keywords": [
+      "team",
+      "group",
+      "round"
+    ]
+  },
+  {
+    "name": "users-square",
+    "category": "people",
+    "keywords": [
+      "team",
+      "group",
+      "boxed"
+    ]
+  },
+  {
+    "name": "users-add",
+    "category": "people",
+    "keywords": [
+      "team",
+      "group",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "users-check",
+    "category": "people",
+    "keywords": [
+      "team",
+      "group",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "chart-line",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "trend"
+    ]
+  },
+  {
+    "name": "chart-line-circle",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "trend",
+      "round"
+    ]
+  },
+  {
+    "name": "chart-line-square",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "trend",
+      "boxed"
+    ]
+  },
+  {
+    "name": "chart-line-add",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "trend",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "chart-line-check",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "trend",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "chart-bar",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "comparison"
+    ]
+  },
+  {
+    "name": "chart-bar-circle",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "comparison",
+      "round"
+    ]
+  },
+  {
+    "name": "chart-bar-square",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "comparison",
+      "boxed"
+    ]
+  },
+  {
+    "name": "chart-bar-add",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "comparison",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "chart-bar-check",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "comparison",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "chart-pie",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "share"
+    ]
+  },
+  {
+    "name": "chart-pie-circle",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "share",
+      "round"
+    ]
+  },
+  {
+    "name": "chart-pie-square",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "share",
+      "boxed"
+    ]
+  },
+  {
+    "name": "chart-pie-add",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "share",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "chart-pie-check",
+    "category": "data",
+    "keywords": [
+      "analytics",
+      "share",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "table",
+    "category": "data",
+    "keywords": [
+      "grid",
+      "rows"
+    ]
+  },
+  {
+    "name": "table-circle",
+    "category": "data",
+    "keywords": [
+      "grid",
+      "rows",
+      "round"
+    ]
+  },
+  {
+    "name": "table-square",
+    "category": "data",
+    "keywords": [
+      "grid",
+      "rows",
+      "boxed"
+    ]
+  },
+  {
+    "name": "table-add",
+    "category": "data",
+    "keywords": [
+      "grid",
+      "rows",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "table-check",
+    "category": "data",
+    "keywords": [
+      "grid",
+      "rows",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "grid",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "tiles"
+    ]
+  },
+  {
+    "name": "grid-circle",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "tiles",
+      "round"
+    ]
+  },
+  {
+    "name": "grid-square",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "tiles",
+      "boxed"
+    ]
+  },
+  {
+    "name": "grid-add",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "tiles",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "grid-check",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "tiles",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "network",
+    "category": "data",
+    "keywords": [
+      "graph",
+      "nodes"
+    ]
+  },
+  {
+    "name": "network-circle",
+    "category": "data",
+    "keywords": [
+      "graph",
+      "nodes",
+      "round"
+    ]
+  },
+  {
+    "name": "network-square",
+    "category": "data",
+    "keywords": [
+      "graph",
+      "nodes",
+      "boxed"
+    ]
+  },
+  {
+    "name": "network-add",
+    "category": "data",
+    "keywords": [
+      "graph",
+      "nodes",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "network-check",
+    "category": "data",
+    "keywords": [
+      "graph",
+      "nodes",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "pulse",
+    "category": "data",
+    "keywords": [
+      "telemetry",
+      "signal"
+    ]
+  },
+  {
+    "name": "pulse-circle",
+    "category": "data",
+    "keywords": [
+      "telemetry",
+      "signal",
+      "round"
+    ]
+  },
+  {
+    "name": "pulse-square",
+    "category": "data",
+    "keywords": [
+      "telemetry",
+      "signal",
+      "boxed"
+    ]
+  },
+  {
+    "name": "pulse-add",
+    "category": "data",
+    "keywords": [
+      "telemetry",
+      "signal",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "pulse-check",
+    "category": "data",
+    "keywords": [
+      "telemetry",
+      "signal",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "gauge",
+    "category": "data",
+    "keywords": [
+      "meter",
+      "performance"
+    ]
+  },
+  {
+    "name": "gauge-circle",
+    "category": "data",
+    "keywords": [
+      "meter",
+      "performance",
+      "round"
+    ]
+  },
+  {
+    "name": "gauge-square",
+    "category": "data",
+    "keywords": [
+      "meter",
+      "performance",
+      "boxed"
+    ]
+  },
+  {
+    "name": "gauge-add",
+    "category": "data",
+    "keywords": [
+      "meter",
+      "performance",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "gauge-check",
+    "category": "data",
+    "keywords": [
+      "meter",
+      "performance",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "target",
+    "category": "maps",
+    "keywords": [
+      "objective",
+      "aim"
+    ]
+  },
+  {
+    "name": "target-circle",
+    "category": "maps",
+    "keywords": [
+      "objective",
+      "aim",
+      "round"
+    ]
+  },
+  {
+    "name": "target-square",
+    "category": "maps",
+    "keywords": [
+      "objective",
+      "aim",
+      "boxed"
+    ]
+  },
+  {
+    "name": "target-add",
+    "category": "maps",
+    "keywords": [
+      "objective",
+      "aim",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "target-check",
+    "category": "maps",
+    "keywords": [
+      "objective",
+      "aim",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "radar",
+    "category": "maps",
+    "keywords": [
+      "sensor",
+      "scan"
+    ]
+  },
+  {
+    "name": "radar-circle",
+    "category": "maps",
+    "keywords": [
+      "sensor",
+      "scan",
+      "round"
+    ]
+  },
+  {
+    "name": "radar-square",
+    "category": "maps",
+    "keywords": [
+      "sensor",
+      "scan",
+      "boxed"
+    ]
+  },
+  {
+    "name": "radar-add",
+    "category": "maps",
+    "keywords": [
+      "sensor",
+      "scan",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "radar-check",
+    "category": "maps",
+    "keywords": [
+      "sensor",
+      "scan",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "aircraft",
+    "category": "transport",
+    "keywords": [
+      "flight",
+      "aviation"
+    ]
+  },
+  {
+    "name": "aircraft-circle",
+    "category": "transport",
+    "keywords": [
+      "flight",
+      "aviation",
+      "round"
+    ]
+  },
+  {
+    "name": "aircraft-square",
+    "category": "transport",
+    "keywords": [
+      "flight",
+      "aviation",
+      "boxed"
+    ]
+  },
+  {
+    "name": "aircraft-add",
+    "category": "transport",
+    "keywords": [
+      "flight",
+      "aviation",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "aircraft-check",
+    "category": "transport",
+    "keywords": [
+      "flight",
+      "aviation",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "anchor",
+    "category": "transport",
+    "keywords": [
+      "marine",
+      "port"
+    ]
+  },
+  {
+    "name": "anchor-circle",
+    "category": "transport",
+    "keywords": [
+      "marine",
+      "port",
+      "round"
+    ]
+  },
+  {
+    "name": "anchor-square",
+    "category": "transport",
+    "keywords": [
+      "marine",
+      "port",
+      "boxed"
+    ]
+  },
+  {
+    "name": "anchor-add",
+    "category": "transport",
+    "keywords": [
+      "marine",
+      "port",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "anchor-check",
+    "category": "transport",
+    "keywords": [
+      "marine",
+      "port",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "antenna",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "transmitter"
+    ]
+  },
+  {
+    "name": "antenna-circle",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "transmitter",
+      "round"
+    ]
+  },
+  {
+    "name": "antenna-square",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "transmitter",
+      "boxed"
+    ]
+  },
+  {
+    "name": "antenna-add",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "transmitter",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "antenna-check",
+    "category": "communication",
+    "keywords": [
+      "radio",
+      "transmitter",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "battery",
+    "category": "devices",
+    "keywords": [
+      "power",
+      "energy"
+    ]
+  },
+  {
+    "name": "battery-circle",
+    "category": "devices",
+    "keywords": [
+      "power",
+      "energy",
+      "round"
+    ]
+  },
+  {
+    "name": "battery-square",
+    "category": "devices",
+    "keywords": [
+      "power",
+      "energy",
+      "boxed"
+    ]
+  },
+  {
+    "name": "battery-add",
+    "category": "devices",
+    "keywords": [
+      "power",
+      "energy",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "battery-check",
+    "category": "devices",
+    "keywords": [
+      "power",
+      "energy",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "beacon",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "locator"
+    ]
+  },
+  {
+    "name": "beacon-circle",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "locator",
+      "round"
+    ]
+  },
+  {
+    "name": "beacon-square",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "locator",
+      "boxed"
+    ]
+  },
+  {
+    "name": "beacon-add",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "locator",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "beacon-check",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "locator",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "bookmark",
+    "category": "files",
+    "keywords": [
+      "save",
+      "favorite"
+    ]
+  },
+  {
+    "name": "bookmark-circle",
+    "category": "files",
+    "keywords": [
+      "save",
+      "favorite",
+      "round"
+    ]
+  },
+  {
+    "name": "bookmark-square",
+    "category": "files",
+    "keywords": [
+      "save",
+      "favorite",
+      "boxed"
+    ]
+  },
+  {
+    "name": "bookmark-add",
+    "category": "files",
+    "keywords": [
+      "save",
+      "favorite",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "bookmark-check",
+    "category": "files",
+    "keywords": [
+      "save",
+      "favorite",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "briefcase",
+    "category": "files",
+    "keywords": [
+      "work",
+      "case"
+    ]
+  },
+  {
+    "name": "briefcase-circle",
+    "category": "files",
+    "keywords": [
+      "work",
+      "case",
+      "round"
+    ]
+  },
+  {
+    "name": "briefcase-square",
+    "category": "files",
+    "keywords": [
+      "work",
+      "case",
+      "boxed"
+    ]
+  },
+  {
+    "name": "briefcase-add",
+    "category": "files",
+    "keywords": [
+      "work",
+      "case",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "briefcase-check",
+    "category": "files",
+    "keywords": [
+      "work",
+      "case",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "building",
+    "category": "places",
+    "keywords": [
+      "office",
+      "facility"
+    ]
+  },
+  {
+    "name": "building-circle",
+    "category": "places",
+    "keywords": [
+      "office",
+      "facility",
+      "round"
+    ]
+  },
+  {
+    "name": "building-square",
+    "category": "places",
+    "keywords": [
+      "office",
+      "facility",
+      "boxed"
+    ]
+  },
+  {
+    "name": "building-add",
+    "category": "places",
+    "keywords": [
+      "office",
+      "facility",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "building-check",
+    "category": "places",
+    "keywords": [
+      "office",
+      "facility",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "calculator",
+    "category": "devices",
+    "keywords": [
+      "math",
+      "compute"
+    ]
+  },
+  {
+    "name": "calculator-circle",
+    "category": "devices",
+    "keywords": [
+      "math",
+      "compute",
+      "round"
+    ]
+  },
+  {
+    "name": "calculator-square",
+    "category": "devices",
+    "keywords": [
+      "math",
+      "compute",
+      "boxed"
+    ]
+  },
+  {
+    "name": "calculator-add",
+    "category": "devices",
+    "keywords": [
+      "math",
+      "compute",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "calculator-check",
+    "category": "devices",
+    "keywords": [
+      "math",
+      "compute",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "clipboard",
+    "category": "files",
+    "keywords": [
+      "report",
+      "task"
+    ]
+  },
+  {
+    "name": "clipboard-circle",
+    "category": "files",
+    "keywords": [
+      "report",
+      "task",
+      "round"
+    ]
+  },
+  {
+    "name": "clipboard-square",
+    "category": "files",
+    "keywords": [
+      "report",
+      "task",
+      "boxed"
+    ]
+  },
+  {
+    "name": "clipboard-add",
+    "category": "files",
+    "keywords": [
+      "report",
+      "task",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "clipboard-check",
+    "category": "files",
+    "keywords": [
+      "report",
+      "task",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "code",
+    "category": "development",
+    "keywords": [
+      "developer",
+      "source"
+    ]
+  },
+  {
+    "name": "code-circle",
+    "category": "development",
+    "keywords": [
+      "developer",
+      "source",
+      "round"
+    ]
+  },
+  {
+    "name": "code-square",
+    "category": "development",
+    "keywords": [
+      "developer",
+      "source",
+      "boxed"
+    ]
+  },
+  {
+    "name": "code-add",
+    "category": "development",
+    "keywords": [
+      "developer",
+      "source",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "code-check",
+    "category": "development",
+    "keywords": [
+      "developer",
+      "source",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "cube",
+    "category": "data",
+    "keywords": [
+      "model",
+      "volume"
+    ]
+  },
+  {
+    "name": "cube-circle",
+    "category": "data",
+    "keywords": [
+      "model",
+      "volume",
+      "round"
+    ]
+  },
+  {
+    "name": "cube-square",
+    "category": "data",
+    "keywords": [
+      "model",
+      "volume",
+      "boxed"
+    ]
+  },
+  {
+    "name": "cube-add",
+    "category": "data",
+    "keywords": [
+      "model",
+      "volume",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "cube-check",
+    "category": "data",
+    "keywords": [
+      "model",
+      "volume",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "dashboard",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "overview"
+    ]
+  },
+  {
+    "name": "dashboard-circle",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "overview",
+      "round"
+    ]
+  },
+  {
+    "name": "dashboard-square",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "overview",
+      "boxed"
+    ]
+  },
+  {
+    "name": "dashboard-add",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "overview",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "dashboard-check",
+    "category": "data",
+    "keywords": [
+      "layout",
+      "overview",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "external-link",
+    "category": "navigation",
+    "keywords": [
+      "open",
+      "launch"
+    ]
+  },
+  {
+    "name": "external-link-circle",
+    "category": "navigation",
+    "keywords": [
+      "open",
+      "launch",
+      "round"
+    ]
+  },
+  {
+    "name": "external-link-square",
+    "category": "navigation",
+    "keywords": [
+      "open",
+      "launch",
+      "boxed"
+    ]
+  },
+  {
+    "name": "external-link-add",
+    "category": "navigation",
+    "keywords": [
+      "open",
+      "launch",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "external-link-check",
+    "category": "navigation",
+    "keywords": [
+      "open",
+      "launch",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "fingerprint",
+    "category": "security",
+    "keywords": [
+      "identity",
+      "biometric"
+    ]
+  },
+  {
+    "name": "fingerprint-circle",
+    "category": "security",
+    "keywords": [
+      "identity",
+      "biometric",
+      "round"
+    ]
+  },
+  {
+    "name": "fingerprint-square",
+    "category": "security",
+    "keywords": [
+      "identity",
+      "biometric",
+      "boxed"
+    ]
+  },
+  {
+    "name": "fingerprint-add",
+    "category": "security",
+    "keywords": [
+      "identity",
+      "biometric",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "fingerprint-check",
+    "category": "security",
+    "keywords": [
+      "identity",
+      "biometric",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "flask",
+    "category": "science",
+    "keywords": [
+      "lab",
+      "experiment"
+    ]
+  },
+  {
+    "name": "flask-circle",
+    "category": "science",
+    "keywords": [
+      "lab",
+      "experiment",
+      "round"
+    ]
+  },
+  {
+    "name": "flask-square",
+    "category": "science",
+    "keywords": [
+      "lab",
+      "experiment",
+      "boxed"
+    ]
+  },
+  {
+    "name": "flask-add",
+    "category": "science",
+    "keywords": [
+      "lab",
+      "experiment",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "flask-check",
+    "category": "science",
+    "keywords": [
+      "lab",
+      "experiment",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "help",
+    "category": "status",
+    "keywords": [
+      "question",
+      "support"
+    ]
+  },
+  {
+    "name": "help-circle",
+    "category": "status",
+    "keywords": [
+      "question",
+      "support",
+      "round"
+    ]
+  },
+  {
+    "name": "help-square",
+    "category": "status",
+    "keywords": [
+      "question",
+      "support",
+      "boxed"
+    ]
+  },
+  {
+    "name": "help-add",
+    "category": "status",
+    "keywords": [
+      "question",
+      "support",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "help-check",
+    "category": "status",
+    "keywords": [
+      "question",
+      "support",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "info",
+    "category": "status",
+    "keywords": [
+      "information",
+      "details"
+    ]
+  },
+  {
+    "name": "info-circle",
+    "category": "status",
+    "keywords": [
+      "information",
+      "details",
+      "round"
+    ]
+  },
+  {
+    "name": "info-square",
+    "category": "status",
+    "keywords": [
+      "information",
+      "details",
+      "boxed"
+    ]
+  },
+  {
+    "name": "info-add",
+    "category": "status",
+    "keywords": [
+      "information",
+      "details",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "info-check",
+    "category": "status",
+    "keywords": [
+      "information",
+      "details",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "keyboard",
+    "category": "devices",
+    "keywords": [
+      "input",
+      "type"
+    ]
+  },
+  {
+    "name": "keyboard-circle",
+    "category": "devices",
+    "keywords": [
+      "input",
+      "type",
+      "round"
+    ]
+  },
+  {
+    "name": "keyboard-square",
+    "category": "devices",
+    "keywords": [
+      "input",
+      "type",
+      "boxed"
+    ]
+  },
+  {
+    "name": "keyboard-add",
+    "category": "devices",
+    "keywords": [
+      "input",
+      "type",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "keyboard-check",
+    "category": "devices",
+    "keywords": [
+      "input",
+      "type",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "laptop",
+    "category": "devices",
+    "keywords": [
+      "computer",
+      "portable"
+    ]
+  },
+  {
+    "name": "laptop-circle",
+    "category": "devices",
+    "keywords": [
+      "computer",
+      "portable",
+      "round"
+    ]
+  },
+  {
+    "name": "laptop-square",
+    "category": "devices",
+    "keywords": [
+      "computer",
+      "portable",
+      "boxed"
+    ]
+  },
+  {
+    "name": "laptop-add",
+    "category": "devices",
+    "keywords": [
+      "computer",
+      "portable",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "laptop-check",
+    "category": "devices",
+    "keywords": [
+      "computer",
+      "portable",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "lightbulb",
+    "category": "status",
+    "keywords": [
+      "idea",
+      "insight"
+    ]
+  },
+  {
+    "name": "lightbulb-circle",
+    "category": "status",
+    "keywords": [
+      "idea",
+      "insight",
+      "round"
+    ]
+  },
+  {
+    "name": "lightbulb-square",
+    "category": "status",
+    "keywords": [
+      "idea",
+      "insight",
+      "boxed"
+    ]
+  },
+  {
+    "name": "lightbulb-add",
+    "category": "status",
+    "keywords": [
+      "idea",
+      "insight",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "lightbulb-check",
+    "category": "status",
+    "keywords": [
+      "idea",
+      "insight",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "map",
+    "category": "maps",
+    "keywords": [
+      "terrain",
+      "location"
+    ]
+  },
+  {
+    "name": "map-circle",
+    "category": "maps",
+    "keywords": [
+      "terrain",
+      "location",
+      "round"
+    ]
+  },
+  {
+    "name": "map-square",
+    "category": "maps",
+    "keywords": [
+      "terrain",
+      "location",
+      "boxed"
+    ]
+  },
+  {
+    "name": "map-add",
+    "category": "maps",
+    "keywords": [
+      "terrain",
+      "location",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "map-check",
+    "category": "maps",
+    "keywords": [
+      "terrain",
+      "location",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "microphone",
+    "category": "communication",
+    "keywords": [
+      "voice",
+      "audio"
+    ]
+  },
+  {
+    "name": "microphone-circle",
+    "category": "communication",
+    "keywords": [
+      "voice",
+      "audio",
+      "round"
+    ]
+  },
+  {
+    "name": "microphone-square",
+    "category": "communication",
+    "keywords": [
+      "voice",
+      "audio",
+      "boxed"
+    ]
+  },
+  {
+    "name": "microphone-add",
+    "category": "communication",
+    "keywords": [
+      "voice",
+      "audio",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "microphone-check",
+    "category": "communication",
+    "keywords": [
+      "voice",
+      "audio",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "package",
+    "category": "files",
+    "keywords": [
+      "box",
+      "delivery"
+    ]
+  },
+  {
+    "name": "package-circle",
+    "category": "files",
+    "keywords": [
+      "box",
+      "delivery",
+      "round"
+    ]
+  },
+  {
+    "name": "package-square",
+    "category": "files",
+    "keywords": [
+      "box",
+      "delivery",
+      "boxed"
+    ]
+  },
+  {
+    "name": "package-add",
+    "category": "files",
+    "keywords": [
+      "box",
+      "delivery",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "package-check",
+    "category": "files",
+    "keywords": [
+      "box",
+      "delivery",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "printer",
+    "category": "devices",
+    "keywords": [
+      "print",
+      "document"
+    ]
+  },
+  {
+    "name": "printer-circle",
+    "category": "devices",
+    "keywords": [
+      "print",
+      "document",
+      "round"
+    ]
+  },
+  {
+    "name": "printer-square",
+    "category": "devices",
+    "keywords": [
+      "print",
+      "document",
+      "boxed"
+    ]
+  },
+  {
+    "name": "printer-add",
+    "category": "devices",
+    "keywords": [
+      "print",
+      "document",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "printer-check",
+    "category": "devices",
+    "keywords": [
+      "print",
+      "document",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "rocket",
+    "category": "transport",
+    "keywords": [
+      "launch",
+      "space"
+    ]
+  },
+  {
+    "name": "rocket-circle",
+    "category": "transport",
+    "keywords": [
+      "launch",
+      "space",
+      "round"
+    ]
+  },
+  {
+    "name": "rocket-square",
+    "category": "transport",
+    "keywords": [
+      "launch",
+      "space",
+      "boxed"
+    ]
+  },
+  {
+    "name": "rocket-add",
+    "category": "transport",
+    "keywords": [
+      "launch",
+      "space",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "rocket-check",
+    "category": "transport",
+    "keywords": [
+      "launch",
+      "space",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "save",
+    "category": "actions",
+    "keywords": [
+      "disk",
+      "persist"
+    ]
+  },
+  {
+    "name": "save-circle",
+    "category": "actions",
+    "keywords": [
+      "disk",
+      "persist",
+      "round"
+    ]
+  },
+  {
+    "name": "save-square",
+    "category": "actions",
+    "keywords": [
+      "disk",
+      "persist",
+      "boxed"
+    ]
+  },
+  {
+    "name": "save-add",
+    "category": "actions",
+    "keywords": [
+      "disk",
+      "persist",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "save-check",
+    "category": "actions",
+    "keywords": [
+      "disk",
+      "persist",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "sliders",
+    "category": "actions",
+    "keywords": [
+      "controls",
+      "adjust"
+    ]
+  },
+  {
+    "name": "sliders-circle",
+    "category": "actions",
+    "keywords": [
+      "controls",
+      "adjust",
+      "round"
+    ]
+  },
+  {
+    "name": "sliders-square",
+    "category": "actions",
+    "keywords": [
+      "controls",
+      "adjust",
+      "boxed"
+    ]
+  },
+  {
+    "name": "sliders-add",
+    "category": "actions",
+    "keywords": [
+      "controls",
+      "adjust",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "sliders-check",
+    "category": "actions",
+    "keywords": [
+      "controls",
+      "adjust",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "tag",
+    "category": "files",
+    "keywords": [
+      "label",
+      "category"
+    ]
+  },
+  {
+    "name": "tag-circle",
+    "category": "files",
+    "keywords": [
+      "label",
+      "category",
+      "round"
+    ]
+  },
+  {
+    "name": "tag-square",
+    "category": "files",
+    "keywords": [
+      "label",
+      "category",
+      "boxed"
+    ]
+  },
+  {
+    "name": "tag-add",
+    "category": "files",
+    "keywords": [
+      "label",
+      "category",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "tag-check",
+    "category": "files",
+    "keywords": [
+      "label",
+      "category",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "terminal",
+    "category": "development",
+    "keywords": [
+      "shell",
+      "console"
+    ]
+  },
+  {
+    "name": "terminal-circle",
+    "category": "development",
+    "keywords": [
+      "shell",
+      "console",
+      "round"
+    ]
+  },
+  {
+    "name": "terminal-square",
+    "category": "development",
+    "keywords": [
+      "shell",
+      "console",
+      "boxed"
+    ]
+  },
+  {
+    "name": "terminal-add",
+    "category": "development",
+    "keywords": [
+      "shell",
+      "console",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "terminal-check",
+    "category": "development",
+    "keywords": [
+      "shell",
+      "console",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "truck",
+    "category": "transport",
+    "keywords": [
+      "vehicle",
+      "logistics"
+    ]
+  },
+  {
+    "name": "truck-circle",
+    "category": "transport",
+    "keywords": [
+      "vehicle",
+      "logistics",
+      "round"
+    ]
+  },
+  {
+    "name": "truck-square",
+    "category": "transport",
+    "keywords": [
+      "vehicle",
+      "logistics",
+      "boxed"
+    ]
+  },
+  {
+    "name": "truck-add",
+    "category": "transport",
+    "keywords": [
+      "vehicle",
+      "logistics",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "truck-check",
+    "category": "transport",
+    "keywords": [
+      "vehicle",
+      "logistics",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "warning",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "caution"
+    ]
+  },
+  {
+    "name": "warning-circle",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "caution",
+      "round"
+    ]
+  },
+  {
+    "name": "warning-square",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "caution",
+      "boxed"
+    ]
+  },
+  {
+    "name": "warning-add",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "caution",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "warning-check",
+    "category": "status",
+    "keywords": [
+      "alert",
+      "caution",
+      "verified",
+      "complete"
+    ]
+  },
+  {
+    "name": "wrench",
+    "category": "actions",
+    "keywords": [
+      "tool",
+      "repair"
+    ]
+  },
+  {
+    "name": "wrench-circle",
+    "category": "actions",
+    "keywords": [
+      "tool",
+      "repair",
+      "round"
+    ]
+  },
+  {
+    "name": "wrench-square",
+    "category": "actions",
+    "keywords": [
+      "tool",
+      "repair",
+      "boxed"
+    ]
+  },
+  {
+    "name": "wrench-add",
+    "category": "actions",
+    "keywords": [
+      "tool",
+      "repair",
+      "add",
+      "create"
+    ]
+  },
+  {
+    "name": "wrench-check",
+    "category": "actions",
+    "keywords": [
+      "tool",
+      "repair",
+      "verified",
+      "complete"
+    ]
+  }
+]
