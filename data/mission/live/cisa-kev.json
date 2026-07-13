@@ -4836,7 +4836,7 @@
       "requiredAction": "The impacted product is end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue utilization of the product.",
       "dueDate": "2025-01-08",
       "knownRansomwareCampaignUse": "Unknown",
-      "notes": "https://nuuo.com/wp-content/uploads/2023/03/NUUO-EOL-letter＿NVRmini-2-and-NVRsolo-series.pdf ; https://nvd.nist.gov/vuln/detail/CVE-2022-23227",
+      "notes": "https://nuuo.com/wp-content/uploads/2023/03/NUUO-EOL-letter_NVRmini-2-and-NVRsolo-series.pdf ; https://nvd.nist.gov/vuln/detail/CVE-2022-23227",
       "cwes": [
         "CWE-306"
       ]
@@ -19113,7 +19113,7 @@
       "product": "HTTP Server",
       "vulnerabilityName": "Apache HTTP Server Path Traversal Vulnerability",
       "dateAdded": "2021-11-03",
-      "shortDescription": "Apache HTTP Server contains a path traversal vulnerability that allows an attacker to perform remote code execution if files outside directories configured by Alias-like directives are not under default �require all denied� or if CGI scripts are enabled. The original patch issued under this CVE ID is insufficient, please review remediation information under CVE-2021-42013.",
+      "shortDescription": "Apache HTTP Server contains a path traversal vulnerability that allows an attacker to perform remote code execution if files outside directories configured by Alias-like directives are not under default “require all denied” or if CGI scripts are enabled. The original patch issued under this CVE ID is insufficient, please review remediation information under CVE-2021-42013.",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2021-11-17",
       "knownRansomwareCampaignUse": "Known",
@@ -20586,7 +20586,7 @@
       "product": "Data Risk Manager",
       "vulnerabilityName": "IBM Data Risk Manager Remote Code Execution Vulnerability",
       "dateAdded": "2021-11-03",
-      "shortDescription": "IBM Data Risk Manager contains an unspecified vulnerability which could allow a remote, authenticated attacker to execute commands on the system.�",
+      "shortDescription": "IBM Data Risk Manager contains an unspecified vulnerability which could allow a remote, authenticated attacker to execute commands on the system.",
       "requiredAction": "Apply updates per vendor instructions.",
       "dueDate": "2022-05-03",
       "knownRansomwareCampaignUse": "Unknown",

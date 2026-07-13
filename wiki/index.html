@@ -209,7 +209,7 @@
     .wiki-search {
       width: 100%;
       border: 1px solid var(--wiki-border);
-      background: rgba(7, 13, 24, 0.86);
+      background: color-mix(in srgb, var(--wiki-bg) 88%, transparent);
       color: var(--wiki-text);
       border-radius: 10px;
       padding: 0.68rem 0.74rem;
@@ -218,7 +218,7 @@
     }
 
     body.light-mode .wiki-search {
-      background: #ffffff;
+      background: var(--wiki-bg-soft);
     }
 
     .wiki-search:focus-visible,
@@ -228,7 +228,7 @@
     .snippet-copy:focus-visible {
       outline: none;
       border-color: var(--wiki-border-strong);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--wiki-accent) 16%, transparent);
     }
 
     .wiki-filter-row {
@@ -488,14 +488,14 @@
     .snippet-copy:hover {
       border-color: var(--wiki-border-strong);
       color: var(--wiki-text);
-      background: rgba(56, 189, 248, 0.12);
+      background: color-mix(in srgb, var(--wiki-accent) 12%, transparent);
     }
 
     .wiki-snippet {
       border: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
       border-radius: 10px;
-      background: rgba(5, 11, 20, 0.95);
-      color: #d7e5ff;
+      background: var(--wiki-bg);
+      color: var(--wiki-text);
       font: 12px/1.54 Consolas, "SFMono-Regular", Menlo, monospace;
       white-space: pre;
       overflow: auto;
@@ -505,8 +505,8 @@
     }
 
     body.light-mode .wiki-snippet {
-      background: #ffffff;
-      color: #0f172a;
+      background: var(--wiki-bg-soft);
+      color: var(--wiki-text);
     }
 
     .wiki-preview-grid {
@@ -552,13 +552,13 @@
       border-radius: 8px;
       border: 1px solid color-mix(in srgb, var(--wiki-border) 84%, transparent);
       background:
-        radial-gradient(120% 120% at 15% 0%, rgba(56, 189, 248, 0.09), transparent 46%),
-        #08111f;
+        radial-gradient(120% 120% at 15% 0%, color-mix(in srgb, var(--wiki-accent) 9%, transparent), transparent 46%),
+        var(--wiki-bg);
       overflow: hidden;
     }
 
     body.light-mode .wiki-preview-box {
-      background: linear-gradient(180deg, #f8fbff, #eef4fb);
+      background: linear-gradient(180deg, var(--wiki-bg-soft), var(--wiki-bg));
     }
 
     @media (max-width: 1360px) {
@@ -588,12 +588,13 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="../assets/wiki-DtkzEtIF.js"></script>
-  <link rel="modulepreload" crossorigin href="../assets/header-Du1MgPHB.js">
-  <link rel="modulepreload" crossorigin href="../assets/charts-core-DHnsYKFn.js">
-  <link rel="modulepreload" crossorigin href="../assets/ui-runtime-CAPVxPGH.js">
-  <link rel="modulepreload" crossorigin href="../assets/ui-catalog-registry-CFIhgJn4.js">
-  <link rel="stylesheet" crossorigin href="../assets/ui-runtime-YbmqX44M.css">
+  <script type="module" crossorigin src="../assets/wiki-1QrOIs1S.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/charts-core-BIvOn0B5.js">
+  <link rel="modulepreload" crossorigin href="../assets/site-theme-C9NUC-cX.js">
+  <link rel="modulepreload" crossorigin href="../assets/ui-runtime-CbLJbP2-.js">
+  <link rel="modulepreload" crossorigin href="../assets/ui-catalog-registry-BSZfRntB.js">
+  <link rel="modulepreload" crossorigin href="../assets/styler-runtime-QVhFORbS.js">
+  <link rel="stylesheet" crossorigin href="../assets/ui-runtime-CkKwPM3D.css">
 </head>
 <body>
   <header id="site-header">
@@ -705,6 +706,6 @@
 
     </section>
   </main>
-
+
 </body>
 </html>
