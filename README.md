@@ -1,6 +1,6 @@
 # RiskLab Command
 
-Public deployment repository for `https://rpwalsh.github.io/`.
+Public deployment repository for `https://devgrrl.github.io/`.
 
 This repository publishes the public RiskLab command demo: the chart catalog,
 theme selector, Builder, Wiki, and mission-ready visualization surfaces for
