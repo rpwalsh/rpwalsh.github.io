@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarah Walsh | Software for technical teams who need clarity</title>
+  <title>Sarah Walsh | Frontend systems for complicated work</title>
+  <meta name="description" content="Sarah Walsh builds sharp frontend systems, data-heavy tools, and RiskLab: four practical TypeScript packages for serious interfaces." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>R</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1437,6 +1438,28 @@
       height: 14px;
       border-radius: 4px;
     }
+    /* Mission is a dense instrument, not a poster. On shorter or narrower
+       screens it must grow vertically instead of crushing its visualizations. */
+    @media (max-width: 1100px), (max-height: 780px) {
+      body.mission-mode {
+        height: auto;
+        min-height: 100dvh;
+        overflow-y: auto;
+      }
+      body.mission-mode main,
+      body.mission-mode .grid,
+      body.mission-mode .mission-browser,
+      body.mission-mode .mission-stage,
+      body.mission-mode .mission-stage__preview,
+      body.mission-mode .mission-demo-frame,
+      body.mission-mode .mission-demo-frame > div,
+      body.mission-mode .rlmission-responsive-stage {
+        flex: none;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+      }
+    }
     .theme-selection { color: var(--uc-page-text); }
     .theme-swatch {
       flex-shrink: 0;
@@ -1718,7 +1741,7 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="./assets/main-BPPtoZcY.js"></script>
+  <script type="module" crossorigin src="./assets/main-CRUoHbZD.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
   <link rel="modulepreload" crossorigin href="./assets/preload-helper-Dp1pzeXC.js">
   <link rel="stylesheet" crossorigin href="./assets/main-0NoiUJTR.css">
@@ -1733,21 +1756,22 @@
       <div class="welcome-nav-links">
         <a href="#risklab">RiskLab</a>
         <a href="#work">Work</a>
-        <a href="https://github.com/devgrrl">GitHub</a>
+        <a href="https://linkedin.com/devgrrl" rel="me">LinkedIn</a>
+        <a href="https://github.com/devgrrl" rel="me">GitHub</a>
       </div>
     </nav>
 
     <section class="welcome-hero" aria-labelledby="welcome-title">
       <div class="welcome-hero-copy">
-        <p class="welcome-kicker">Hi, I’m Sarah.</p>
-        <h1 id="welcome-title">Software for technical teams who need clarity.</h1>
-        <p class="welcome-lede">I build calm, powerful software for complicated technical work: React/TypeScript interfaces, data-heavy workflows, developer tools, visualization systems, and internal platforms that help teams understand what is going on.</p>
-        <p>RiskLab is my public UI lab — a set of small, practical TypeScript packages for building sharper analytical interfaces: components, charts, styling primitives, and icons. It is where I explore the kind of frontend systems I like most: fast, legible, useful, and a little bit beautiful.</p>
+        <p class="welcome-kicker">Hi. I’m Sarah. I make complicated software behave.</p>
+        <h1 id="welcome-title">I build the interfaces other engineers avoid.</h1>
+        <p class="welcome-lede">Dense data. Weird workflows. Internal tools with twelve kinds of state and no room for hand-waving. I turn that mess into fast React and TypeScript systems people can actually operate.</p>
+        <p>RiskLab is where I publish the useful parts: four small packages for components, charts, styling, and icons. No framework religion. No fake moonshot. Just sharp tools, typed contracts, and details that hold up when the screen gets busy.</p>
         <div class="welcome-actions">
           <a class="welcome-button welcome-button-primary" href="./?view=all">View the RiskLab Demo</a>
           <a class="welcome-button" href="#packages">See the Packages</a>
         </div>
-        <p class="welcome-proof">Former Meta Reality Labs engineer. Principal-level full-stack platform builder. Based near Seattle. Occasionally dramatic about good UI.</p>
+        <p class="welcome-proof">Former Meta Reality Labs engineer. Principal-level platform builder. Near Seattle. Correctly dramatic about bad UI.</p>
       </div>
 
       <div class="welcome-lab-preview" aria-label="RiskLab system preview">
@@ -1761,19 +1785,19 @@
           <span class="preview-node preview-node-c"></span>
         </div>
         <div class="preview-metrics">
-          <div><span>render</span><strong>12 ms</strong></div>
-          <div><span>contrast</span><strong>AAA</strong></div>
+          <div><span>language</span><strong>TS</strong></div>
           <div><span>packages</span><strong>04</strong></div>
+          <div><span>hand-waving</span><strong>00</strong></div>
         </div>
-        <div class="preview-status"><span></span> Typed contracts · accessible defaults · useful details</div>
+        <div class="preview-status"><span></span> Typed contracts · real states · useful details</div>
       </div>
     </section>
 
     <section class="welcome-section welcome-risklab" id="risklab" aria-labelledby="risklab-title">
       <div class="welcome-section-heading">
         <p class="welcome-eyebrow">The public lab</p>
-        <h2 id="risklab-title">RiskLab is a tiny frontend systems lab for analytical software.</h2>
-        <p>It is not a startup pitch, framework manifesto, or giant platform pretending to be finished. It is a practical set of TypeScript packages for building serious interfaces with less friction.</p>
+        <h2 id="risklab-title">RiskLab is the toolbox I wanted on the last five complicated projects.</h2>
+        <p>Four focused TypeScript packages. Small enough to understand, useful enough to ship, and deliberately not a startup pitch wearing a gradient.</p>
       </div>
       <div class="package-grid" id="packages">
         <a class="package-card package-card-ui" href="./ui/">
@@ -1802,8 +1826,8 @@
     <section class="welcome-section welcome-values" id="work">
       <div class="welcome-value-statement">
         <p class="welcome-eyebrow">What I care about</p>
-        <h2>I like software that feels calm under pressure.</h2>
-        <p>Clear interfaces. Traceable data. Fast feedback loops. Useful defaults. Good empty states. Systems that explain themselves. Tools that make engineers faster instead of making them fight the machine.</p>
+        <h2>Calm screens. Honest data. No mystery meat.</h2>
+        <p>I care about traceable state, fast feedback, good empty states, and interfaces that explain what just happened. If the operator has to guess, the software is not done.</p>
       </div>
       <div class="welcome-builds">
         <p class="welcome-eyebrow">What I build</p>
@@ -1811,7 +1835,7 @@
           <article><span>01</span><h3>Internal engineering platforms</h3></article>
           <article><span>02</span><h3>Developer tools and workflow systems</h3></article>
           <article><span>03</span><h3>Data visualization and analytical UI</h3></article>
-          <article><span>04</span><h3>AI-assisted tools with human-verifiable outputs</h3></article>
+          <article><span>04</span><h3>AI features that show their work</h3></article>
         </div>
       </div>
     </section>
@@ -1829,13 +1853,12 @@
     </section>
 
     <section class="welcome-cta">
-      <p class="welcome-eyebrow">Let’s make the complicated part usable.</p>
-      <h2>Building a platform, dashboard, developer tool, or technical workflow that needs to feel less chaotic?</h2>
-      <p>I’m interested in Staff and Principal engineering roles where frontend craft, platform architecture, production judgment, and messy real-world systems all matter.</p>
+      <p class="welcome-eyebrow">Got a hard interface problem?</p>
+      <h2>If the workflow is messy, the data is dense, and the easy answers already failed, we should talk.</h2>
+      <p>I’m interested in Staff and Principal engineering work where frontend craft, platform architecture, and production judgment all matter. Find me on LinkedIn; my inbox is not bot food.</p>
       <div class="welcome-actions">
-        <a class="welcome-button welcome-button-primary" href="https://github.com/devgrrl">GitHub</a>
-        <a class="welcome-button" href="https://www.linkedin.com/in/uiarchitect">LinkedIn</a>
-        <a class="welcome-button" href="mailto:reactarchitect@outlook.com">Email</a>
+        <a class="welcome-button welcome-button-primary" href="https://linkedin.com/devgrrl" rel="me">LinkedIn</a>
+        <a class="welcome-button" href="https://github.com/devgrrl" rel="me">GitHub</a>
       </div>
     </section>
 
