@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RiskLab Command | RiskLab</title>
+  <title>Sarah Walsh | Software for technical teams who need clarity</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>R</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1718,16 +1718,134 @@
       }
     }
   </style>
-  <script type="module" crossorigin src="./assets/main-BMGXNbpG.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/charts-core-BIvOn0B5.js">
-  <link rel="modulepreload" crossorigin href="./assets/site-theme-SDhXM3Eo.js">
-  <link rel="modulepreload" crossorigin href="./assets/ui-runtime-CbLJbP2-.js">
-  <link rel="modulepreload" crossorigin href="./assets/mission-runtime-DwdT1PVp.js">
-  <link rel="modulepreload" crossorigin href="./assets/site-data-DepQQL70.js">
-  <link rel="stylesheet" crossorigin href="./assets/ui-runtime-CkKwPM3D.css">
-  <link rel="stylesheet" crossorigin href="./assets/mission-runtime-wEkdoSUk.css">
+  <script type="module" crossorigin src="./assets/main-BPPtoZcY.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="./assets/preload-helper-Dp1pzeXC.js">
+  <link rel="stylesheet" crossorigin href="./assets/main-0NoiUJTR.css">
 </head>
 <body>
+  <main class="welcome" id="welcome">
+    <nav class="welcome-nav" aria-label="Primary navigation">
+      <a class="welcome-brand" href="./" aria-label="Sarah Walsh home">
+        <span class="welcome-brand-mark" aria-hidden="true">S</span>
+        <span>Sarah Walsh</span>
+      </a>
+      <div class="welcome-nav-links">
+        <a href="#risklab">RiskLab</a>
+        <a href="#work">Work</a>
+        <a href="https://github.com/devgrrl">GitHub</a>
+      </div>
+    </nav>
+
+    <section class="welcome-hero" aria-labelledby="welcome-title">
+      <div class="welcome-hero-copy">
+        <p class="welcome-kicker">Hi, I’m Sarah.</p>
+        <h1 id="welcome-title">Software for technical teams who need clarity.</h1>
+        <p class="welcome-lede">I build calm, powerful software for complicated technical work: React/TypeScript interfaces, data-heavy workflows, developer tools, visualization systems, and internal platforms that help teams understand what is going on.</p>
+        <p>RiskLab is my public UI lab — a set of small, practical TypeScript packages for building sharper analytical interfaces: components, charts, styling primitives, and icons. It is where I explore the kind of frontend systems I like most: fast, legible, useful, and a little bit beautiful.</p>
+        <div class="welcome-actions">
+          <a class="welcome-button welcome-button-primary" href="./?view=all">View the RiskLab Demo</a>
+          <a class="welcome-button" href="#packages">See the Packages</a>
+        </div>
+        <p class="welcome-proof">Former Meta Reality Labs engineer. Principal-level full-stack platform builder. Based near Seattle. Occasionally dramatic about good UI.</p>
+      </div>
+
+      <div class="welcome-lab-preview" aria-label="RiskLab system preview">
+        <div class="preview-topline"><span>risklab / workspace</span><span class="preview-live">systems nominal</span></div>
+        <div class="preview-chart" aria-hidden="true">
+          <span class="preview-grid"></span>
+          <span class="preview-line preview-line-a"></span>
+          <span class="preview-line preview-line-b"></span>
+          <span class="preview-node preview-node-a"></span>
+          <span class="preview-node preview-node-b"></span>
+          <span class="preview-node preview-node-c"></span>
+        </div>
+        <div class="preview-metrics">
+          <div><span>render</span><strong>12 ms</strong></div>
+          <div><span>contrast</span><strong>AAA</strong></div>
+          <div><span>packages</span><strong>04</strong></div>
+        </div>
+        <div class="preview-status"><span></span> Typed contracts · accessible defaults · useful details</div>
+      </div>
+    </section>
+
+    <section class="welcome-section welcome-risklab" id="risklab" aria-labelledby="risklab-title">
+      <div class="welcome-section-heading">
+        <p class="welcome-eyebrow">The public lab</p>
+        <h2 id="risklab-title">RiskLab is a tiny frontend systems lab for analytical software.</h2>
+        <p>It is not a startup pitch, framework manifesto, or giant platform pretending to be finished. It is a practical set of TypeScript packages for building serious interfaces with less friction.</p>
+      </div>
+      <div class="package-grid" id="packages">
+        <a class="package-card package-card-ui" href="./ui/">
+          <span class="package-index">01</span><h3>risklab-ui</h3>
+          <p>Composable React components for dashboards, tools, inspectors, panels, forms, and technical workflows.</p>
+          <span class="package-link">Browse components <b>→</b></span>
+        </a>
+        <a class="package-card package-card-charts" href="./?view=all">
+          <span class="package-index">02</span><h3>risklab-charts</h3>
+          <p>Reusable charting primitives for analytical interfaces, operational views, and data-heavy product surfaces.</p>
+          <span class="package-link">Explore charts <b>→</b></span>
+        </a>
+        <a class="package-card package-card-styler" href="./styler/">
+          <span class="package-index">03</span><h3>risklab-styler</h3>
+          <p>A lightweight styling system for consistent visual language across components, charts, and demos.</p>
+          <span class="package-link">Inspect styles <b>→</b></span>
+        </a>
+        <a class="package-card package-card-icons" href="./icons/">
+          <span class="package-index">04</span><h3>risklab-icons</h3>
+          <p>A small icon set for technical interfaces: clean, readable, and built to sit quietly inside real tools.</p>
+          <span class="package-link">View icons <b>→</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="welcome-section welcome-values" id="work">
+      <div class="welcome-value-statement">
+        <p class="welcome-eyebrow">What I care about</p>
+        <h2>I like software that feels calm under pressure.</h2>
+        <p>Clear interfaces. Traceable data. Fast feedback loops. Useful defaults. Good empty states. Systems that explain themselves. Tools that make engineers faster instead of making them fight the machine.</p>
+      </div>
+      <div class="welcome-builds">
+        <p class="welcome-eyebrow">What I build</p>
+        <div class="build-grid">
+          <article><span>01</span><h3>Internal engineering platforms</h3></article>
+          <article><span>02</span><h3>Developer tools and workflow systems</h3></article>
+          <article><span>03</span><h3>Data visualization and analytical UI</h3></article>
+          <article><span>04</span><h3>AI-assisted tools with human-verifiable outputs</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="welcome-section lab-map" aria-labelledby="lab-map-title">
+      <div class="welcome-section-heading">
+        <p class="welcome-eyebrow">Inside the lab</p>
+        <h2 id="lab-map-title">Explore the system from the angle you need.</h2>
+      </div>
+      <div class="lab-map-links">
+        <a href="./?view=mission"><strong>Demo</strong><span>See the packages working together in an interactive analytical surface.</span></a>
+        <a href="./builder/"><strong>Builder</strong><span>Compose chart, component, icon, and styling contracts.</span></a>
+        <a href="./wiki/"><strong>Reference</strong><span>Read the live API guide with rendered examples.</span></a>
+      </div>
+    </section>
+
+    <section class="welcome-cta">
+      <p class="welcome-eyebrow">Let’s make the complicated part usable.</p>
+      <h2>Building a platform, dashboard, developer tool, or technical workflow that needs to feel less chaotic?</h2>
+      <p>I’m interested in Staff and Principal engineering roles where frontend craft, platform architecture, production judgment, and messy real-world systems all matter.</p>
+      <div class="welcome-actions">
+        <a class="welcome-button welcome-button-primary" href="https://github.com/devgrrl">GitHub</a>
+        <a class="welcome-button" href="https://www.linkedin.com/in/uiarchitect">LinkedIn</a>
+        <a class="welcome-button" href="mailto:reactarchitect@outlook.com">Email</a>
+      </div>
+    </section>
+
+    <footer class="welcome-footer">
+      <span>Sarah Walsh · Seattle-ish</span>
+      <span>Built with TypeScript, taste, and a healthy respect for empty states.</span>
+    </footer>
+  </main>
+
+  <div id="risklab-app" hidden>
   <header>
     <div class="hdr-brand">
       <span class="hdr-mark" aria-hidden="true">RL</span>
@@ -1747,5 +1865,6 @@
   <footer>
     <p><a href="https://github.com/devgrrl/devgrrl.github.io">RiskLab Command Demo</a> | Copyright (c) 2026 Sarah Walsh. All rights reserved.</p>
   </footer>
+  </div>
 </body>
 </html>
