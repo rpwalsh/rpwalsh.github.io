@@ -1740,6 +1740,125 @@
         align-items: flex-start;
       }
     }
+
+    /* Selected work: curated project grid + compact secondary list */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+      .work-grid { grid-template-columns: 1fr; }
+    }
+    .work-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--welcome-line);
+      border-radius: 1rem;
+      background: #ffffff09;
+      overflow: hidden;
+    }
+    .work-card-media {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-bottom: 1px solid var(--welcome-line);
+      background: #00000030;
+    }
+    .work-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .work-card-body {
+      padding: 1.15rem 1.25rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .work-card-eyebrow {
+      color: var(--welcome-teal);
+      font: 750 .72rem/1.2 'JetBrains Mono', monospace;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin: 0 0 .35rem;
+    }
+    .work-card-body h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: -.02em;
+    }
+    .work-card-body p {
+      margin-top: .6rem;
+      color: var(--welcome-muted);
+      line-height: 1.6;
+      font-size: .92rem;
+    }
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .9rem;
+    }
+    .work-tag {
+      padding: .2rem .55rem;
+      border-radius: .5rem;
+      background: #ffffff0f;
+      border: 1px solid var(--welcome-line);
+      color: var(--welcome-muted);
+      font: 600 .7rem/1.4 'JetBrains Mono', monospace;
+      letter-spacing: .02em;
+    }
+    .work-card-links {
+      margin-top: auto;
+      padding-top: 1.1rem;
+      display: flex;
+      gap: 1.1rem;
+    }
+    .work-card-links a {
+      color: var(--welcome-plum);
+      font-weight: 720;
+      font-size: .92rem;
+      text-decoration: none;
+    }
+    .work-card-links a:hover { text-decoration: underline; }
+    .work-more {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .75rem;
+    }
+    @media (max-width: 900px) {
+      .work-more { grid-template-columns: 1fr; }
+    }
+    .work-more-item {
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--welcome-line);
+      border-radius: .82rem;
+      background: #ffffff06;
+      text-decoration: none;
+    }
+    .work-more-item strong {
+      color: var(--welcome-ink);
+      font-size: .95rem;
+    }
+    .work-more-item span {
+      color: var(--welcome-muted);
+      font-size: .85rem;
+      line-height: 1.5;
+    }
+    .work-more-link {
+      margin-top: 1.25rem;
+      display: inline-block;
+      color: var(--welcome-plum);
+      font-weight: 720;
+      text-decoration: none;
+    }
+    .work-more-link:hover { text-decoration: underline; }
   </style>
   <script type="module" crossorigin src="./assets/main-BKiBq_xN.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
@@ -1754,8 +1873,8 @@
         <span>Ryan P. Walsh</span>
       </a>
       <div class="welcome-nav-links">
-        <a href="#risklab">RiskLab</a>
         <a href="#work">Work</a>
+        <a href="#risklab">RiskLab</a>
         <a href="https://www.linkedin.com/in/uiarchitect/" rel="me">LinkedIn</a>
         <a href="https://github.com/rpwalsh" rel="me">GitHub</a>
       </div>
@@ -1763,19 +1882,18 @@
 
     <section class="welcome-hero" aria-labelledby="welcome-title">
       <div class="welcome-hero-copy">
-        <p class="welcome-kicker">Hi. I’m Ryan. I make complicated software behave.</p>
+        <p class="welcome-kicker">Hi, I’m Ryan.</p>
         <h1 id="welcome-title">I build the systems other engineers avoid.</h1>
-        <p class="welcome-lede">Dense data. Weird workflows. Internal tools with twelve kinds of state and no room for hand-waving. I turn that mess into fast, inspectable systems across TypeScript, Python, Go, and Rust—with interfaces people can actually operate.</p>
-        <p>RiskLab is where I publish the reusable infrastructure: four open-source TypeScript packages for advanced UI, charts, styling, and icons. No commercial “pro” tier, no locked analytical components, and no framework religion—just typed packages built to ship.</p>
+        <p class="welcome-lede">20+ years shipping software end-to-end: interactive frontends, distributed backends, data and forecasting systems, developer platforms, and the occasional operating system. I take on the parts of the stack other people postpone, and I ship the architecture, not just the demo.</p>
         <div class="welcome-actions">
-          <a class="welcome-button welcome-button-primary" href="./?view=all">View the RiskLab Demo</a>
-          <a class="welcome-button" href="#packages">See the Packages</a>
+          <a class="welcome-button welcome-button-primary" href="#work">View Selected Work</a>
+          <a class="welcome-button" href="https://github.com/rpwalsh">GitHub</a>
         </div>
-        <p class="welcome-proof">Former Meta Reality Labs engineer. Principal-level platform builder. Near Seattle. Correctly dramatic about bad UI.</p>
+        <p class="welcome-proof">20+ years · Meta Reality Labs · TypeScript · React · C# · Go · Rust · Python · PostgreSQL</p>
       </div>
 
-      <div class="welcome-lab-preview" aria-label="RiskLab system preview">
-        <div class="preview-topline"><span>risklab / workspace</span><span class="preview-live">systems nominal</span></div>
+      <div class="welcome-lab-preview" aria-label="Engineering summary">
+        <div class="preview-topline"><span>ryan / systems</span><span class="preview-live">open to work</span></div>
         <div class="preview-chart" aria-hidden="true">
           <span class="preview-grid"></span>
           <span class="preview-line preview-line-a"></span>
@@ -1785,11 +1903,143 @@
           <span class="preview-node preview-node-c"></span>
         </div>
         <div class="preview-metrics">
-          <div><span>language</span><strong>TS</strong></div>
-          <div><span>packages</span><strong>04</strong></div>
-          <div><span>hand-waving</span><strong>00</strong></div>
+          <div><span>experience</span><strong>20+y</strong></div>
+          <div><span>shipped</span><strong>10+</strong></div>
+          <div><span>domains</span><strong>05</strong></div>
         </div>
-        <div class="preview-status"><span></span> Typed contracts · real states · useful details</div>
+        <div class="preview-status"><span></span> Systems-first · production judgment · shipped code</div>
+      </div>
+    </section>
+
+    <section class="welcome-section welcome-work" id="work" aria-labelledby="work-title">
+      <div class="welcome-section-heading">
+        <p class="welcome-eyebrow">Selected work</p>
+        <h2 id="work-title">Eight systems worth reading the code for.</h2>
+        <p>Real, working repositories spanning full-stack application architecture, forecasting and data systems, reverse engineering, and systems research — not a portfolio grid of screenshots.</p>
+      </div>
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Full-stack systems</p>
+            <h3>Encounter Lab</h3>
+            <p>A server-authoritative combat application: the backend owns every state transition — hit points, resistance, dice, command versioning, event history — and the React/Three.js client only sends intent and renders what the server committed.</p>
+            <div class="work-tags">
+              <span class="work-tag">React</span><span class="work-tag">TypeScript</span><span class="work-tag">ASP.NET Core</span><span class="work-tag">GraphQL</span><span class="work-tag">SignalR</span><span class="work-tag">SQLite</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/encounter-lab">Source →</a>
+              <a href="https://github.com/rpwalsh/encounter-lab/blob/main/TLDR_5_Minute_Review.md">5-minute review →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-media"><img src="./assets/portfolio/dispatchlayer-dashboard.jpg" alt="DispatchLayer forecasting dashboard showing confidence bands and error diagnostics" loading="lazy" /></div>
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Data & forecasting</p>
+            <h3>DispatchLayer</h3>
+            <p>Archive-first forecasting and decision-support for grid assets — physics-informed generation models, P10/P50/P90 uncertainty bands, and holdout-validated accuracy across 5 years of hourly data on 10 demo sites.</p>
+            <div class="work-tags">
+              <span class="work-tag">Python</span><span class="work-tag">FastAPI</span><span class="work-tag">Vue</span><span class="work-tag">PostgreSQL</span><span class="work-tag">Forecasting</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/DispatchLayer">Source →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Systems research</p>
+            <h3>SCCE</h3>
+            <p>An experimental cognitive runtime built around a persistent, inspectable evidence graph instead of a foundation-model inference loop — document/code ingestion, graph-based reasoning and planning, and a local HTTP API, CLI, and VS Code integration, all CPU-native.</p>
+            <div class="work-tags">
+              <span class="work-tag">Graph systems</span><span class="work-tag">Reasoning</span><span class="work-tag">Local runtimes</span><span class="work-tag">CLI</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/SCCE">Source →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Operating systems</p>
+            <h3>LaplacianOS</h3>
+            <p>A capability-oriented OS kernel written in Rust, booting through a custom UEFI loader, with a native typed graph runtime driving predictive system control and a GPU-composited desktop for native ring-3 applications.</p>
+            <div class="work-tags">
+              <span class="work-tag">Rust</span><span class="work-tag">Kernel</span><span class="work-tag">UEFI</span><span class="work-tag">Graph runtime</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/LaplacianOS">Source →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Reverse engineering</p>
+            <h3>Bao1702</h3>
+            <p>An independently written Windows configuration toolkit for DM-1702-series radios — binary codeplug modeling from reverse-engineered protocol captures, and a safety model that treats every device write as destructive until proven otherwise.</p>
+            <div class="work-tags">
+              <span class="work-tag">C#</span><span class="work-tag">WPF</span><span class="work-tag">Binary protocols</span><span class="work-tag">Reverse engineering</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/dm-1702b-configurator">Source →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Backend / infrastructure</p>
+            <h3>SearchAPI</h3>
+            <p>A Go backend for field-deployed hardware test environments: asset and telemetry ingestion, threshold alarms, and a replayable, searchable audit trail backed by Postgres with optional Elasticsearch indexing.</p>
+            <div class="work-tags">
+              <span class="work-tag">Go</span><span class="work-tag">PostgreSQL</span><span class="work-tag">Elasticsearch</span><span class="work-tag">Telemetry</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/searchAPI">Source →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Cryptography</p>
+            <h3>Blockchain Voting System</h3>
+            <p>A tamper-evident election platform with independently auditable votes and signed administrative actions, built on real cryptographic primitives — not a "blockchain" buzzword slapped on a CRUD app.</p>
+            <div class="work-tags">
+              <span class="work-tag">TypeScript</span><span class="work-tag">Node.js</span><span class="work-tag">Prisma</span><span class="work-tag">Cryptography</span><span class="work-tag">React</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/blockchain-voting-system">Source →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-body">
+            <p class="work-card-eyebrow">Hardware / browser</p>
+            <h3>Onboard Diagnostics Tool</h3>
+            <p>A React app that talks directly to ELM327 Bluetooth OBD2 adapters from the browser via Web Bluetooth — live PID charting, DTC read/clear, and a raw hex command console, no native app required.</p>
+            <div class="work-tags">
+              <span class="work-tag">React</span><span class="work-tag">Web Bluetooth</span><span class="work-tag">Vite</span>
+            </div>
+            <div class="work-card-links">
+              <a href="https://github.com/rpwalsh/onboarddiagnosticstool">Source →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="welcome-eyebrow" style="margin-top:2.75rem">More on GitHub</p>
+      <div class="work-more">
+        <a class="work-more-item" href="https://github.com/rpwalsh/aiblocker">
+          <strong>AI Content Blocker</strong>
+          <span>Local-first Chrome extension that flags likely AI-generated content, with on-device detection and optional crowd-learning.</span>
+        </a>
+        <a class="work-more-item" href="https://github.com/rpwalsh/receipt_wrangler_android">
+          <strong>Receipt Wrangler (Android)</strong>
+          <span>Offline-first receipt manager with on-device OCR, duplicate detection, and zero cloud sync.</span>
+        </a>
+        <a class="work-more-item" href="https://github.com/rpwalsh?tab=repositories">
+          <strong>Everything else →</strong>
+          <span>The full repository list, unfiltered.</span>
+        </a>
       </div>
     </section>
 
@@ -1797,7 +2047,7 @@
       <div class="welcome-section-heading">
         <p class="welcome-eyebrow">The public lab</p>
         <h2 id="risklab-title">RiskLab is the toolbox I wanted on the last five complicated projects.</h2>
-        <p>Four focused TypeScript packages for serious analytical software: inspectable, composable, and useful enough to ship.</p>
+        <p>Four focused TypeScript packages for serious analytical software: inspectable, composable, and useful enough to ship. Every card below opens a live demo running on this site, not a README.</p>
       </div>
       <div class="risklab-proof-strip" aria-label="RiskLab package compatibility">
         <a href="https://www.npmjs.com/org/risklab">Published on npm</a>
@@ -1808,40 +2058,31 @@
         <a class="package-card package-card-ui" href="./ui/">
           <span class="package-index">01</span><h3>risklab-ui</h3>
           <p>Composable React components for dashboards, tools, inspectors, panels, forms, and technical workflows.</p>
-          <span class="package-link">Browse components <b>→</b></span>
+          <span class="package-link">Live demo <b>→</b></span>
         </a>
-        <a class="package-card package-card-charts" href="https://www.npmjs.com/package/@risklab/charts">
+        <a class="package-card package-card-charts" href="./?view=all">
           <span class="package-index">02</span><h3>risklab-charts</h3>
           <p>Reusable charting primitives for analytical interfaces, operational views, and data-heavy product surfaces.</p>
-          <span class="package-link">View on npm <b>→</b></span>
+          <span class="package-link">Live demo <b>→</b></span>
         </a>
         <a class="package-card package-card-styler" href="./styler/">
           <span class="package-index">03</span><h3>risklab-styler</h3>
           <p>A typed styling compiler and runtime for consistent visual language across components, charts, and production applications.</p>
-          <span class="package-link">Inspect styles <b>→</b></span>
+          <span class="package-link">Live demo <b>→</b></span>
         </a>
         <a class="package-card package-card-icons" href="./icons/">
           <span class="package-index">04</span><h3>risklab-icons</h3>
           <p>A small icon set for technical interfaces: clean, readable, and built to sit quietly inside real tools.</p>
-          <span class="package-link">View icons <b>→</b></span>
+          <span class="package-link">Live demo <b>→</b></span>
         </a>
       </div>
     </section>
 
-    <section class="welcome-section welcome-values" id="work">
+    <section class="welcome-section welcome-values">
       <div class="welcome-value-statement">
-        <p class="welcome-eyebrow">What I care about</p>
+        <p class="welcome-eyebrow">How I work</p>
         <h2>Calm screens. Honest data. No mystery meat.</h2>
-        <p>I care about traceable state, fast feedback, good empty states, and interfaces that explain what just happened. If the operator has to guess, the software is not done.</p>
-      </div>
-      <div class="welcome-builds">
-        <p class="welcome-eyebrow">What I build</p>
-        <div class="build-grid">
-          <article><span>01</span><h3>Internal engineering platforms</h3></article>
-          <article><span>02</span><h3>Developer tools and workflow systems</h3></article>
-          <article><span>03</span><h3>Data visualization and analytical UI</h3></article>
-          <article><span>04</span><h3>AI features that show their work</h3></article>
-        </div>
+        <p>I care about traceable state, fast feedback, good empty states, and interfaces that explain what just happened. I use automation and AI aggressively in my own workflow, but I don't delegate architectural judgment to either — invariants live in tests and static checks, not in a prompt.</p>
       </div>
     </section>
 
@@ -1858,9 +2099,9 @@
     </section>
 
     <section class="welcome-cta">
-      <p class="welcome-eyebrow">Got a hard interface problem?</p>
+      <p class="welcome-eyebrow">Hiring for Staff/Principal engineering?</p>
       <h2>If the workflow is messy, the data is dense, and the easy answers already failed, we should talk.</h2>
-      <p>I’m interested in Staff and Principal engineering work where systems architecture, production judgment, and excellent interfaces all matter. Find me on LinkedIn.</p>
+      <p>I’m interested in Staff and Principal engineering work where systems architecture, production judgment, and execution across the whole stack all matter. Find me on LinkedIn or GitHub.</p>
       <div class="welcome-actions">
         <a class="welcome-button welcome-button-primary" href="https://www.linkedin.com/in/uiarchitect/" rel="me">LinkedIn</a>
         <a class="welcome-button" href="https://github.com/rpwalsh" rel="me">GitHub</a>
