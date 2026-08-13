@@ -1892,6 +1892,9 @@
         </div>
         <p class="welcome-proof">20+ years · TypeScript · React · C# · Go · Rust · Python · PostgreSQL</p>
       </div>
+      <div class="welcome-hero-tesseract">
+        <canvas id="tesseract-canvas" aria-hidden="true"></canvas>
+      </div>
     </section>
 
     <section class="welcome-section welcome-work" id="work" aria-labelledby="work-title">
@@ -2105,5 +2108,119 @@
     <p><a href="https://github.com/rpwalsh/rpwalsh.github.io">RiskLab Command Demo</a> | Copyright (c) 2026 Ryan P. Walsh. All rights reserved.</p>
   </footer>
   </div>
+  <script type="module">
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+    const container = document.querySelector('.welcome-hero-tesseract');
+    const canvas = document.getElementById('tesseract-canvas');
+    if (container && canvas && window.WebGLRenderingContext) {
+      const VERTS4 = [];
+      for (let i = 0; i < 16; i++) {
+        VERTS4.push([
+          (i & 1) ? 1 : -1,
+          (i & 2) ? 1 : -1,
+          (i & 4) ? 1 : -1,
+          (i & 8) ? 1 : -1,
+        ]);
+      }
+      const EDGES = [];
+      for (let i = 0; i < 16; i++) {
+        for (let j = i + 1; j < 16; j++) {
+          const diff = i ^ j;
+          if (diff && (diff & (diff - 1)) === 0) EDGES.push([i, j]);
+        }
+      }
+
+      const rotate4D = (v, aXY, aZW, aXW) => {
+        let [x, y, z, w] = v;
+        let x1 = x * Math.cos(aXY) - y * Math.sin(aXY);
+        let y1 = x * Math.sin(aXY) + y * Math.cos(aXY);
+        x = x1; y = y1;
+        let z1 = z * Math.cos(aZW) - w * Math.sin(aZW);
+        let w1 = z * Math.sin(aZW) + w * Math.cos(aZW);
+        z = z1; w = w1;
+        let x2 = x * Math.cos(aXW) - w * Math.sin(aXW);
+        let w2 = x * Math.sin(aXW) + w * Math.cos(aXW);
+        x = x2; w = w2;
+        return [x, y, z, w];
+      };
+      const project4Dto3D = (v, wDist = 2.4) => {
+        const [x, y, z, w] = v;
+        const s = wDist / (wDist - w);
+        return [x * s, y * s, z * s];
+      };
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+      camera.position.set(0, 0, 5.2);
+
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+      const group = new THREE.Group();
+      scene.add(group);
+
+      const positions = new Float32Array(EDGES.length * 2 * 3);
+      const colors = new Float32Array(EDGES.length * 2 * 3);
+      const pink = new THREE.Color('#ef91bd');
+      const teal = new THREE.Color('#67c8bd');
+      EDGES.forEach(([a, b], i) => {
+        const colorA = VERTS4[a][3] > 0 ? pink : teal;
+        const colorB = VERTS4[b][3] > 0 ? pink : teal;
+        colors.set([colorA.r, colorA.g, colorA.b], i * 6);
+        colors.set([colorB.r, colorB.g, colorB.b], i * 6 + 3);
+      });
+
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      const material = new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.85 });
+      const lines = new THREE.LineSegments(geometry, material);
+      group.add(lines);
+
+      const pointsGeometry = new THREE.BufferGeometry();
+      const pointPositions = new Float32Array(16 * 3);
+      pointsGeometry.setAttribute('position', new THREE.BufferAttribute(pointPositions, 3));
+      const pointsMaterial = new THREE.PointsMaterial({ color: '#fff7fb', size: 0.05, transparent: true, opacity: 0.9 });
+      const points = new THREE.Points(pointsGeometry, pointsMaterial);
+      group.add(points);
+
+      const resize = () => {
+        const w = container.clientWidth || 1;
+        const h = container.clientHeight || 1;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      };
+      new ResizeObserver(resize).observe(container);
+      resize();
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let t = 0;
+      const renderFrame = () => {
+        t += 0.006;
+        const projected = VERTS4.map((v) => project4Dto3D(rotate4D(v, t * 0.6, t * 0.42, t * 0.31)));
+        const posAttr = geometry.attributes.position.array;
+        EDGES.forEach(([a, b], i) => {
+          posAttr.set(projected[a], i * 6);
+          posAttr.set(projected[b], i * 6 + 3);
+        });
+        geometry.attributes.position.needsUpdate = true;
+        const ptAttr = pointsGeometry.attributes.position.array;
+        projected.forEach((p, i) => ptAttr.set(p, i * 3));
+        pointsGeometry.attributes.position.needsUpdate = true;
+        group.rotation.y += 0.0015;
+        group.rotation.x += 0.0007;
+        renderer.render(scene, camera);
+      };
+
+      if (reduceMotion) {
+        renderFrame();
+      } else {
+        const loop = () => { renderFrame(); requestAnimationFrame(loop); };
+        requestAnimationFrame(loop);
+      }
+    }
+  </script>
 </body>
 </html>
