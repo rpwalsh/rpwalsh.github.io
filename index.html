@@ -1924,7 +1924,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Full-stack systems</p>
             <h3>Encounter Lab</h3>
-            <p>A server-authoritative combat application: the backend owns every state transition — hit points, resistance, dice, command versioning, event history — and the React/Three.js client only sends intent and renders what the server committed.</p>
+            <p>A server-authoritative combat engine for tabletop-style encounters. The backend owns every state transition — hit points, resistance, dice rolls, command versioning, full event history. The React/Three.js client never computes outcomes; it only sends intent and renders what the server already committed. Every action is replayable from the event log, not just the current state snapshot. Built with ASP.NET Core, GraphQL, and SignalR for real-time state sync.</p>
             <div class="work-tags">
               <span class="work-tag">React</span><span class="work-tag">TypeScript</span><span class="work-tag">ASP.NET Core</span><span class="work-tag">GraphQL</span><span class="work-tag">SignalR</span><span class="work-tag">SQLite</span>
             </div>
@@ -1939,7 +1939,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Data & forecasting</p>
             <h3>DispatchLayer</h3>
-            <p>Archive-first forecasting and decision-support for grid assets — physics-informed generation models, P10/P50/P90 uncertainty bands, and holdout-validated accuracy across 5 years of hourly data on 10 demo sites.</p>
+            <p>Archive-first forecasting and decision-support for grid assets. Physics-informed generation models replace black-box curve fitting. Every forecast ships with P10/P50/P90 uncertainty bands, not a single point estimate. Accuracy is holdout-validated across 5 years of hourly data on 10 demo sites. Built in Python/FastAPI on the backend, Vue on the front end, Postgres underneath.</p>
             <div class="work-tags">
               <span class="work-tag">Python</span><span class="work-tag">FastAPI</span><span class="work-tag">Vue</span><span class="work-tag">PostgreSQL</span><span class="work-tag">Forecasting</span>
             </div>
@@ -1953,7 +1953,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Systems research</p>
             <h3>SCCE</h3>
-            <p>An experimental cognitive runtime built around a persistent, inspectable evidence graph instead of a foundation-model inference loop — document/code ingestion, graph-based reasoning and planning, and a local HTTP API, CLI, and VS Code integration, all CPU-native.</p>
+            <p>A local, non-LLM cognitive engine: graph memory and inspectable reasoning traces instead of a hosted model and vector RAG. It ingests documents and code, reasons over a persistent evidence graph, and plans actions from that graph, not from a prompt. Every answer carries a reasoning trace back to its evidence — no black box to trust blindly. It runs entirely CPU-native, with a local HTTP API, a CLI, and VS Code integration — no cloud inference call, ever. Source-available under a proprietary license, built to replace the LLM/RAG stack, not wrap it.</p>
             <div class="work-tags">
               <span class="work-tag">Graph systems</span><span class="work-tag">Reasoning</span><span class="work-tag">Local runtimes</span><span class="work-tag">CLI</span>
             </div>
@@ -1967,7 +1967,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Operating systems</p>
             <h3>LaplacianOS</h3>
-            <p>A capability-oriented OS kernel written in Rust, booting through a custom UEFI loader, with a native typed graph runtime driving predictive system control and a GPU-composited desktop for native ring-3 applications.</p>
+            <p>A capability-oriented OS kernel written from scratch in Rust. It boots through a custom UEFI loader with dual-arch support — x86_64 and aarch64 — boot-verified in CI under QEMU on every commit. A native, typed graph runtime drives predictive system control instead of static schedulers and driver stacks. Capabilities, not ambient authority, gate every resource access at the kernel boundary. A GPU-composited desktop runs native ring-3 applications directly on top of the kernel — no POSIX layer underneath.</p>
             <div class="work-tags">
               <span class="work-tag">Rust</span><span class="work-tag">Kernel</span><span class="work-tag">UEFI</span><span class="work-tag">Graph runtime</span>
             </div>
@@ -1981,7 +1981,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Reverse engineering</p>
             <h3>Bao1702</h3>
-            <p>An independently written Windows configuration toolkit for DM-1702-series radios — binary codeplug modeling from reverse-engineered protocol captures, and a safety model that treats every device write as destructive until proven otherwise.</p>
+            <p>An independently written Windows configuration toolkit for DM-1702-series radios. The binary codeplug format was reverse-engineered entirely from protocol captures — no vendor SDK, no leaked source. Every device write is treated as destructive until proven otherwise, with staged confirmation before anything touches the radio. A safety-first workflow separates read, validate, and write into distinct, reversible steps. Built in C# and WPF as a real desktop application, not a wrapper around someone else's tool.</p>
             <div class="work-tags">
               <span class="work-tag">C#</span><span class="work-tag">WPF</span><span class="work-tag">Binary protocols</span><span class="work-tag">Reverse engineering</span>
             </div>
@@ -1995,7 +1995,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Real-time visualization</p>
             <h3>RiskLab Mission</h3>
-            <p>A real-time 3D command surface built on RiskLab's own packages: terrain rendering, live track fusion, signal-zone overlays, and multi-view drone feeds driven entirely by typed, composable primitives instead of a game engine.</p>
+            <p>A real-time 3D command surface built entirely on RiskLab's own component packages. Terrain rendering, live track fusion, and signal-zone overlays run together in one composable scene graph. Multi-view drone feeds stream alongside the 3D view for simultaneous situational awareness. Every visual primitive is typed and composable — there's no game engine underneath, just TypeScript, Three.js, and WebGL. The live demo on this site is the actual production build, not a mockup.</p>
             <div class="work-tags">
               <span class="work-tag">TypeScript</span><span class="work-tag">Three.js</span><span class="work-tag">WebGL</span><span class="work-tag">Real-time</span>
             </div>
@@ -2009,7 +2009,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Cryptography</p>
             <h3>Blockchain Voting System</h3>
-            <p>A tamper-evident election platform: voters prove token possession with a real compiled Groth16 zk-SNARK circuit — salted Poseidon commitment, nullifier-based replay protection, verified end-to-end with no mocking — plus Shamir-split key ceremonies, signed administrative actions, and independently auditable receipts. Applicable anywhere vote integrity matters and trust is scarce — union and club elections as much as the trust assumptions underlying government voting infrastructure.</p>
+            <p>A tamper-evident election platform built on real cryptographic primitives, not a blockchain buzzword bolted onto a CRUD app. Voters prove token possession with a real, compiled Groth16 zk-SNARK circuit — a salted Poseidon commitment, verified end-to-end with no mocking. A nullifier bound to each challenge gives genuine replay protection, not just a checkbox. Election keys are split via Shamir secret sharing, and every administrative action is signed and independently auditable. The same trust model applies to union and club elections as it does to the trust assumptions underlying government voting infrastructure.</p>
             <div class="work-tags">
               <span class="work-tag">TypeScript</span><span class="work-tag">Node.js</span><span class="work-tag">Prisma</span><span class="work-tag">zk-SNARKs</span><span class="work-tag">React</span>
             </div>
@@ -2023,7 +2023,7 @@
           <div class="work-card-body">
             <p class="work-card-eyebrow">Hardware / browser</p>
             <h3>Onboard Diagnostics Tool</h3>
-            <p>A React app that talks directly to ELM327 Bluetooth OBD2 adapters from the browser via Web Bluetooth — live PID charting, DTC read/clear, and a raw hex command console, no native app required.</p>
+            <p>A React app that talks directly to ELM327 Bluetooth OBD2 adapters from inside the browser. Web Bluetooth replaces the native app or dongle software most OBD2 tools require. Live PID charting streams RPM, speed, coolant temp, fuel level, engine load, and more in real time. DTC codes can be read and cleared directly from the same interface. A raw hex command console exposes the underlying protocol for anyone who wants to go lower-level.</p>
             <div class="work-tags">
               <span class="work-tag">React</span><span class="work-tag">Web Bluetooth</span><span class="work-tag">Vite</span>
             </div>
