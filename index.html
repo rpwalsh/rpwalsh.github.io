@@ -2144,7 +2144,7 @@
         x = x2; w = w2;
         return [x, y, z, w];
       };
-      const project4Dto3D = (v, wDist = 2.4) => {
+      const project4Dto3D = (v, wDist = 3.2) => {
         const [x, y, z, w] = v;
         const s = wDist / (wDist - w);
         return [x * s, y * s, z * s];
