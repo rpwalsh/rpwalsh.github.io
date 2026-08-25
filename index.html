@@ -1755,23 +1755,26 @@
     /* The lead runs across both columns. Above the breakpoint it puts the
        media beside the text rather than above it — a full-width 16:9 image
        at this width would be taller than everything under it. */
-    /* Both classes on the selector, deliberately: these rules sit above
-       .work-card in the file, and at equal specificity the later rule wins. */
+    /* The lead runs across both columns, so it gets two screenshots side by
+       side above the text rather than one beside it. Both classes on the
+       selector: these rules sit above .work-card in the file, and at equal
+       specificity the later rule would win. */
     .work-card.work-card--lead { grid-column: 1 / -1; }
+    .work-card.work-card--lead .work-card-media {
+      aspect-ratio: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--welcome-line);
+    }
+    .work-card.work-card--lead .work-card-media img { aspect-ratio: 16 / 10; }
+    @media (max-width: 700px) {
+      .work-card.work-card--lead .work-card-media { grid-template-columns: 1fr; }
+    }
     @media (min-width: 901px) {
-      .work-card.work-card--lead {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-        align-items: stretch;
-      }
-      .work-card.work-card--lead .work-card-media {
-        aspect-ratio: auto;
-        height: 100%;
-        border-bottom: none;
-        border-right: 1px solid var(--welcome-line);
-      }
       .work-card.work-card--lead .work-card-body { padding: 1.5rem 1.6rem 1.6rem; }
       .work-card.work-card--lead .work-card-body h3 { font-size: 1.35rem; }
+      .work-card.work-card--lead .work-card-body p { max-width: 92ch; }
     }
     .work-card {
       display: flex;
@@ -1926,11 +1929,14 @@
       </div>
       <div class="work-grid">
         <div class="work-card work-card--lead">
-          <div class="work-card-media"><img src="./assets/portfolio/code-wizard-workspace.jpg" alt="Code Wizard workspace showing a Python exercise: the task and its objectives on the left, the editor with starter code in the middle, and Run, Trace and Test controls above" loading="lazy" /></div>
+          <div class="work-card-media">
+            <img src="./assets/portfolio/code-wizard-skill-map.jpg" alt="Code Wizard's Python skill map: seventy-three skills drawn as a dependency graph, with the prerequisite chain for breadth-first and depth-first traversal lit and everything unrelated dimmed, and an inspector naming the three untested skills holding it back" loading="lazy" />
+            <img src="./assets/portfolio/code-wizard-workspace.jpg" alt="The Code Wizard editor on a Python exercise: the task and its objectives on the left, starter code in the middle, and Run, Trace and Test above" loading="lazy" />
+          </div>
           <div class="work-card-body">
             <p class="work-card-eyebrow">Runtimes &amp; tooling</p>
             <h3>Code Wizard</h3>
-            <p>A practice environment for fourteen languages that runs the real toolchain rather than pattern-matching a string. CPython, PHP and SQLite are compiled to WebAssembly and execute in the browser; the desktop build spawns actual clang, Go, rustc and .NET. Every one of the 202 exercises is graded by the language's own test runner, and none of them ships until deliberately introduced faults — a flipped comparison, an off-by-one — are caught by its tests.</p>
+            <p>A practice environment for fourteen languages that runs the real toolchain rather than pattern-matching a string. CPython, PHP and SQLite are compiled to WebAssembly and execute in the browser; the desktop build spawns actual clang, Go, rustc and .NET. Progress is held as a dependency graph — seventy-three skills for Python alone — so a weak prerequisite is named rather than left to be inferred. Every one of the 202 exercises is graded by the language's own test runner, and none of them ships until deliberately introduced faults — a flipped comparison, an off-by-one — are caught by its tests.</p>
             <p>There is no model anywhere in it. Every hint, test and explanation is written by hand, and a dependency test fails the build if a model client ever appears. Nothing leaves the machine either: a content security policy permits no off-origin destination at all, and five independent checks fail the build if one is introduced.</p>
             <div class="work-tags">
               <span class="work-tag">TypeScript</span><span class="work-tag">WebAssembly</span><span class="work-tag">Electron</span><span class="work-tag">React</span><span class="work-tag">Playwright</span>
